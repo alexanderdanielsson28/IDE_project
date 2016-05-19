@@ -11,6 +11,12 @@
 
 
     <h1 id="DocumentHeader">IDE Prototype</h1>
+<p>
+
+    <button type="button" class="btn">
+        <span class="glyphicon glyphicon-floppy-saved"></span> File Saved
+    </button>
+</p>
     <pre id="editor" style="height:300px">
        
 </pre>
@@ -28,6 +34,9 @@
     
 <script src="~/ace/ace.js"></script>
 <script src="~/ace/ext-language_tools.js"></script>
+<script src="~/Scripts/autoSave.js"></script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+
 
 
 <script>
@@ -40,6 +49,64 @@
         enableSnippets: true,
         enableLiveAutocompletion: true
     });
-    
+    var fileText = File1.Content;
+
+    // trigger extension
+    ace.require("ace/ext/language_tools");
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/tomorrow");
+    // enable autocompletion and snippets
+    editor.setOptions({
+        enableBasicAutocompletion: true,
+        enableSnippets: true,
+        enableLiveAutocompletion: true,
+
+    });
+
+    editor.commands.addCommand({
+        name: 'saveFile',
+        bindKey: {
+            win: 'Ctrl-S',
+            mac: 'Command-S',
+            sender: 'editor|cli'
+        },
+        exec: function (env, args, request) {
+            alert("Sparat!");
+        }
+
+    });
+    var arlene1 = new Array();
+    var consoleText = $("#editor").text();
+    //var consoleText=$("#editor").text();
+ //   console.log(consoleText);
+   // console.log(fileText);
+    //ace_line
+    //ace_identifier
+  
+
+    $(".btn").click(function () {
+        var editorText = editor.getValue();
+       
+        
+
+        
+        var _fileText = fileText.replace(/\s+$/, '');
+        var _editorText = editorText.replace(/\s+$/, '');
+        
+
+        
+        console.log(_fileText);
+        console.log(_editorText);
+
+        if (_fileText != _editorText) {
+         //  File1.Content = consoleText;
+            console.log("Ej samma");
+        } else {
+            console.log("samma");
+        }
+    });
+
+
 </script>
 
