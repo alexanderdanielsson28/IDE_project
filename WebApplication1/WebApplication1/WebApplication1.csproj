@@ -549,6 +549,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\FileManagerDesign.css" />
+    <Content Include="Content\Icons\document.png" />
+    <Content Include="Content\Icons\folder-horizontal.png" />
+    <Content Include="Content\Icons\toggle-small-expand.png" />
+    <Content Include="Content\Icons\toggle-small.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

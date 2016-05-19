@@ -10,19 +10,19 @@
 
 var fileArray = [];
 var File1 = {
-    Name: "markup",
+    Name: "markup.html",
     Content: "<div id=''></div>",
-    fileEnding: ".html"
+    Type: "html"
 }
 var File2 = {
-    Name: "style",
+    Name: "style.css",
     Content: "body{margin:0}",
-    fileEnding: ".css"
+    Type: "css"
 }
 var File3 = {
-    Name: "script",
+    Name: "script.js",
     Content: "var test = 5;",
-    fileEnding: ".js"
+    Type: "js"
 }
 fileArray.push(File1);
 fileArray.push(File2);
@@ -37,11 +37,11 @@ fileArray.push(File3);
 //---------------GENERATING OF DISPLAY FILES---------------------
 $(document).ready(function () {
     for (var i = 0; i < fileArray.length; i++) {
-        $("#FileManager").append("<li class='file' id=" + fileArray[i].Name + fileArray[i].fileEnding + ">" + fileArray[i].Name + fileArray[i].fileEnding + "</li>");
+        $("#FileManager").append("<li class='file' id=" + fileArray[i].Name+ ">" + fileArray[i].Name + "</li>");
     }
-   
 
 
+    
 })
   
 //---------------END OF GENERATING OF DISPLAY FILES---------------------
@@ -51,14 +51,17 @@ $(document).ready(function () {
 $(document).on('click', ".file", function () {
     $(".file").removeClass("selectedFile");
     $(this).addClass("selectedFile")
-    $("#editor").text();
+    GetFileFromID($(this))
+    // SAVE HERE
+    editor.setValue("", 0);
+    
 });
 
 
 //----------------END OF CLICK EVENTS---------------------------
 
 function GetFileFromID(Element) {
-
+    var id = $(Element).attr('id');
 
 
 }
