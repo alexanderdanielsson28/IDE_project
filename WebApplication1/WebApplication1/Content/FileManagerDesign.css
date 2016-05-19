@@ -1,0 +1,16 @@
+﻿body {
+}
+#FileManager{
+    list-style-type: none;
+}
+.file{
+    text-decoration:none;
+    cursor:pointer;
+}
+.file:hover:not(.selectedFile){
+    color:darkgray;
+}
+.selectedFile{
+    color:red;
+}
+
