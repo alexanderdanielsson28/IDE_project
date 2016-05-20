@@ -551,6 +551,7 @@
     <Content Include="Content\FileManagerDesign.css" />
     <Content Include="Content\Icons\document.png" />
     <Content Include="Content\Icons\folder-horizontal.png" />
+    <Content Include="Content\Icons\JSIcon16X16.png" />
     <Content Include="Content\Icons\toggle-small-expand.png" />
     <Content Include="Content\Icons\toggle-small.png" />
     <Content Include="favicon.ico" />
