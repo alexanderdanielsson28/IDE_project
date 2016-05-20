@@ -1,12 +1,18 @@
-﻿
+﻿//-------------GLOBAL VARIABLES--------------------
+//-------------SETTING UP ARRAYS-----------------------------
+//-------------INITIATOR--------------------------
+//-------------GENERATING OF DISPLAY FILES---------------------
+//-------------CLICK EVENTS---------------------------
+//-------------FILE-RELATED FUNCTIONS---------------------------
+
+
+
+
+
+
+
 //------------GLOBAL VARIABLES--------------------
-
-
-//------------END OF GLOBAL VARIABLES--------------------
-
-
-
-//----------------------------"FILES"-----------------------------
+var html = "";
 var matchArray = [];
 var fileArray = [];
 var testSubFolder = [];
@@ -59,6 +65,11 @@ var File9 = {
     Type: ".js"
 }
 
+//------------END OF GLOBAL VARIABLES--------------------
+
+
+
+//----------------------------"SETTING UP ARRAYS"-----------------------------
 testSubFolder.push(File4);
 testSubFolder.push(testsub2folder);
 testsub2folder.push(File5);
@@ -72,28 +83,29 @@ fileArray.push(File2);
 fileArray.push(testSubFolder);
 fileArray.push(File3);
 console.log(fileArray);
+//----------------------------"END OF SETTING UP ARRAYS"-----------------------------
 
 
+//----------------------------INITIATOR--------------------------
 
-
-//----------------------------"FILES"-----------------------------
-var html = "";
-//---------------GENERATING OF DISPLAY FILES---------------------
 $(document).ready(function () {
 
     
     var folderCount = 1;
     for (var i = 0; i < fileArray.length; i++) {
         console.log("lap: " + i)
-        checkFilesFolders(fileArray, i, folderCount);
+        generateFilesAndFolders(fileArray, i, folderCount);
     }
     console.log(html);
     $("#FileManager").append(html);
 
 })
+//----------------------------END OF INITIATOR--------------------------
 
-//---------------END OF GENERATING OF DISPLAY FILES---------------------
-function checkFilesFolders(array, iterator, folderCount) {
+
+//---------------GENERATING OF DISPLAY FILES---------------------
+
+function generateFilesAndFolders(array, iterator, folderCount) {
     console.log(Array.isArray(array[iterator]))
     if (Array.isArray(array[iterator])) {
         //$("#FileManager").append("<ol>")
@@ -103,7 +115,7 @@ function checkFilesFolders(array, iterator, folderCount) {
         for (var j = 0; j < array[iterator].length; j++) {
             //console.log("Deeper Lap:" + j);
             //arrayCheck = true;
-            checkFilesFolders(array[iterator], j, folderCount);
+            generateFilesAndFolders(array[iterator], j, folderCount);
         }
         html += "</ol></li>"
     }
@@ -121,6 +133,9 @@ function checkFilesFolders(array, iterator, folderCount) {
         }
     }
 }
+//---------------END OF GENERATING OF DISPLAY FILES---------------------
+
+
 
 //----------------CLICK EVENTS---------------------------
 $(document).on('click', ".file a", function (e) {
@@ -138,6 +153,9 @@ $(document).on('click', ".file a", function (e) {
 
 //----------------END OF CLICK EVENTS---------------------------
 
+
+
+//----------------FILE-RELATED FUNCTIONS---------------------------
 function GetFileFromID(Element) {
     var id = $(Element).attr('id');
     console.log(Element)
@@ -149,3 +167,4 @@ function GetFileFromID(Element) {
         }
     });
 }
+//----------------END OF FILE-RELATED FUNCTIONS---------------------------
