@@ -6,27 +6,39 @@
 <head>
     <meta charset="UTF-8">
     <title>ACE Autocompletion demo</title>
+    <link rel="stylesheet" href="../../Content/Site.css"/>
+    <link rel="stylesheet" href="../../Content/bootstrap.css" />
+    <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
 </head>
 <body>
-    <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Färgschema</button>
-        <div id="myDropdown" class="dropdown-content">
-            <a onclick="white()" class="buttondiv"><p class="p-aligncenter">white</p></a>
-            <a onclick="black()" class="buttondiv"><p class="p-aligncenter">black</p></a>
-            <a onclick="grayblue()" class="buttondiv"><p class="p-aligncenter">grayblue</p></a>
+    <div id="fullwidth1pxheight">
+        <div id="tinybox" onclick="onf()"></div>
+        <div onclick="full()" id="f11" class="clickdivf11f11r">Full Screen</div>
+        <div onclick="revert()" id="f11r" class="clickdivf11f11r">Window Mode</div>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Färgschema</button>
+            <div id="myDropdown" class="dropdown-content">
+                <p onclick="white()" class="p-aligncenter">white</p>
+                <p onclick="black()" class="p-aligncenter">black</p>
+                <p onclick="grayblue()" class="p-aligncenter">grayblue</p>
+            </div>
         </div>
     </div>
-    <h1 id="DocumentHeader">Text editor</h1>
+    <div id="twinbox">
+        <div id="tinyboxtwin" onclick="onft()"></div>
+    </div>
+    <h1 id="de">Text editor</h1>
     <pre id="editor"></pre>
 
 
-
-
+    
     <!-- load ace -->
     <script src="../../no-fonflikt/ace.js"></script>
     <!-- load ace language tools -->
     <script src="../../no-fonflikt/ext-language_tools.js"></script>
     <!-- load external js file -->
     <script src="../../no-fonflikt/doc.js"></script>
+    <!-- fullscreen function -->
+    <script src="../../Scripts/documentjs.js"></script>
 </body>
 </html>

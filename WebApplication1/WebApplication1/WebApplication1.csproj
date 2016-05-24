@@ -559,6 +559,8 @@
     <Content Include="no-fonflikt\mode-javascript.js" />
     <Content Include="no-fonflikt\snippets\text.js" />
     <Content Include="no-fonflikt\theme-tomorrow.js" />
+    <Content Include="pics\arrows.png" />
+    <Content Include="pics\arrowsup.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
