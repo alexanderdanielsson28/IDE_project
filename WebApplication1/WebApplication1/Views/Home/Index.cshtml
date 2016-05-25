@@ -2,111 +2,34 @@
     ViewBag.Title = "Home Page";
 }
 
-
-   
-
-
-
-
-
-
-    <h1 id="DocumentHeader">IDE Prototype</h1>
+<link href="~/Content/styleIndex.css" rel="stylesheet" />
+<h1 id="DocumentHeader">IDE Prototype</h1>
+<div id="consoleError"></div>
 <p>
 
     <button type="button" class="btn">
         <span class="glyphicon glyphicon-floppy-saved"></span> File Saved
     </button>
+    <span id="msg"></span>
+    <span id="errormess"></span>
+    <span>
+
+        <!--<span id="img-unChecked">...</span>-->
+        <img id="img-check" src="~/img/good_or_tick.png" width="20" height="20" hidden="hidden" /></span>
 </p>
-    <pre id="editor" style="height:300px">
-       
+
+<pre id="editor" style="height:300px">
+
 </pre>
 
+<div style="width:100%;max-height:100px;min-height:100px;height:100px; max-width:100%; background-color:black;">
+   <div id="error"></div>
+</div>
 
-    <div style="width:100%;max-height:100px;min-height:100px;height:100px; max-width:100%; background-color:black;">
-        Our First Prototype Of Apirix IDE  |  Current Date:
-    </div>
-
-
-
-
-
-    
-    
 <script src="~/ace/ace.js"></script>
 <script src="~/ace/ext-language_tools.js"></script>
-<script src="~/Scripts/autoSave.js"></script>
+
 <script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/autoSave.js"></script>
 
-
-
-<script>
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.getSession().setMode("ace/mode/javascript");
-
-    editor.setOptions({
-        enableBasicAutocompletion: true,
-        enableSnippets: true,
-        enableLiveAutocompletion: true
-    });
-    var fileText = File1.Content;
-
-    // trigger extension
-    ace.require("ace/ext/language_tools");
-    var editor = ace.edit("editor");
-    editor.session.setMode("ace/mode/javascript");
-    editor.setTheme("ace/theme/tomorrow");
-    // enable autocompletion and snippets
-    editor.setOptions({
-        enableBasicAutocompletion: true,
-        enableSnippets: true,
-        enableLiveAutocompletion: true,
-
-    });
-
-    editor.commands.addCommand({
-        name: 'saveFile',
-        bindKey: {
-            win: 'Ctrl-S',
-            mac: 'Command-S',
-            sender: 'editor|cli'
-        },
-        exec: function (env, args, request) {
-            alert("Sparat!");
-        }
-
-    });
-    var arlene1 = new Array();
-    var consoleText = $("#editor").text();
-    //var consoleText=$("#editor").text();
- //   console.log(consoleText);
-   // console.log(fileText);
-    //ace_line
-    //ace_identifier
-  
-
-    $(".btn").click(function () {
-        var editorText = editor.getValue();
-       
-        
-
-        
-        var _fileText = fileText.replace(/\s+$/, '');
-        var _editorText = editorText.replace(/\s+$/, '');
-        
-
-        
-        console.log(_fileText);
-        console.log(_editorText);
-
-        if (_fileText != _editorText) {
-         //  File1.Content = consoleText;
-            console.log("Ej samma");
-        } else {
-            console.log("samma");
-        }
-    });
-
-
-</script>
 
