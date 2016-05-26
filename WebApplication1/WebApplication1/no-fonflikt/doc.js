@@ -10,7 +10,7 @@ editor.setOptions({
     enableLiveAutocompletion: true
 });
 function black() {
-    document.body.style.backgroundColor = "black";
+    document.body.style.backgroundColor = "rgb(75,75,75)";
     document.getElementById('de').style.color = "white";
 }
 
@@ -20,7 +20,7 @@ function white() {
 }
 
 function grayblue() {
-    document.body.style.backgroundColor = "rgb(170,170,180)";
+    document.body.style.backgroundColor = "rgb(150,150,150)";
     document.getElementById('de').style.color = "black";
 }
 

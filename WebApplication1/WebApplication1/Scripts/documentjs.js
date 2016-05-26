@@ -11,6 +11,7 @@
    });
    function full() {
        document.getElementById('editor').style.width = "100%";
+       document.getElementById('editor').style.border = "0px";
        document.getElementById('editor').style.height = "100%";
        document.getElementById('editor').style.position = "absolute";
        document.getElementById('fullwidth1pxheight').style.float = "none";
@@ -60,6 +61,7 @@
        document.getElementById('twinbox').style.marginLeft = "5px";
        document.getElementById('tinyboxtwin').style.backgroundImage = "url(../pics/arrowsup.png)";
        document.getElementById('tinyboxtwin').style.backgroundSize = "contain";
+       document.getElementById('editor').style.border = "1px solid gray";
    }
    window.onkeydown = function (e) {
        if (e.shiftKey && e.keyCode == 66) {
@@ -74,7 +76,7 @@
        if (e.ctrlKey && e.keyCode == 66) {
            full();
        }
-       if (e.ctrlKey && e.keyCode == 89) {
+       if (e.shiftKey && e.keyCode == 89) {
            revert();
        }
    }
@@ -100,12 +102,15 @@
    function Res1() {
        document.getElementById('editor').style.width = "600px";
        document.getElementById('editor').style.height = "450px";
+       document.getElementById('editor').style.border = "1px solid gray";
    }
    function Res2() {
        document.getElementById('editor').style.width = "900px";
        document.getElementById('editor').style.height = "600px";
+       document.getElementById('editor').style.border = "1px solid gray";
    }
    function Res3() {
        document.getElementById('editor').style.width = "1200px";
        document.getElementById('editor').style.height = "800px";
+       document.getElementById('editor').style.border = "1px solid gray";
    }

@@ -34,6 +34,7 @@ textarea {
     margin-left:auto;
     margin-right:auto;
     border:1px solid gray;
+    box-shadow:1px 1px 1px;
 }
 #DocumentHeader {
     text-align:center;
@@ -109,6 +110,7 @@ textarea {
     height:30px;
     background-color:white;
     z-index:52;
+    box-shadow:1px 1px 5px;
 }
 #tinybox {
     width:20px;
@@ -131,7 +133,7 @@ textarea {
     cursor:pointer;
 }
 #twinbox {
-    width:95%;
+    width:25px;
     height:25px;
     display:none;
     margin-left:5px;
@@ -182,8 +184,7 @@ a {
     position:fixed;
     right:5px;
     background-color:white;
-    border:1px solid black;
-    border-top:1px dashed;
+    box-shadow:1px 1px 5px;
 }
 p {
     margin:0px 0px 0px 0px;
@@ -208,4 +209,7 @@ p {
 }
 .spanpointer {
     cursor:pointer;
+}
+.spanCommandP:hover {
+    background-color:rgb(230,238,255);
 }
