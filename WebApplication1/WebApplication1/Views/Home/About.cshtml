@@ -13,19 +13,48 @@
 <body>
     <div id="fullwidth1pxheight">
         <div id="tinybox" onclick="onf()"></div>
-        <div onclick="full()" id="f11" class="clickdivf11f11r">Full Screen</div>
+        <div onclick="full()" id="f11" class="clickdivf11f11r">FullScreen</div>
         <div onclick="revert()" id="f11r" class="clickdivf11f11r">Window Mode</div>
         <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Färgschema</button>
+            <p onclick="myFunction()" class="dropbtn">Färgschema</p>
             <div id="myDropdown" class="dropdown-content">
                 <p onclick="white()" class="p-aligncenter">white</p>
                 <p onclick="black()" class="p-aligncenter">black</p>
                 <p onclick="grayblue()" class="p-aligncenter">grayblue</p>
             </div>
         </div>
+        <div class="dropdown">
+            <p onclick="myFunctionRes()" class="dropbtn">Upplösning</p>
+            <div id="myDropdownRes" class="dropdown-content">
+                <p onclick="Res1()" class="p-aligncenter">600 x 450</p>
+                <p onclick="Res2()" class="p-aligncenter">900 x 600</p>
+                <p onclick="Res3()" class="p-aligncenter">1200 x 800</p>
+            </div>
+        </div>
+        <div class="dropdown">
+            <p onclick="myFunctionSch()" class="dropbtn">Förintställdt</p>
+            <div id="myDropdownSch" class="dropdown-content">
+                <p onclick="white(); Res1()" class="p-aligncenter">Stark</p>
+                <p onclick="black(); Res2()" class="p-aligncenter">Dark</p>
+                <p onclick="grayblue(); Res3()" class="p-aligncenter">Bark</p>
+            </div>
+        </div>
+        <div id="boxie" onclick="settingsinfo()"></div>
+        <div id="boxieR" onclick="settingsinfoR()"></div>
     </div>
     <div id="twinbox">
         <div id="tinyboxtwin" onclick="onft()"></div>
+    </div>
+    <div id="showcontent">
+        <h2 id="CommandHeader">Shortcut Commands</h2>
+        <p class="spanCommandP"><span onclick="full()" class="spanpointer">Fullscreen</span> | ctrl + b</p>
+        <p class="spanCommandP"><span onclick="revert()" class="spanpointer">Window Mode</span> | ctrl + y</p>
+        <p class="spanCommandP"><span onclick="black()" class="spanpointer">Black background</span> | shift + b</p>
+        <p class="spanCommandP"><span onclick="white()" class="spanpointer">White background</span> | shift + w</p>
+        <p class="spanCommandP"><span onclick="grayblue()" class="spanpointer">Grayblue background</span> | shift + g</p>
+        <p class="spanCommandP"><span onclick="Res1()" class="spanpointer">600 x 450</span> | N/A</p>
+        <p class="spanCommandP"><span onclick="Res2()" class="spanpointer">900 x 600</span> | N/A</p>
+        <p class="spanCommandP"><span onclick="Res3()" class="spanpointer">1200 x 800</span> | N/A</p>
     </div>
     <h1 id="de">Text editor</h1>
     <pre id="editor"></pre>

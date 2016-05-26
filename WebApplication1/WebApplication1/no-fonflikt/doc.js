@@ -11,17 +11,17 @@ editor.setOptions({
 });
 function black() {
     document.body.style.backgroundColor = "black";
-    document.getElementById('DocumentHeader').style.color = "white";
+    document.getElementById('de').style.color = "white";
 }
 
 function white() {
     document.body.style.backgroundColor = "white";
-    document.getElementById('DocumentHeader').style.color = "black";
+    document.getElementById('de').style.color = "black";
 }
 
 function grayblue() {
     document.body.style.backgroundColor = "rgb(170,170,180)";
-    document.getElementById('DocumentHeader').style.color = "black";
+    document.getElementById('de').style.color = "black";
 }
 
 /* When the user clicks on the button, 
