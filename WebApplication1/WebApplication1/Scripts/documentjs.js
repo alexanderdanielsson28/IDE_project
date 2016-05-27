@@ -9,6 +9,7 @@
        enableSnippets: true,
        enableLiveAutocompletion: true
    });
+// FullScreen resolution
    function full() {
        document.getElementById('editor').style.width = "100%";
        document.getElementById('editor').style.border = "0px";
@@ -30,6 +31,7 @@
        document.getElementById('tinyboxtwin').style.backgroundImage = "url(../pics/arrow_icon.png)";
        document.getElementById('tinyboxtwin').style.backgroundSize = "contain";
    }
+//Clicking on arrow to hide navigation bar
    function onf() {
        document.getElementById('fullwidth1pxheight').style.display = "none";
        document.getElementById('tinyboxtwin').style.display = "block";
@@ -38,6 +40,7 @@
        document.getElementById('boxieR').style.display = "none";
        document.getElementById('boxie').style.display = "block";
    }
+// Click to display navigation bar
    function onft() {
        document.getElementById('fullwidth1pxheight').style.display = "block";
        document.getElementById('fullwidth1pxheight').style.zIndex = "60";
@@ -48,6 +51,7 @@
        document.getElementById('boxieR').style.display = "none";
        document.getElementById('boxie').style.display = "block";
    }
+//Revert from fullscreen to window mode
    function revert() {
        document.getElementById('editor').style.width = "900px";
        document.getElementById('editor').style.height = "600px";
@@ -63,52 +67,39 @@
        document.getElementById('tinyboxtwin').style.backgroundSize = "contain";
        document.getElementById('editor').style.border = "1px solid gray";
    }
-   window.onkeydown = function (e) {
-       if (e.shiftKey && e.keyCode == 66) {
-           black();
-       }
-       if (e.shiftKey && e.keyCode == 71) {
-           grayblue();
-       }
-       if (e.shiftKey && e.keyCode == 87) {
-           white();
-       }
-       if (e.ctrlKey && e.keyCode == 66) {
-           full();
-       }
-       if (e.shiftKey && e.keyCode == 89) {
-           revert();
-       }
-   }
+//Show settings
    function settingsinfo() {
        document.getElementById('showcontent').style.display = "block";
        document.getElementById('boxieR').style.display = "block";
        document.getElementById('boxie').style.display = "none";
    }
+   //hide settings
    function settingsinfoR() {
        document.getElementById('showcontent').style.display = "none";
        document.getElementById('boxieR').style.display = "none";
        document.getElementById('boxie').style.display = "block";
    }
-   function span1() {
-       document.getElementById('span1').style.display = "block";
-   }
+   //show resolution list
    function myFunctionRes() {
        document.getElementById("myDropdownRes").classList.toggle("show");
    }
+//show pre schemes list
    function myFunctionSch() {
        document.getElementById("myDropdownSch").classList.toggle("show");
    }
+//change resolution 600 x 450
    function Res1() {
        document.getElementById('editor').style.width = "600px";
        document.getElementById('editor').style.height = "450px";
        document.getElementById('editor').style.border = "1px solid gray";
    }
+//change resolution 900 x 600
    function Res2() {
        document.getElementById('editor').style.width = "900px";
        document.getElementById('editor').style.height = "600px";
        document.getElementById('editor').style.border = "1px solid gray";
    }
+//change resolution 1200 x 800
    function Res3() {
        document.getElementById('editor').style.width = "1200px";
        document.getElementById('editor').style.height = "800px";

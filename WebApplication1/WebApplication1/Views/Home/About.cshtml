@@ -11,18 +11,21 @@
     <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
 </head>
 <body>
+    <!-- Navigationbar -->
     <div id="fullwidth1pxheight">
         <div id="tinybox" onclick="onf()"></div>
         <div onclick="full()" id="f11" class="clickdivf11f11r">FullScreen</div>
         <div onclick="revert()" id="f11r" class="clickdivf11f11r">Window Mode</div>
+        <!-- Background color -->
         <div class="dropdown">
             <p onclick="myFunction()" class="dropbtn">Färgschema</p>
             <div id="myDropdown" class="dropdown-content">
-                <p onclick="white()" class="p-aligncenter">white</p>
-                <p onclick="black()" class="p-aligncenter">black</p>
-                <p onclick="grayblue()" class="p-aligncenter">grayblue</p>
+                <p onclick="white()" class="p-aligncenter">White</p>
+                <p onclick="black()" class="p-aligncenter">Dark</p>
+                <p onclick="grayblue()" class="p-aligncenter">Lightgray</p>
             </div>
         </div>
+        <!-- Resolution -->
         <div class="dropdown">
             <p onclick="myFunctionRes()" class="dropbtn">Upplösning</p>
             <div id="myDropdownRes" class="dropdown-content">
@@ -31,6 +34,7 @@
                 <p onclick="Res3()" class="p-aligncenter">1200 x 800</p>
             </div>
         </div>
+        <!-- Pre scheme -->
         <div class="dropdown">
             <p onclick="myFunctionSch()" class="dropbtn">Förintställt</p>
             <div id="myDropdownSch" class="dropdown-content">
@@ -42,25 +46,30 @@
         <div id="boxie" onclick="settingsinfo()"></div>
         <div id="boxieR" onclick="settingsinfoR()"></div>
     </div>
+    <!-- Show navigation bar -->
     <div id="twinbox">
         <div id="tinyboxtwin" onclick="onft()"></div>
     </div>
+    <!-- Settings -->
     <div id="showcontent">
-        <h2 id="CommandHeader">Shortcut Commands</h2>
-        <p class="spanCommandP"><span onclick="full()" class="spanpointer">Fullscreen</span> | ctrl + b</p>
-        <p class="spanCommandP"><span onclick="revert()" class="spanpointer">Window Mode</span> | shift + y</p>
-        <p class="spanCommandP"><span onclick="black()" class="spanpointer">Black background</span> | shift + b</p>
-        <p class="spanCommandP"><span onclick="white()" class="spanpointer">White background</span> | shift + w</p>
-        <p class="spanCommandP"><span onclick="grayblue()" class="spanpointer">Grayblue background</span> | shift + g</p>
-        <p class="spanCommandP"><span onclick="Res1()" class="spanpointer">600 x 450 Resolution</span> | N/A</p>
-        <p class="spanCommandP"><span onclick="Res2()" class="spanpointer">900 x 600 Resolution</span> | N/A</p>
-        <p class="spanCommandP"><span onclick="Res3()" class="spanpointer">1200 x 800 Resolution</span> | N/A</p>
+        <h2 id="CommandHeader">Settings</h2>
+        <p class="spanCommandP"><span onclick="full()" class="spanpointer">Fullscreen</span></p>
+        <p class="spanCommandP"><span onclick="revert()" class="spanpointer">Window Mode</span></p>
+        <p class="spanCommandP"><span onclick="black()" class="spanpointer">Dark background</span></p>
+        <p class="spanCommandP"><span onclick="white()" class="spanpointer">White background</span></p>
+        <p class="spanCommandP"><span onclick="grayblue()" class="spanpointer">Lightgray background</span></p>
+        <p class="spanCommandP"><span onclick="Res1()" class="spanpointer">600 x 450 Resolution</span></p>
+        <p class="spanCommandP"><span onclick="Res2()" class="spanpointer">900 x 600 Resolution</span></p>
+        <p class="spanCommandP"><span onclick="Res3()" class="spanpointer">1200 x 800 Resolution</span></p>
     </div>
+    <!-- Text editor begins -->
     <h1 id="de">Text editor</h1>
     <pre id="editor"></pre>
 
 
     
+
+    <!-- Javascript externals -->
     <!-- load ace -->
     <script src="../../no-fonflikt/ace.js"></script>
     <!-- load ace language tools -->

@@ -9,16 +9,17 @@ editor.setOptions({
     enableSnippets: true,
     enableLiveAutocompletion: true
 });
+//black background
 function black() {
     document.body.style.backgroundColor = "rgb(75,75,75)";
     document.getElementById('de').style.color = "white";
 }
-
+//white background
 function white() {
     document.body.style.backgroundColor = "white";
     document.getElementById('de').style.color = "black";
 }
-
+//gray background
 function grayblue() {
     document.body.style.backgroundColor = "rgb(150,150,150)";
     document.getElementById('de').style.color = "black";
