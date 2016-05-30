@@ -1,8 +1,11 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Editor";
 }
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>ACE Autocompletion demo</title>
@@ -10,6 +13,7 @@
     <link rel="stylesheet" href="../../Content/bootstrap.css" />
     <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
 </head>
+
 <body>
     <!-- Navigationbar -->
     <div id="fullwidth1pxheight">
@@ -43,6 +47,7 @@
                 <p onclick="grayblue(); Res3()" class="p-aligncenter">Bark</p>
             </div>
         </div>
+        <!-- open and close settings -->
         <div id="boxie" onclick="settingsinfo()"></div>
         <div id="boxieR" onclick="settingsinfoR()"></div>
     </div>
@@ -64,7 +69,7 @@
     </div>
     <!-- Text editor begins -->
     <h1 id="de">Text editor</h1>
-    <pre id="editor"></pre>
+    <div id="editor"></div>
 
 
     
@@ -76,7 +81,8 @@
     <script src="../../no-fonflikt/ext-language_tools.js"></script>
     <!-- load external js file -->
     <script src="../../no-fonflikt/doc.js"></script>
-    <!-- fullscreen function -->
+    <!-- load external js file -->
     <script src="../../Scripts/documentjs.js"></script>
 </body>
+
 </html>

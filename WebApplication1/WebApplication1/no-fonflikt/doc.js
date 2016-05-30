@@ -45,3 +45,8 @@ window.onclick = function (event) {
         }
     }
 }
+var EditSession = require("edit_session.js").EditSession;
+var js = new EditSession("some js code");
+var css = new EditSession(["some", "css", "code here"]);
+// and then to load document into editor, just call
+editor.setSession(js);
