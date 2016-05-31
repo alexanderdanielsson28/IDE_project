@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+<link href="~/Content/FileManagerDesign.css" rel="stylesheet" />
 
    
 
@@ -16,6 +16,8 @@
 </pre>
 
 
+<ol id="FileManager"></ol>
+
     <div style="width:100%;max-height:100px;min-height:100px;height:100px; max-width:100%; background-color:black;">
         Our First Prototype Of Apirix IDE  |  Current Date:
     </div>
@@ -23,12 +25,10 @@
 
 
 
-
-    
-    
+<script src="~/Scripts/jquery-1.10.2.js"></script>
 <script src="~/ace/ace.js"></script>
 <script src="~/ace/ext-language_tools.js"></script>
-
+<script src="~/Scripts/FileManagement.js"></script>
 
 <script>
     var editor = ace.edit("editor");
