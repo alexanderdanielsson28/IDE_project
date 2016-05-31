@@ -46,6 +46,9 @@ textarea {
     width:92px;
     height:20px;
 }
+.p-aligncenter:hover {
+    background-color:aliceblue;
+}
 #myDropdown {
     background-color:white;
 }
@@ -69,11 +72,6 @@ textarea {
     font-size:17px;
 }
 
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-    background-color:aliceblue;
-}
-
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
@@ -95,10 +93,7 @@ textarea {
     background-color:white;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content p:hover {
-    background-color:rgb(204,255,255);
-}
+
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
@@ -208,8 +203,21 @@ p {
     line-height:1.5em;
 }
 .spanpointer {
-    cursor:pointer;
+    cursor: pointer;
 }
-.spanCommandP:hover {
-    background-color:rgb(230,238,255);
+#myDropdownLan {
+    background-color:white;
+    width:110px;
+}
+#w110 {
+    width:110px;
+}
+#w111 {
+    width:110px;
+}
+#w112 {
+    width:110px;
+}
+#w113 {
+    width:110px;
 }

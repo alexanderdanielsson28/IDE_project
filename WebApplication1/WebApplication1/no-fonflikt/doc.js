@@ -34,7 +34,6 @@ function myFunction() {
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
-
         var dropdowns = document.getElementsByClassName("dropdown-content");
         var i;
         for (i = 0; i < dropdowns.length; i++) {
@@ -45,8 +44,43 @@ window.onclick = function (event) {
         }
     }
 }
-var EditSession = require("edit_session.js").EditSession;
-var js = new EditSession("some js code");
-var css = new EditSession(["some", "css", "code here"]);
-// and then to load document into editor, just call
-editor.setSession(js);
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtnn')) {
+        var dropdownss = document.getElementsByClassName("dropdown-contents");
+    var ii;
+    for (ii = 0; ii < dropdownss.length; ii++) {
+        var openDropdown2 = dropdownss[ii];
+        if (openDropdown2.classList.contains('show')) {
+            openDropdown2.classList.remove('show');
+        }
+    }
+}
+}
+
+var editorr = ace.edit("editor");
+editorr.setTheme("ace/theme/monokai");
+editorr.getSession().setMode("ace/mode/javascript");
+
+editorr.setOptions({
+    enableBasicAutocompletion: true, enableSnippets: true, enableLiveAutocompletion: true
+});
+
+function html() {
+    editorr.getSession().setMode("ace/mode/html");
+    document.getElementById('spanlanguageholder').innerHTML = "HTML";
+}
+function css() {
+    editorr.getSession().setMode("ace/mode/css");
+    document.getElementById('spanlanguageholder').innerHTML = "CSS";
+}
+function javascript() {
+    editorr.getSession().setMode("ace/mode/javascript");
+    document.getElementById('spanlanguageholder').innerHTML = "JavaScript";
+}
+function csharp() {
+    editorr.getSession().setMode("ace/mode/csharp");
+    document.getElementById('spanlanguageholder').innerHTML = "C#";
+}
+function languages() {
+    document.getElementById("myDropdownLan").classList.toggle("show");
+}

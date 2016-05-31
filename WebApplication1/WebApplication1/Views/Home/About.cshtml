@@ -47,6 +47,15 @@
                 <p onclick="grayblue(); Res3()" class="p-aligncenter">Bark</p>
             </div>
         </div>
+        <div class="dropdown">
+            <p onclick="languages()" class="dropbtn">Select language</p>
+            <div id="myDropdownLan" class="dropdown-content">   
+                <p class="p-aligncenter" id="w110" onclick="html()">HTML</p>
+                <p class="p-aligncenter" id="w111" onclick="css()">CSS</p>
+                <p class="p-aligncenter" id="w112" onclick="javascript()">JavaScript</p>
+                <p class="p-aligncenter" id="w113" onclick="csharp()">C#</p>
+            </div>
+        </div>
         <!-- open and close settings -->
         <div id="boxie" onclick="settingsinfo()"></div>
         <div id="boxieR" onclick="settingsinfoR()"></div>
@@ -68,21 +77,21 @@
         <p class="spanCommandP"><span onclick="Res3()" class="spanpointer">1200 x 800 Resolution</span></p>
     </div>
     <!-- Text editor begins -->
-    <h1 id="de">Text editor</h1>
-    <div id="editor"></div>
+    <h1 id="de">Text editor - <span id="spanlanguageholder">JavaScript</span></h1>
+    <pre id="editor"></pre>
+    
+    
 
 
     
 
     <!-- Javascript externals -->
-    <!-- load ace -->
-    <script src="../../no-fonflikt/ace.js"></script>
-    <!-- load ace language tools -->
-    <script src="../../no-fonflikt/ext-language_tools.js"></script>
+    <script src="~/ace/ace.js"></script>
+    <script src="~/ace/ext-language_tools.js"></script>
     <!-- load external js file -->
-    <script src="../../no-fonflikt/doc.js"></script>
+    <script src="~/no-fonflikt/doc.js"></script>
     <!-- load external js file -->
-    <script src="../../Scripts/documentjs.js"></script>
+    <script src="~/Scripts/documentjs.js"></script>
 </body>
 
 </html>
