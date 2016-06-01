@@ -555,7 +555,7 @@
     <Content Include="mycss\jquery.terminal.css" />
     <Content Include="mycss\jquery.terminal.min.css" />
     <Content Include="myjs\CodeToBeRun.js" />
-    <Content Include="myjs\documentjs.js" />
+    <Content Include="myjs\header.js" />
     <Content Include="myjs\jquery-1.7.1.min.js" />
     <Content Include="myjs\jquery.mousewheel-min.js" />
     <Content Include="myjs\jquery.terminal.js" />

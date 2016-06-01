@@ -4,10 +4,8 @@
 
 <meta charset="utf-8" />
 
-<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 
-<script src="~/myjs/terminal.js"></script>
-<script src="~/myjs/documentjs.js"></script>
+
 
 <head>
     <meta charset="UTF-8">
@@ -44,7 +42,7 @@
                 <p onclick="black(); Res2()" class="p-aligncenter">Dark</p>
                 <p onclick="grayblue(); Res3()" class="p-aligncenter">Bark</p>
             </div>
-        
+        </div>
     </div>
 
     <h1 id="DocumentHeader">Apirix IDE Prototype</h1>
@@ -54,8 +52,14 @@
 
     <div id="term" ></div>
 
-    <script src="~/ace/ace.js"></script>
-    <script src="~/ace/ext-language_tools.js"></script>
+        <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+        <script src="~/ace/ace.js"></script>
+        <script src="~/ace/ext-language_tools.js"></script>
+
+        <script src="~/myjs/terminal.js"></script>
+
+        <script src="~/myjs/header.js"></script>
 
     <script>
     var editor = ace.edit("editor");
@@ -77,7 +81,7 @@
     myTerminal.print("********************** APIRIX Terminal V2 **********************")
     myTerminal.print("The commands are: | date | creator | errorlog | theme | clear |");
 
-    var lock = false;
+    var lock = true;
 
     function myfunction() {
 
@@ -136,24 +140,25 @@
                         myTerminal.print("You Choosed Theme White")
                         lock = false;
                     }
-                    else if (userInput2 == "grayblue") {
+                    else if (userInput2 == "bluegray") {
                         grayblue();
-                        myTerminal.print("You Choosed Theme Grayblue")
+                        myTerminal.print("You Choosed Theme Bluegray")
                         lock = false;
                     }
                     else{
                         myTerminal.print("There Are No Theme Called That!")
+                        lock = false;
                     }
 
+                    
                     if (lock == false) {
                         lock = true;
                         myfunction();
                     }
-                    
 
 
                 });
-
+               
                 
             }
             else if (userInput == "clear") {
