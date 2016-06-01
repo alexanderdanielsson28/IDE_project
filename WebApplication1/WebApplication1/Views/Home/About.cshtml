@@ -22,7 +22,7 @@
         <div onclick="revert()" id="f11r" class="clickdivf11f11r">Window Mode</div>
         <!-- Background color -->
         <div class="dropdown">
-            <p onclick="myFunction()" class="dropbtn">Färgschema</p>
+            <p onclick="myFunction()" class="dropbtn">Background</p>
             <div id="myDropdown" class="dropdown-content">
                 <p onclick="white()" class="p-aligncenter">White</p>
                 <p onclick="black()" class="p-aligncenter">Dark</p>
@@ -31,20 +31,11 @@
         </div>
         <!-- Resolution -->
         <div class="dropdown">
-            <p onclick="myFunctionRes()" class="dropbtn">Upplösning</p>
+            <p onclick="myFunctionRes()" class="dropbtn">Resolution</p>
             <div id="myDropdownRes" class="dropdown-content">
                 <p onclick="Res1()" class="p-aligncenter">600 x 450</p>
                 <p onclick="Res2()" class="p-aligncenter">900 x 600</p>
                 <p onclick="Res3()" class="p-aligncenter">1200 x 800</p>
-            </div>
-        </div>
-        <!-- Pre scheme -->
-        <div class="dropdown">
-            <p onclick="myFunctionSch()" class="dropbtn">Förintställt</p>
-            <div id="myDropdownSch" class="dropdown-content">
-                <p onclick="white(); Res1()" class="p-aligncenter">Stark</p>
-                <p onclick="black(); Res2()" class="p-aligncenter">Dark</p>
-                <p onclick="grayblue(); Res3()" class="p-aligncenter">Bark</p>
             </div>
         </div>
         <!-- Select different programming languages -->
@@ -57,6 +48,16 @@
                 <p class="p-aligncenter" id="w113" onclick="csharp()">C#</p>
                 <p class="p-aligncenter" id="w114" onclick="php()">PHP</p>
                 <p class="p-aligncenter" id="w115" onclick="sql()">SQL</p>
+            </div>
+        </div>
+        <!-- Select different editor themes -->
+        <div class="dropdown">
+            <p onclick="theme()" class="dropbtn">Select Theme</p>
+            <div id="myDropdownTheme" class="dropdown-content">
+                <p class="p-aligncenter" onclick="monokai()">monokai</p>
+                <p class="p-aligncenter" onclick="iplastic()">iplastic</p>
+                <p class="p-aligncenter" onclick="cobalt()">cobalt</p>
+                <p class="p-aligncenter" onclick="tomorrow()">tomorrow</p>
             </div>
         </div>
         <!-- open and close settings -->
@@ -78,6 +79,16 @@
         <p class="spanCommandP"><span onclick="Res1()" class="spanpointer">600 x 450 Resolution</span></p>
         <p class="spanCommandP"><span onclick="Res2()" class="spanpointer">900 x 600 Resolution</span></p>
         <p class="spanCommandP"><span onclick="Res3()" class="spanpointer">1200 x 800 Resolution</span></p>
+        <p class="spanCommandP"><span onclick="html()" class="spanpointer">HTML</span></p>
+        <p class="spanCommandP"><span onclick="css()" class="spanpointer">CSS</span></p>
+        <p class="spanCommandP"><span onclick="javascript()" class="spanpointer">JavaScript</span></p>
+        <p class="spanCommandP"><span onclick="csharp()" class="spanpointer">C#</span></p>
+        <p class="spanCommandP"><span onclick="php()" class="spanpointer">PHP</span></p>
+        <p class="spanCommandP"><span onclick="sql()" class="spanpointer">SQL</span></p>
+        <p class="spanCommandP"><span onclick="monokai()" class="spanpointer">monokai theme</span></p>
+        <p class="spanCommandP"><span onclick="iplastic()" class="spanpointer">iplastic theme</span></p>
+        <p class="spanCommandP"><span onclick="cobalt()" class="spanpointer">cobalt theme</span></p>
+        <p class="spanCommandP"><span onclick="tomorrow()" class="spanpointer">tomorrow theme</span></p>
     </div>
     <!-- Text editor begins -->
     <h1 id="de">Text editor - <span id="spanlanguageholder">JavaScript</span></h1>
@@ -88,12 +99,12 @@
 
     
 
-    <!-- Javascript externals -->
+    <!-- Javascript externals loading in ace editor js -->
     <script src="~/ace/ace.js"></script>
     <script src="~/ace/ext-language_tools.js"></script>
-    <!-- load external js file -->
+    <!-- load external js file: document functions -->
     <script src="~/no-fonflikt/doc.js"></script>
-    <!-- load external js file -->
+    <!-- load external js file: document functions -->
     <script src="~/Scripts/documentjs.js"></script>
 </body>
 

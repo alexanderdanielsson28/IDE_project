@@ -1,4 +1,14 @@
-﻿//black background
+﻿// trigger extension
+ace.require("ace/ext/language_tools");
+var editor = ace.edit("editor");
+editor.session.setMode("ace/mode/javascript");
+// enable autocompletion and snippets
+editor.setOptions({
+    enableBasicAutocompletion: true,
+    enableSnippets: true,
+    enableLiveAutocompletion: true
+});
+//black background
 function black() {
     document.body.style.backgroundColor = "rgb(75,75,75)";
     document.getElementById('de').style.color = "white";
@@ -35,7 +45,7 @@ window.onclick = function (event) {
 }
 // Default editor theme and programming language
 var editorr = ace.edit("editor");
-editorr.setTheme("ace/theme/monokai");
+editorr.setTheme("ace/theme/tomorrow");
 editorr.getSession().setMode("ace/mode/javascript");
 
 editorr.setOptions({
@@ -80,4 +90,24 @@ function sql() {
 //function that displays the languages list if area is clicked is clicked
 function languages() {
     document.getElementById("myDropdownLan").classList.toggle("show");
+}
+//functions that display theme options
+function theme() {
+    document.getElementById("myDropdownTheme").classList.toggle("show");
+}
+//monokai theme
+function monokai() {
+    editorr.setTheme("ace/theme/monokai");
+}
+//iplastic theme
+function iplastic() {
+    editorr.setTheme("ace/theme/iplastic");
+}
+//cobalt theme
+function cobalt() {
+    editorr.setTheme("ace/theme/cobalt");
+}
+//tomorrow theme
+function tomorrow() {
+    editorr.setTheme("ace/theme/tomorrow");
 }

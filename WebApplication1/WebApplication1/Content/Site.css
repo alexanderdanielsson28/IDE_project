@@ -57,6 +57,7 @@ textarea {
 }
 #myDropdownRes {
     background-color:white;
+    width:85px;
 }
 #dropdownContent {
     position: relative;
@@ -210,8 +211,14 @@ p {
 }
 #myDropdownLan {
     background-color:white;
-    width:110px;
+    width:115px;
     height:120px;
+    z-index:100;
+}
+#myDropdownTheme {
+    background-color:white;
+    width:100px;
+    height:80px;
     z-index:100;
 }
 #w110 {
