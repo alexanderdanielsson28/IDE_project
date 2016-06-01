@@ -7,6 +7,7 @@
 <h1 id="DocumentHeader">IDE Prototype</h1>
 <div id="consoleError"></div>
 <p>
+<meta charset="utf-8" />
 
     <button type="button" class="btn">
         <span class="glyphicon glyphicon-floppy-saved"></span> File Saved
@@ -14,13 +15,51 @@
     <span id="msg"></span>
     <span id="errormess"></span>
     <span>
-   
+
         <!--<span id="img-unChecked">...</span>-->
         <img id="img-check" src="~/img/good_or_tick.png" width="20" height="20" hidden="hidden" /></span>
 </p>
 
+<head>
+    <meta charset="UTF-8">
+    <title>ACE Autocompletion demo</title>
+    <link rel="stylesheet" href="../../Content/Site.css" />
+    <link rel="stylesheet" href="../../Content/bootstrap.css" />
+    <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
+</head>
 
+    <div id="fullwidth1pxheight">
+        <div id="tinybox" onclick="onf()"></div>
+        <div onclick="full()" id="f11" class="clickdivf11f11r">FullScreen</div>
+        <div onclick="revert()" id="f11r" class="clickdivf11f11r">Window Mode</div>
+        <div class="dropdown">
+            <p onclick="myFunction()" class="dropbtn">Färgschema</p>
+            <div id="myDropdown" class="dropdown-content">
+                <p onclick="white()" class="p-aligncenter">white</p>
+                <p onclick="black()" class="p-aligncenter">black</p>
+                <p onclick="grayblue()" class="p-aligncenter">grayblue</p>
+            </div>
+        </div>
+        <div class="dropdown">
+            <p onclick="myFunctionRes()" class="dropbtn">Upplösning</p>
+            <div id="myDropdownRes" class="dropdown-content">
+                <p onclick="Res1()" class="p-aligncenter">600 x 450</p>
+                <p onclick="Res2()" class="p-aligncenter">900 x 600</p>
+                <p onclick="Res3()" class="p-aligncenter">1200 x 800</p>
+            </div>
+        </div>
+        <div class="dropdown">
+            <p onclick="myFunctionSch()" class="dropbtn">Förintställt</p>
+            <div id="myDropdownSch" class="dropdown-content">
+                <p onclick="white(); Res1()" class="p-aligncenter">Stark</p>
+                <p onclick="black(); Res2()" class="p-aligncenter">Dark</p>
+                <p onclick="grayblue(); Res3()" class="p-aligncenter">Bark</p>
+            </div>
+        </div>
+    </div>
 
+    <h1 id="DocumentHeader">Apirix IDE Prototype</h1>
+<pre id="editor" style="height:300px;margin:0px; width:100%;border:none;">
 
 <script src="~/Scripts/jquery-1.10.2.js"></script>
 
@@ -29,6 +68,7 @@
        
 </pre>
 
+    <div id="term" ></div>
 
 <ol id="FileManager"></ol>
 
@@ -40,11 +80,17 @@
 
 
 <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
 <script src="~/ace/ace.js"></script>
 <script src="~/ace/ext-language_tools.js"></script>
 <script src="~/Scripts/FileManagement.js"></script>
 
-        <script>
+        <script src="~/myjs/terminal.js"></script>
+
+        <script src="~/myjs/header.js"></script>
+
+<script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
     editor.getSession().setMode("ace/mode/javascript");
@@ -59,5 +105,127 @@
 <script src="~/Scripts/jquery-1.10.2.js"></script>
 <script src="~/Scripts/autoSave.js"></script>
     
+
+    <script>
+
+    var myTerminal = new Terminal()
+
+    myTerminal.print("********************** APIRIX Terminal V2 **********************")
+    myTerminal.print("The commands are: | date | creator | errorlog | theme | clear |");
+
+    var lock = true;
+
+    function myfunction() {
+
+        myTerminal.input("",function (userInput) {
+            var currentime = new Date();
+
+            if (userInput == "date") {
+                myTerminal.print("Todays Date Is: " + currentime);
+                lock = false;
+            }
+            else if (userInput == "creator") {
+                myTerminal.print("The Apirix Terminal Was Brought To You By Wiggoviich ©");
+                lock = false;
+            }
+            else if (userInput == "errorlog") {
+                var annot = editor.getSession().getAnnotations();
+                console.log(annot);
+
+                if (annot.length > 0) {
+
+                    for (var key in annot) {
+
+                        if (annot.hasOwnProperty(key)) {
+                            var rownr = annot[key].row + 1;
+                            myTerminal.print(annot[key].text + "on line " + " " + rownr);
+                            lock = false;
+                        }
+                    }
+                }
+                else {
+                    myTerminal.print("There Are No Error At The Moment!");
+                    lock = false
+                }
+            }
+            else if (userInput == "theme") {
+
+
+                myTerminal.print("black");
+                myTerminal.print("white");
+                myTerminal.print("bluegray");
+
+                
+
+                myTerminal.input("", function (userInput2) {
+
+                  
+
+                    if (userInput2 == "black") {
+                        black();
+                        myTerminal.print("You Choosed Theme Black")
+                        lock = false;
+                    }
+
+                    else if (userInput2 == "white") {
+                        white();
+                        myTerminal.print("You Choosed Theme White")
+                        lock = false;
+                    }
+                    else if (userInput2 == "bluegray") {
+                        grayblue();
+                        myTerminal.print("You Choosed Theme Bluegray")
+                        lock = false;
+                    }
+                    else{
+                        myTerminal.print("There Are No Theme Called That!")
+                        lock = false;
+                    }
+
+                    
+                    if (lock == false) {
+                        lock = true;
+                        myfunction();
+                    }
+
+
+                });
+               
+                
+            }
+            else if (userInput == "clear") {
+                myTerminal.clear();
+                myTerminal.print("*********** APIRIX Terminal V2 ***********")
+                myTerminal.print("The commands are: | date | creator | errorlog | theme | clear |");
+                lock = false;
+            }
+            else {
+                myTerminal.print("There Is No Such Command,Try Another One");
+                lock = false;
+            }
+            if (lock == false) {
+                lock = true;
+                myfunction();
+            }
+        })
+    }
+    myfunction();
+    myTerminal.setBackgroundColor("#000000")
+    myTerminal.setTextColor("#00ff00")
+    myTerminal.setWidth("100%")
+    myTerminal.setHeight("180px");
+    myTerminal.setscrollY("auto");
+    myTerminal.blinkingCursor(true)
+
+    $("#term").append(myTerminal.html)
+    $("#term").css({
+        'word-break': 'break-word'
+    });
+
+    </script>
+
+
+
+
 
 <script src="~/Scripts/VariableChecks.js"></script>

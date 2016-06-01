@@ -576,6 +576,15 @@
     <Content Include="img\emblem-dropbox-unsyncable.png" />
     <Content Include="img\good_or_tick.png" />
     <Content Include="img\red-green-ok-not-ok-icons-1.png" />
+    <Content Include="mycss\jquery.terminal.css" />
+    <Content Include="mycss\jquery.terminal.min.css" />
+    <Content Include="myjs\CodeToBeRun.js" />
+    <Content Include="myjs\header.js" />
+    <Content Include="myjs\jquery-1.7.1.min.js" />
+    <Content Include="myjs\jquery.mousewheel-min.js" />
+    <Content Include="myjs\jquery.terminal.js" />
+    <Content Include="myjs\jquery.terminal.min.js" />
+    <Content Include="myjs\terminal.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\autoSave.js" />
