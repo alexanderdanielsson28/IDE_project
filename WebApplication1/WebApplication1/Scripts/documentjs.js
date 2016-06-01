@@ -105,4 +105,3 @@
        document.getElementById('editor').style.height = "800px";
        document.getElementById('editor').style.border = "1px solid gray";
    }
-// show languages

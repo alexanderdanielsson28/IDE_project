@@ -205,9 +205,14 @@ p {
 .spanpointer {
     cursor: pointer;
 }
+.spanCommandP:hover {
+    background-color:aliceblue;
+}
 #myDropdownLan {
     background-color:white;
     width:110px;
+    height:120px;
+    z-index:100;
 }
 #w110 {
     width:110px;
@@ -219,5 +224,11 @@ p {
     width:110px;
 }
 #w113 {
+    width:110px;
+}
+#w114 {
+    width:110px;
+}
+#w115 {
     width:110px;
 }

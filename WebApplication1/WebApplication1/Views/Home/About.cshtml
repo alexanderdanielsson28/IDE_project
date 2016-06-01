@@ -10,15 +10,15 @@
     <meta charset="UTF-8">
     <title>ACE Autocompletion demo</title>
     <link rel="stylesheet" href="../../Content/Site.css"/>
-    <link rel="stylesheet" href="../../Content/bootstrap.css" />
-    <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
 </head>
 
 <body>
     <!-- Navigationbar -->
     <div id="fullwidth1pxheight">
         <div id="tinybox" onclick="onf()"></div>
+        <!-- Displays the editor in full screen -->
         <div onclick="full()" id="f11" class="clickdivf11f11r">FullScreen</div>
+        <!-- Reverts the editor into window mode -->
         <div onclick="revert()" id="f11r" class="clickdivf11f11r">Window Mode</div>
         <!-- Background color -->
         <div class="dropdown">
@@ -47,13 +47,16 @@
                 <p onclick="grayblue(); Res3()" class="p-aligncenter">Bark</p>
             </div>
         </div>
+        <!-- Select different programming languages -->
         <div class="dropdown">
             <p onclick="languages()" class="dropbtn">Select language</p>
-            <div id="myDropdownLan" class="dropdown-content">   
+            <div id="myDropdownLan" class="dropdown-content">
                 <p class="p-aligncenter" id="w110" onclick="html()">HTML</p>
                 <p class="p-aligncenter" id="w111" onclick="css()">CSS</p>
                 <p class="p-aligncenter" id="w112" onclick="javascript()">JavaScript</p>
                 <p class="p-aligncenter" id="w113" onclick="csharp()">C#</p>
+                <p class="p-aligncenter" id="w114" onclick="php()">PHP</p>
+                <p class="p-aligncenter" id="w115" onclick="sql()">SQL</p>
             </div>
         </div>
         <!-- open and close settings -->

@@ -44,19 +44,7 @@ window.onclick = function (event) {
         }
     }
 }
-window.onclick = function (event) {
-    if (!event.target.matches('.dropbtnn')) {
-        var dropdownss = document.getElementsByClassName("dropdown-contents");
-    var ii;
-    for (ii = 0; ii < dropdownss.length; ii++) {
-        var openDropdown2 = dropdownss[ii];
-        if (openDropdown2.classList.contains('show')) {
-            openDropdown2.classList.remove('show');
-        }
-    }
-}
-}
-
+// Default editor theme and programming language
 var editorr = ace.edit("editor");
 editorr.setTheme("ace/theme/monokai");
 editorr.getSession().setMode("ace/mode/javascript");
@@ -64,23 +52,43 @@ editorr.getSession().setMode("ace/mode/javascript");
 editorr.setOptions({
     enableBasicAutocompletion: true, enableSnippets: true, enableLiveAutocompletion: true
 });
-
+//function that changes language to html
 function html() {
     editorr.getSession().setMode("ace/mode/html");
     document.getElementById('spanlanguageholder').innerHTML = "HTML";
+    document.getElementById("myDropdownLan").classList.toggle("hide");
 }
+//function that changes language to css
 function css() {
     editorr.getSession().setMode("ace/mode/css");
     document.getElementById('spanlanguageholder').innerHTML = "CSS";
+    document.getElementById("myDropdownLan").classList.toggle("hide");
 }
+//function that changes language to javascript
 function javascript() {
     editorr.getSession().setMode("ace/mode/javascript");
     document.getElementById('spanlanguageholder').innerHTML = "JavaScript";
+    document.getElementById("myDropdownLan").classList.toggle("hide");
 }
+//function that changes language to C#
 function csharp() {
     editorr.getSession().setMode("ace/mode/csharp");
     document.getElementById('spanlanguageholder').innerHTML = "C#";
+    document.getElementById("myDropdownLan").classList.toggle("hide");
 }
+//function that changes language to php
+function php() {
+    editorr.getSession().setMode("ace/mode/php");
+    document.getElementById('spanlanguageholder').innerHTML = "PHP";
+    document.getElementById("myDropdownLan").classList.toggle("hide");
+}
+//function that changes language to sql
+function sql() {
+    editorr.getSession().setMode("ace/mode/sql");
+    document.getElementById('spanlanguageholder').innerHTML = "SQL";
+    document.getElementById("myDropdownLan").classList.toggle("hide");
+}
+//function that displays the languages list if area is clicked is clicked
 function languages() {
     document.getElementById("myDropdownLan").classList.toggle("show");
 }
