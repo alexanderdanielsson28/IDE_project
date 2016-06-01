@@ -7,12 +7,14 @@
 
 
 
+
 <head>
     <meta charset="UTF-8">
     <title>ACE Autocompletion demo</title>
     <link rel="stylesheet" href="../../Content/Site.css" />
     <link rel="stylesheet" href="../../Content/bootstrap.css" />
     <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
+    <link href="~/mycss/StyleSheet1.css" rel="stylesheet" />
 </head>
 
     <div id="fullwidth1pxheight">
@@ -46,7 +48,26 @@
     </div>
 
     <h1 id="DocumentHeader">Apirix IDE Prototype</h1>
-<pre id="editor" style="height:300px;margin:0px; width:100%;border:none;">
+
+
+<div class="container" style="width:100%;" >
+ 
+    <div class="well" style="margin-bottom:0px; padding:0px;">
+
+        <a href="#" id="btnAdd"><i class="icon-plus-sign-alt"></i> Add Tab</a>
+        <br><br>
+        <ul class="nav nav-tabs" id="tabs" style="margin-bottom:0px;">
+            <li class="active"><a href="#tab1">Tab 1</a></li>
+        </ul>
+
+        
+    </div>
+ 
+</div>
+
+
+
+<pre id="editor" style="height:400px;margin:0px; width:100%;border:none;">
        
 </pre>
 
@@ -60,6 +81,8 @@
         <script src="~/myjs/terminal.js"></script>
 
         <script src="~/myjs/header.js"></script>
+        <script src="~/myjs/tabs.js"></script>
+
 
     <script>
     var editor = ace.edit("editor");
@@ -181,7 +204,7 @@
     myTerminal.setBackgroundColor("#000000")
     myTerminal.setTextColor("#00ff00")
     myTerminal.setWidth("100%")
-    myTerminal.setHeight("180px");
+    myTerminal.setHeight("140px");
     myTerminal.setscrollY("auto");
     myTerminal.blinkingCursor(true)
 

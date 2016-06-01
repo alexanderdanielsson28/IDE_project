@@ -554,12 +554,14 @@
     <Content Include="Content\Site.css" />
     <Content Include="mycss\jquery.terminal.css" />
     <Content Include="mycss\jquery.terminal.min.css" />
+    <Content Include="mycss\StyleSheet1.css" />
     <Content Include="myjs\CodeToBeRun.js" />
     <Content Include="myjs\header.js" />
     <Content Include="myjs\jquery-1.7.1.min.js" />
     <Content Include="myjs\jquery.mousewheel-min.js" />
     <Content Include="myjs\jquery.terminal.js" />
     <Content Include="myjs\jquery.terminal.min.js" />
+    <Content Include="myjs\tabs.js" />
     <Content Include="myjs\terminal.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />

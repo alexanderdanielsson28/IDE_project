@@ -131,6 +131,7 @@ function Res1() {
     document.getElementById('editor').style.width = "600px";
     document.getElementById('editor').style.height = "450px";
     document.getElementById('editor').style.border = "1px solid gray";
+
 }
 function Res2() {
     document.getElementById('editor').style.width = "900px";
