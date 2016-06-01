@@ -86,7 +86,7 @@ fileArray.push(File1);
 fileArray.push(File2);
 fileArray.push(testSubFolder);
 fileArray.push(File3);
-console.log(fileArray);
+
 //----------------------------"END OF SETTING UP DUMMY ARRAYS"-----------------------------
 
 
@@ -95,13 +95,8 @@ console.log(fileArray);
 $(document).ready(function () {
 
     
-    var folderCount = 1;
-    for (var i = 0; i < fileArray.length; i++) {
-        console.log("lap: " + i)
-        generateFilesAndFolders(fileArray, i, folderCount);
-    }
-    console.log(html);
-    $("#FileManager").append(html);
+    callFileGeneration();
+
 
 })
 //----------------------------END OF INITIATOR--------------------------
@@ -109,32 +104,31 @@ $(document).ready(function () {
 
 //---------------GENERATING OF DISPLAY FILES---------------------
 
+
+function callFileGeneration() {
+
+    var folderCount = 1;
+    for (var i = 0; i < fileArray.length; i++) {
+        generateFilesAndFolders(fileArray, i, folderCount);
+    }
+    $("#FileManager").append(html);
+}
+
+
+
 function generateFilesAndFolders(array, iterator, folderCount) {
-    console.log(Array.isArray(array[iterator]))
     if (Array.isArray(array[iterator])) {
-        //$("#FileManager").append("<ol>")
-        //$("#FileManager").append(""<li><label class='clearfix' for=" + "folder" + iterator + "></label> <input id=" + "folder" + iterator + "></input><ol>"")
-        html += "<li><label  for=" + "folder" + folderCount + ">" + "folder " + folderCount + "</label> <input type='checkbox' id=" + "folder" + folderCount + "></input><ol>";
+      html += "<li><label  for=" + "folder" + folderCount + ">" + "folder " + folderCount + "</label> <input type='checkbox' id=" + "folder" + folderCount + "></input><ol>";
         folderCount++
         for (var j = 0; j < array[iterator].length; j++) {
-            //console.log("Deeper Lap:" + j);
-            //arrayCheck = true;
+
             generateFilesAndFolders(array[iterator], j, folderCount);
         }
         html += "</ol></li>"
     }
     else {
-        console.log(array)
-        console.log(iterator)
-        // $("#FileManager").append("<li class='file' id=" + array[iterator].Name + "><a>" + array[iterator].Name + "</a></li>");
-        html += ("<li class='file' id=" + array[iterator].Name + "><a href='" + array[iterator].Type+ "'>" + array[iterator].Name + "</a></li>");
+       html += ("<li class='file' id=" + array[iterator].Name + "><a href='" + array[iterator].Type+ "'>" + array[iterator].Name + "</a></li>");
         matchArray.push(array[iterator]);
-        if (iterator == array.length - 1) {
-            //$("#FileManager").append("</ol>")
-            //$("#FileManager").append("</ol></li>")
-            
-            console.log("end of current folder")
-        }
     }
 }
 //---------------END OF GENERATING OF DISPLAY FILES---------------------
@@ -166,11 +160,8 @@ $(document).on('click', ".file a", function (e) {
 //----------------FILE-RELATED FUNCTIONS---------------------------
 function GetFileFromID(Element) {
     var id = $(Element).attr('id');
-    //console.log(Element)
     return $.map(matchArray, function (n) {
         if (n.Name === id) {
-            console.log(id)
-            console.log(n.Name)
             return n;
         }
     });
@@ -182,11 +173,11 @@ function GetFileFromID(Element) {
 
 //----------------SESSION-RELATED FUNCTIONS--------------------------------
 
-function setSessionLanguage(EditSession, Language) {
-    if (Language == null || EditSession == null) {
+function setSessionLanguage(editSession, Language) {
+    if (Language == null || editSession == null) {
         return null;
     }
-    EditSession.setMode("ace/mode/" + Language);
+    editSession.setMode("ace/mode/" + Language);
 }
 
 //----------------SESSION-RELATED FUNCTIONS--------------------------------
