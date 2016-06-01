@@ -21,9 +21,9 @@ var File4 = {
     Content: "<div id='asda'></div>",
     fileEnding: ".html"
 }
-
-
-
+var fileText = "";
+var _editorText = "";
+/*
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/monokai");
 editor.getSession().setMode("ace/mode/javascript");
@@ -33,7 +33,7 @@ editor.setOptions({
     enableSnippets: true,
     enableLiveAutocompletion: true
 });
-var fileText = File1.Content;
+
 
 // trigger extension
 ace.require("ace/ext/language_tools");
@@ -47,7 +47,7 @@ editor.setOptions({
     enableLiveAutocompletion: true,
 
 });
-
+*/
 
 
 
@@ -96,7 +96,11 @@ var delay = (function () {
 var delay3 = 5000;
 var delay4 = 8000;
 var validCodeFunc = function () {
-    
+
+    var currentFileArray = GetFileFromID($(".selectedFile").parent())
+    currentFileArray[0].Content = editor.getValue();
+
+
     $("#msg").text("ALL CHANGES SAVED!");
     $("#img-check").show();
     $("#errormess").text(" ");
@@ -129,11 +133,11 @@ $(".btn").click(function () {
 
     var editorText = editor.getValue();
     var _fileText = fileText.replace(/\s+$/, '');
-    var _editorText = editorText.replace(/\s+$/, '');
+    _editorText = editorText.replace(/\s+$/, '');
     if (_fileText != _editorText) {
 
         console.log("Ej samma kod som i fil");
-        File1.Content = _editorText;
+       
 
         var emptyString = checkIfEmpty();
         if (emptyString == false) {

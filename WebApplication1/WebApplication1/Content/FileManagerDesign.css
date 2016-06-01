@@ -47,10 +47,10 @@ ol.FileManager
 			text-decoration: none;
 			display: block;
 		}
-		li.file a[href *= '.pdf']	{ background: url(Icons/document.png) 0 0 no-repeat; }
-		li.file a[href *= '.html']	{ background: url(Icons/document.png) 0 0 no-repeat; }
-		li.file a[href $= '.css']	{ background: url(Icons/document.png) 0 0 no-repeat; }
-		li.file a[href $= '.js']		{ background: url(Icons/JSIcon16X16.png) 0 0 no-repeat; }
+		li.file a[href *= 'pdf']	{ background: url(Icons/document.png) 0 0 no-repeat; }
+		li.file a[href *= 'html']	{ background: url(Icons/document.png) 0 0 no-repeat; }
+		li.file a[href $= 'css']	{ background: url(Icons/document.png) 0 0 no-repeat; }
+		li.file a[href $= 'javascript']		{ background: url(Icons/JSIcon16X16.png) 0 0 no-repeat; }
 	li input
 	{
 		position: absolute;

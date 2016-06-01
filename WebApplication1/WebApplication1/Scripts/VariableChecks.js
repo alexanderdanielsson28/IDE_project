@@ -2,12 +2,14 @@
 var JSComments = /(\/\*[\w\'\s\r\n\*]*\*\/)|(\/\/[\w\s\']*)|(\<![\-\-\s\w\>\/]*\>)/
 
 $(document).ready(function () {
+    /*
     editor.session.setOption("useWorker", false)
     editor.getSession().setUseWrapMode(true);
     editor.setOption('minLines', 10); // this is required for the auto synced scroll
     editor.setOption('maxLines', 25); // this is required for the auto synced scroll
     editor.setAutoScrollEditorIntoView(false);
     editor.$blockScrolling = Infinity;
+    */
 })
 function goThroughArray(arr) {
     for (var i = 0; i < arr.length; i++) {
@@ -104,8 +106,8 @@ function test() {
         matches.push(declarations[i], editsession.getTextRange(declarations[i]));
     }
 
-    console.log(declarations)
-    console.log(matches)
+    //console.log(declarations)
+    //console.log(matches)
 
     if (matches) {
         for (var i = 0; i < matches.length; i++) {
@@ -120,10 +122,9 @@ function test() {
                     textAndRows[index-1].push(matches[i])
                 }
             }
-
         }
-        var annotations = [];
-        console.log(textAndRows)
+        var annotations = editor.getSession().getAnnotations();
+        //console.log(textAndRows)
         var textAndRowslength = textAndRows.length;
         for (var i = 0; i < textAndRowslength; i++) {
             if (i % 2 == 0 || i == 0) {
@@ -171,7 +172,7 @@ function test() {
 function getRows(array) {
     //console.log(array)
     var numbers = [];
-    for (var i = 0; i < array.length - 1; i++) {
+    for (var i = 0; i < array.length; i++) {
         numbers.push(array[i].start.row + 1)
     }
     return numbers;
