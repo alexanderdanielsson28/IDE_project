@@ -153,13 +153,35 @@ $(document).on('click', ".file a", function (e) {
     }
 });
 
-
+$('html').click(function (e) {
+    if (!$(e.target).hasClass('file')) {
+       
+    }
+});
+var dblClickedFile;
+var dblClickedElement;
 $(document).on('dblclick', ".file a", function (e) {
     e.preventDefault();
-    var dblClickedFile = GetFileFromID($(this).parent())
+    
     //$(this).text("")
-    $(this).parent().append("<input type='text' class='NameChangeInput' name='test'>")
-    console.log($(this))
+   // $(this).parent().append("<input type='text' class='NameChangeInput' value=" + dblClickedFile.Name + ">")
+    //console.log($(".NameChangeInput").length)
+    
+    if (!$(".NameChangeInput").length >= 1) {
+        dblClickedElement = $(this);
+        dblClickedFile = GetFileFromID($(this).parent())
+        $(this).parent().append("<input type='text' class='NameChangeInput' value=" + dblClickedFile.Name + ">")
+        console.log("appended input!")
+    }
+    else {
+        console.log(dblClickedElement.parent())
+        //dblClickedElement.parent().css("display", "none")
+        dblClickedElement.parent().attr("id", $(".NameChangeInput").val())
+        dblClickedElement.text($(".NameChangeInput").val())
+        SetFileprop(fileArray, "Name", dblClickedFile.Name, $(".NameChangeInput").val());
+        $(".NameChangeInput").remove();
+    }
+   console.log(fileArray)
 })
 //----------------END OF CLICK EVENTS---------------------------
 
@@ -186,14 +208,14 @@ function GetFileFromID(Element) {
         }
     }*/
 
-    var clickedFile = test(fileArray, id)
+    var clickedFile = IterateForFile(fileArray, id)
     return clickedFile;
 }
 
-function test(array, id) {
+function IterateForFile(array, id) {
     for (var i = 0; i < array.length; i++) {
         if (Array.isArray(array[i])) {
-            var file = test(array[i], id)
+            var file = IterateForFile(array[i], id)
             if (typeof file != 'undefined') {
                 if (file.Name == id) {
                     return file;
@@ -205,7 +227,16 @@ function test(array, id) {
         }   
     }
 }
-
+function SetFileprop(array,property, olddata,newdata ) {
+        for (var i = 0; i < array.length; i++) {
+            if (Array.isArray(array[i])) {
+                SetFileprop(array[i],property,olddata, newdata)
+            }
+            else if (array[i][property] == olddata) {
+                array[i][property] = newdata;
+            }
+        }
+}
 function lookDeeperForFile(id,iterator, array) {
 
    
