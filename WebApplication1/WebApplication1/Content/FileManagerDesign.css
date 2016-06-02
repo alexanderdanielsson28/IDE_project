@@ -116,3 +116,14 @@ ol.FileManager
 .selectedFile{
     color:red !important;
 }
+
+.NameChangeInput{
+    color:black;
+    position:relative;
+    cursor:text;
+    display:block;
+    width:150px;
+    height:50px;
+    opacity:1;
+
+}
