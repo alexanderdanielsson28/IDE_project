@@ -1,8 +1,8 @@
-﻿// trigger extension
+﻿//trigger extension
 ace.require("ace/ext/language_tools");
 var editor = ace.edit("editor");
 editor.session.setMode("ace/mode/javascript");
-// enable autocompletion and snippets
+//enable autocompletion and snippets
 editor.setOptions({
     enableBasicAutocompletion: true,
     enableSnippets: true,
@@ -24,13 +24,13 @@ function grayblue() {
     document.getElementById('de').style.color = "black";
 }
 
-/* When the user clicks on the button, 
+/*When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown menu if the user clicks outside of it
+//Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -43,7 +43,7 @@ window.onclick = function (event) {
         }
     }
 }
-// Default editor theme and programming language
+//Default editor theme and programming language
 var editorr = ace.edit("editor");
 editorr.setTheme("ace/theme/tomorrow");
 editorr.getSession().setMode("ace/mode/javascript");

@@ -51,13 +51,16 @@ textarea {
 }
 #myDropdown {
     background-color:white;
+    z-index:100;
 }
 #myDropdownSch {
     background-color:white;
+    z-index:100;
 }
 #myDropdownRes {
     background-color:white;
     width:85px;
+    z-index:100;
 }
 #dropdownContent {
     position: relative;

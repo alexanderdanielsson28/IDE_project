@@ -1,4 +1,4 @@
-﻿// FullScreen resolution
+﻿//FullScreen resolution
    function full() {
        document.getElementById('editor').style.width = "100%";
        document.getElementById('editor').style.border = "0px";
@@ -29,7 +29,7 @@
        document.getElementById('boxieR').style.display = "none";
        document.getElementById('boxie').style.display = "block";
    }
-// Click to display navigation bar
+//Click to display navigation bar
    function onft() {
        document.getElementById('fullwidth1pxheight').style.display = "block";
        document.getElementById('fullwidth1pxheight').style.zIndex = "60";
@@ -62,13 +62,13 @@
        document.getElementById('boxieR').style.display = "block";
        document.getElementById('boxie').style.display = "none";
    }
-   //hide settings
+//hide settings
    function settingsinfoR() {
        document.getElementById('showcontent').style.display = "none";
        document.getElementById('boxieR').style.display = "none";
        document.getElementById('boxie').style.display = "block";
    }
-   //show resolution list
+//show resolution list
    function myFunctionRes() {
        document.getElementById("myDropdownRes").classList.toggle("show");
    }
