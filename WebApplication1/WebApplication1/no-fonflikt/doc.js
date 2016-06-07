@@ -35,13 +35,11 @@ document.getElementById("gb1").onclick = function gb1() {
     document.body.style.backgroundColor = "rgb(150,150,150)";
     document.getElementById('de').style.color = "black";
 }
-
 /*When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 document.getElementById("dropit").onclick = function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-
 //Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
@@ -59,7 +57,6 @@ window.onclick = function (event) {
 var editorr = ace.edit("editor");
 editorr.setTheme("ace/theme/tomorrow");
 editorr.getSession().setMode("ace/mode/javascript");
-
 editorr.setOptions({
     enableBasicAutocompletion: true, enableSnippets: true, enableLiveAutocompletion: true
 });
@@ -164,4 +161,147 @@ document.getElementById("tomorrow").onclick = function tomorrow() {
 } //settings below
 document.getElementById("tm1").onclick = function tm1() {
     editorr.setTheme("ace/theme/tomorrow");
+}
+//FullScreen resolution. Both dropdown-list and settings
+document.getElementById("f11").onclick = function full() {
+    document.getElementById('editor').style.width = "100%";
+    document.getElementById('editor').style.border = "0px";
+    document.getElementById('editor').style.height = "100%";
+    document.getElementById('editor').style.position = "absolute";
+    document.getElementById('fullwidth1pxheight').style.float = "none";
+    document.getElementById('fullwidth1pxheight').style.display = "none";
+    document.getElementById('tinyboxtwin').style.display = "block";
+    document.getElementById('tinyboxtwin').style.zIndex = "60";
+    document.getElementById('tinyboxtwin').style.position = "absolute";
+    document.getElementById('twinbox').style.display = "block";
+    document.getElementById('showcontent').style.display = "none";
+    document.getElementById('boxieR').style.display = "none";
+    document.getElementById('boxie').style.display = "block";
+    document.getElementById('tinyboxtwin').style.width = "15px";
+    document.getElementById('tinyboxtwin').style.height = "15px";
+    document.getElementById('tinyboxtwin').style.backgroundColor = "transparent";
+    document.getElementById('twinbox').style.marginLeft = "0px";
+    document.getElementById('tinyboxtwin').style.backgroundImage = "url(../pics/arrow_icon.png)";
+    document.getElementById('tinyboxtwin').style.backgroundSize = "contain";
+}//Settings below
+document.getElementById("full1").onclick = function full1() {
+    document.getElementById('editor').style.width = "100%";
+    document.getElementById('editor').style.border = "0px";
+    document.getElementById('editor').style.height = "100%";
+    document.getElementById('editor').style.position = "absolute";
+    document.getElementById('fullwidth1pxheight').style.float = "none";
+    document.getElementById('fullwidth1pxheight').style.display = "none";
+    document.getElementById('tinyboxtwin').style.display = "block";
+    document.getElementById('tinyboxtwin').style.zIndex = "60";
+    document.getElementById('tinyboxtwin').style.position = "absolute";
+    document.getElementById('twinbox').style.display = "block";
+    document.getElementById('showcontent').style.display = "none";
+    document.getElementById('boxieR').style.display = "none";
+    document.getElementById('boxie').style.display = "block";
+    document.getElementById('tinyboxtwin').style.width = "15px";
+    document.getElementById('tinyboxtwin').style.height = "15px";
+    document.getElementById('tinyboxtwin').style.backgroundColor = "transparent";
+    document.getElementById('twinbox').style.marginLeft = "0px";
+    document.getElementById('tinyboxtwin').style.backgroundImage = "url(../pics/arrow_icon.png)";
+    document.getElementById('tinyboxtwin').style.backgroundSize = "contain";
+}
+//Clicking on arrow to hide navigation bar
+document.getElementById("tinybox").onclick = function onf() {
+    document.getElementById('fullwidth1pxheight').style.display = "none";
+    document.getElementById('tinyboxtwin').style.display = "block";
+    document.getElementById('twinbox').style.display = "block";
+    document.getElementById('showcontent').style.display = "none";
+    document.getElementById('boxieR').style.display = "none";
+    document.getElementById('boxie').style.display = "block";
+}
+//Click to display navigation bar
+document.getElementById("tinyboxtwin").onclick = function onft() {
+    document.getElementById('fullwidth1pxheight').style.display = "block";
+    document.getElementById('fullwidth1pxheight').style.zIndex = "60";
+    document.getElementById('fullwidth1pxheight').style.position = "relative";
+    document.getElementById('tinyboxtwin').style.display = "none";
+    document.getElementById('twinbox').style.display = "none";
+    document.getElementById('showcontent').style.display = "none";
+    document.getElementById('boxieR').style.display = "none";
+    document.getElementById('boxie').style.display = "block";
+}
+//Revert from fullscreen to window mode. Both dropdown-list and settings
+document.getElementById("f11r").onclick = function revert() {
+    document.getElementById('editor').style.width = "900px";
+    document.getElementById('editor').style.height = "600px";
+    document.getElementById('editor').style.position = "relative";
+    document.getElementById('showcontent').style.display = "none";
+    document.getElementById('boxieR').style.display = "none";
+    document.getElementById('boxie').style.display = "block";
+    document.getElementById('tinyboxtwin').style.width = "20px";
+    document.getElementById('tinyboxtwin').style.height = "20px";
+    document.getElementById('tinyboxtwin').style.backgroundColor = "white";
+    document.getElementById('twinbox').style.marginLeft = "5px";
+    document.getElementById('tinyboxtwin').style.backgroundImage = "url(../pics/arrowsup.png)";
+    document.getElementById('tinyboxtwin').style.backgroundSize = "contain";
+    document.getElementById('editor').style.border = "1px solid gray";
+}//Settings below
+document.getElementById("rev1").onclick = function rev1() {
+    document.getElementById('editor').style.width = "900px";
+    document.getElementById('editor').style.height = "600px";
+    document.getElementById('editor').style.position = "relative";
+    document.getElementById('showcontent').style.display = "none";
+    document.getElementById('boxieR').style.display = "none";
+    document.getElementById('boxie').style.display = "block";
+    document.getElementById('tinyboxtwin').style.width = "20px";
+    document.getElementById('tinyboxtwin').style.height = "20px";
+    document.getElementById('tinyboxtwin').style.backgroundColor = "white";
+    document.getElementById('twinbox').style.marginLeft = "5px";
+    document.getElementById('tinyboxtwin').style.backgroundImage = "url(../pics/arrowsup.png)";
+    document.getElementById('tinyboxtwin').style.backgroundSize = "contain";
+    document.getElementById('editor').style.border = "1px solid gray";
+}
+//Show settings
+document.getElementById("boxie").onclick = function settingsinfo() {
+    document.getElementById('showcontent').style.display = "block";
+    document.getElementById('boxieR').style.display = "block";
+    document.getElementById('boxie').style.display = "none";
+}
+//hide settings
+document.getElementById("boxieR").onclick = function settingsinfoR() {
+    document.getElementById('showcontent').style.display = "none";
+    document.getElementById('boxieR').style.display = "none";
+    document.getElementById('boxie').style.display = "block";
+}
+//show resolution list
+document.getElementById("res").onclick = function myFunctionRes() {
+    document.getElementById("myDropdownRes").classList.toggle("show");
+}
+//change resolution 600 x 450. Both dropdown-list and settings
+document.getElementById("first").onclick = function Res1() {
+    document.getElementById('editor').style.width = "600px";
+    document.getElementById('editor').style.height = "450px";
+    document.getElementById('editor').style.border = "1px solid gray";
+}//Settings below
+document.getElementById("res1").onclick = function res1() {
+    document.getElementById('editor').style.width = "600px";
+    document.getElementById('editor').style.height = "450px";
+    document.getElementById('editor').style.border = "1px solid gray";
+}
+//change resolution 900 x 600. Both dropdown-list and settings
+document.getElementById("second").onclick = function Res2() {
+    document.getElementById('editor').style.width = "900px";
+    document.getElementById('editor').style.height = "600px";
+    document.getElementById('editor').style.border = "1px solid gray";
+} //Settings below
+document.getElementById("res2").onclick = function res2() {
+    document.getElementById('editor').style.width = "900px";
+    document.getElementById('editor').style.height = "600px";
+    document.getElementById('editor').style.border = "1px solid gray";
+}
+//change resolution 1200 x 800. Both dropdown-list and settings
+document.getElementById("third").onclick = function Res3() {
+    document.getElementById('editor').style.width = "1200px";
+    document.getElementById('editor').style.height = "800px";
+    document.getElementById('editor').style.border = "1px solid gray";
+} //Settings below
+document.getElementById("res3").onclick = function res3() {
+    document.getElementById('editor').style.width = "1200px";
+    document.getElementById('editor').style.height = "800px";
+    document.getElementById('editor').style.border = "1px solid gray";
 }
