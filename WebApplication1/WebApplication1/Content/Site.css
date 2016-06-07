@@ -213,3 +213,77 @@ p {
 .spanCommandP:hover {
     background-color:rgb(230,238,255);
 }
+
+/*Tabs CSS BEGINING*/
+
+#dialog label, #dialog input {
+        display: block;
+    }
+
+    #dialog label {
+        margin-top: 0.5em;
+    }
+
+    #dialog input, #dialog textarea {
+        width: 95%;
+    }
+
+    #tabs {
+        margin-top: 1em;
+    }
+
+        #tabs li .ui-icon-close {
+            float: left;
+            margin: 0.1em 0.2em 0 0;
+            cursor: pointer;
+        }
+
+    #add_tab {
+        cursor: pointer;
+    }
+
+    #sortable {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+        #sortable li {
+            margin: 0 3px 3px 3px;
+            padding: 0.4em;
+            padding-left: 0em;
+            font-size: 1.4em;
+            height: 18px;
+        }
+
+            #sortable li span {
+                position: absolute;
+                margin-left: -1.3em;
+            }
+
+
+    .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+        float: left;
+        padding: 0.0em 1em;
+        text-decoration: none;
+        margin: -0.1em 0em;
+    }
+
+    .ui-tabs{
+            padding:  0 0.1em;
+    }
+
+    .ui-widget-content {
+        border:none;
+    }
+
+    /*Tabs CSS END*/
+
+
+
+    .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+    float: left;
+    padding: 0em 1em; 
+    text-decoration: none;
+}

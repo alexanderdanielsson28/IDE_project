@@ -561,6 +561,7 @@
     <Content Include="myjs\jquery.mousewheel-min.js" />
     <Content Include="myjs\jquery.terminal.js" />
     <Content Include="myjs\jquery.terminal.min.js" />
+    <Content Include="myjs\loadTheTerminal.js" />
     <Content Include="myjs\tabs.js" />
     <Content Include="myjs\terminal.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
