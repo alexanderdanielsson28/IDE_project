@@ -22,7 +22,14 @@ window.setInterval(function () {
 
 
 
-
+/*
+ * This function first checks for any variable declarations via regex
+ * then indents through said declarations and inserts the variable/function name and where its declared
+ * if there is any declarations we indent through it and on every even iterator number we first format the string, then chekc if it exists already in another array.
+ * if not, then we append the object and an array containing its range, if it does however, we get the index of the array containing the ranges of that declaration and only append the range to that.
+ *  now we have an array containing the duplicate variable and its ranges, looking something like this(  ["var test" [range, range] ]  ), the range is an object witch contains the rows and collumns of something
+ * then we get the current annotations if there is any, then iterate through our array of duplicates and its ranges and create new annotation objects containing the info needed by the ace editor to print out the annotations
+ */
 //-------------------MAIN FUNCTION------------------------
 function findDuplicatesAndPlaceAnnotations() {
     var annotationsArray = [];

@@ -104,7 +104,6 @@ $(document).ready(function () {
 
 //---------------GENERATING OF DISPLAY FILES---------------------
 
-
 function callFileGeneration() {
 
     var folderCount = 1;
@@ -115,7 +114,11 @@ function callFileGeneration() {
 }
 
 
-
+/*
+ * This function iterates through the incoming array, in our case an array that looks like a file-hierarchy but instead of files and folders, there is objects and arrays
+ * we use a css-standard that uses ol/li tags to simulate a file hierarchy, all this function does is generate html code ín that format.
+ * 
+ */
 function generateFilesAndFolders(array, iterator, folderCount) {
     if (Array.isArray(array[iterator])) {
         html += "<li><label  for=" + "folder" + folderCount + ">" + "folder " + folderCount + "</label> <input type='checkbox' id=" + "folder" + folderCount + "></input><ol>";
@@ -136,6 +139,10 @@ function generateFilesAndFolders(array, iterator, folderCount) {
 
 
 //----------------CLICK EVENTS---------------------------
+/*
+ * this onClick function sets a marker on the selected file and gets it's type, then sets the current language to that of the selected "file"
+ * it also inserts any content in the file into the editor
+ */
 $(document).on('click', ".file a", function (e) {
     e.preventDefault();
 
@@ -208,14 +215,14 @@ function GetFileFromID(Element) {
         }
     }*/
 
-    var clickedFile = IterateForFile(fileArray, id)
+    var clickedFile = searchForFile(fileArray, id)
     return clickedFile;
 }
 
-function IterateForFile(array, id) {
+function searchForFile(array, id) {
     for (var i = 0; i < array.length; i++) {
         if (Array.isArray(array[i])) {
-            var file = IterateForFile(array[i], id)
+            var file = searchForFile(array[i], id)
             if (typeof file != 'undefined') {
                 if (file.Name == id) {
                     return file;
