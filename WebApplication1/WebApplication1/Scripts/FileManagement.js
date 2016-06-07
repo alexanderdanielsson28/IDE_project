@@ -106,7 +106,9 @@ $(document).ready(function () {
 
 
 //---------------GENERATING OF DISPLAY FILES---------------------
-
+/*
+ * simply iterates the first layer of the file-object array and calls the html-generation function
+ */
 function callFileGeneration() {
 
     var folderCount = 1;
@@ -143,8 +145,8 @@ function generateFilesAndFolders(array, iterator, folderCount) {
 
 //----------------CLICK EVENTS---------------------------
 /*
- * this onClick function sets a marker on the selected file and gets it's type, then sets the current language to that of the selected "file"
- * it also inserts any content in the file into the editor
+ * this onClick function sets a marker on the selected file and gets it's type, then sets the current language to that of the selected file-object
+ * it also inserts any content in the file-object into the editor
  */
 $(document).on('click', ".file a", function (e) {
     e.preventDefault();
@@ -162,13 +164,19 @@ $(document).on('click', ".file a", function (e) {
         fileText = clickedFile.Content
     }
 });
-
+/*
+ * checks if you click anything but a file or the input field for changing name
+ * then calls the clearnaming function
+ */
 $('html').click(function (e) {
     if (!$(e.target).hasClass('file') && !$(e.target).hasClass('NameChangeInput')) {
         clearNaming(dblClickedElement, dblClickedFile);
     }
 });
 
+/*
+ * appends an input field for changing filename 
+ */
 $(document).on('dblclick', ".file a", function (e) {
     e.preventDefault();
     $(this).text("")
@@ -199,7 +207,9 @@ function GetFileFromID(Element) {
     var clickedFile = IterateForFile(fileArray, id)
     return clickedFile;
 }
-
+/*
+ * searches for a specific file-object and returns it
+ */
 function IterateForFile(array, id) {
     for (var i = 0; i < array.length; i++) {
         if (Array.isArray(array[i])) {
@@ -215,6 +225,9 @@ function IterateForFile(array, id) {
         }   
     }
 }
+/*
+ * searches for a specific file-object and sets a specific property
+ */
 function SetFileprop(array, property, olddata, newdata) {
         for (var i = 0; i < array.length; i++) {
             if (Array.isArray(array[i])) {
@@ -225,7 +238,9 @@ function SetFileprop(array, property, olddata, newdata) {
             }
     }
 }
-
+/*
+ * removes the input field for changing name and sets the name of the visual file and the property of the matching file-object
+ */
 function clearNaming(Element, fileObject) {
     if ( $(".NameChangeInput").length >= 1) { 
     Element.parent().attr("id", $(".NameChangeInput").val())
@@ -268,7 +283,9 @@ function lookDeeperForFile(id,iterator, array) {
 
 
 //----------------SESSION-RELATED FUNCTIONS--------------------------------
-
+/*
+ * sets the current syntax of a session
+ */
 function setSessionLanguage(editSession, Language) {
     if (Language == null || editSession == null) {
         return null;
