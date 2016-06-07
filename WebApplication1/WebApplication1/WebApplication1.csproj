@@ -566,6 +566,7 @@
     <Content Include="no-fonflikt\snippets\javascript.js" />
     <Content Include="no-fonflikt\mode-javascript.js" />
     <Content Include="no-fonflikt\snippets\text.js" />
+    <Content Include="no-fonflikt\theme-monokai.js" />
     <Content Include="no-fonflikt\theme-tomorrow.js" />
     <Content Include="pics\arrows.png" />
     <Content Include="pics\arrowsup.png" />
