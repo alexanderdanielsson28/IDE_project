@@ -225,20 +225,44 @@ p {
     z-index:100;
 }
 #w110 {
-    width:110px;
+    width:115px;
 }
 #w111 {
-    width:110px;
+    width:115px;
 }
 #w112 {
-    width:110px;
+    width:115px;
 }
 #w113 {
-    width:110px;
+    width:115px;
 }
 #w114 {
-    width:110px;
+    width:115px;
 }
 #w115 {
-    width:110px;
+    width:115px;
+}
+.dropdown:hover {
+    background-color:aliceblue;
+}
+#first {
+    width:85px;
+}
+#second {
+    width:85px;
+}
+#third {
+    width:85px;
+}
+#monokai {
+    width:100px;
+}
+#iplastic {
+    width:100px;
+}
+#cobalt {
+    width:100px;
+}
+#tomorrow {
+    width:100px;
 }

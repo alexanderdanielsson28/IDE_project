@@ -7,95 +7,100 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Code editor">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="author" content="The Fantastic 4 Kalmar version">
     <meta charset="UTF-8">
     <title>ACE Autocompletion demo</title>
+    <link rel="stylesheet" href="../../Content/Site.css" />
+    <link rel="stylesheet" href="../../Content/Site.css" />
     <link rel="stylesheet" href="../../Content/Site.css" />
 </head>
 
 <body>
     <!-- Navigationbar -->
     <div id="fullwidth1pxheight">
-        <div id="tinybox" onclick="onf()"></div>
+        <div id="tinybox"></div>
         <!-- Displays the editor in full screen -->
-        <div onclick="full()" id="f11" class="clickdivf11f11r">FullScreen</div>
+        <div id="f11" class="clickdivf11f11r"><span title="Editor fullscreen">FullScreen</span></div>
         <!-- Reverts the editor into window mode -->
-        <div onclick="revert()" id="f11r" class="clickdivf11f11r">Window mode</div>
+        <div id="f11r" class="clickdivf11f11r"><span title="Editor window">Window mode</span></div>
         <!-- Background color -->
         <div class="dropdown">
-            <p onclick="myFunction()" class="dropbtn">Background</p>
+            <p id="dropit" class="dropbtn">Background</p>
             <div id="myDropdown" class="dropdown-content">
-                <p onclick="white()" class="p-aligncenter">White</p>
-                <p onclick="black()" class="p-aligncenter">Dark</p>
-                <p onclick="grayblue()" class="p-aligncenter">Lightgray</p>
+                <p id="white" class="p-aligncenter"><span title="Background white">White</span></p>
+                <p id="black" class="p-aligncenter"><span title="Background dark">Dark</span></p>
+                <p id="grayblue" class="p-aligncenter"><span title="Background lightgray">Lightgray</span></p>
             </div>
         </div>
         <!-- Resolution -->
         <div class="dropdown">
-            <p onclick="myFunctionRes()" class="dropbtn">Resolution</p>
+            <p id="res" class="dropbtn">Resolution</p>
             <div id="myDropdownRes" class="dropdown-content">
-                <p onclick="Res1()" class="p-aligncenter">600 x 450</p>
-                <p onclick="Res2()" class="p-aligncenter">900 x 600</p>
-                <p onclick="Res3()" class="p-aligncenter">1200 x 800</p>
+                <p id="first" class="p-aligncenter"><span title="Tiny editor">600 x 450</span></p>
+                <p id="second" class="p-aligncenter"><span title="Medium editor">900 x 600</span></p>
+                <p id="third" class="p-aligncenter"><span title="Large editor">1200 x 800</span></p>
             </div>
         </div>
         <!-- Select different programming languages -->
         <div class="dropdown">
-            <p onclick="languages()" class="dropbtn">Select language</p>
+            <p id="lang" class="dropbtn">Select language</p>
             <div id="myDropdownLan" class="dropdown-content">
-                <p class="p-aligncenter" id="w110" onclick="html()">HTML</p>
-                <p class="p-aligncenter" id="w111" onclick="css()">CSS</p>
-                <p class="p-aligncenter" id="w112" onclick="javascript()">JavaScript</p>
-                <p class="p-aligncenter" id="w113" onclick="csharp()">C#</p>
-                <p class="p-aligncenter" id="w114" onclick="php()">PHP</p>
-                <p class="p-aligncenter" id="w115" onclick="sql()">SQL</p>
+                <p class="p-aligncenter" id="w110"><span title="Webb">HTML</span></p>
+                <p class="p-aligncenter" id="w111"><span title="Styling">CSS</span></p>
+                <p class="p-aligncenter" id="w112"><span title="Functions">JavaScript</span></p>
+                <p class="p-aligncenter" id="w113"><span title="Object-oriented">C#</span></p>
+                <p class="p-aligncenter" id="w114"><span title="Webb/functions">PHP</span></p>
+                <p class="p-aligncenter" id="w115"><span title="Database">SQL</span></p>
             </div>
         </div>
         <!-- Select different editor themes -->
         <div class="dropdown">
-            <p onclick="theme()" class="dropbtn">Select theme</p>
+            <p id="theme" class="dropbtn">Select theme</p>
             <div id="myDropdownTheme" class="dropdown-content">
-                <p class="p-aligncenter" onclick="monokai()">monokai</p>
-                <p class="p-aligncenter" onclick="iplastic()">iplastic</p>
-                <p class="p-aligncenter" onclick="cobalt()">cobalt</p>
-                <p class="p-aligncenter" onclick="tomorrow()">tomorrow</p>
+                <p class="p-aligncenter" id="monokai"><span title="A dark theme">monokai</span></p>
+                <p class="p-aligncenter" id="iplastic"><span title="A gray-white theme">iplastic</span></p>
+                <p class="p-aligncenter" id="cobalt"><span title="A dark-blue color">cobalt</span></p>
+                <p class="p-aligncenter" id="tomorrow"><span title="A white theme">tomorrow</span></p>
             </div>
         </div>
         <!-- open and close settings -->
-        <div id="boxie" onclick="settingsinfo()"></div>
-        <div id="boxieR" onclick="settingsinfoR()"></div>
+        <div id="boxie"></div>
+        <div id="boxieR"></div>
     </div>
     <!-- Show navigation bar -->
     <div id="twinbox">
-        <div id="tinyboxtwin" onclick="onft()"></div>
+        <div id="tinyboxtwin"></div>
     </div>
     <!-- Settings -->
     <div id="showcontent">
         <h2 id="CommandHeader">Settings</h2>
-        <p class="spanCommandP"><span onclick="full()" class="spanpointer">Fullscreen</span></p>
-        <p class="spanCommandP"><span onclick="revert()" class="spanpointer">Window Mode</span></p>
-        <p class="spanCommandP"><span onclick="black()" class="spanpointer">Dark background</span></p>
-        <p class="spanCommandP"><span onclick="white()" class="spanpointer">White background</span></p>
-        <p class="spanCommandP"><span onclick="grayblue()" class="spanpointer">Lightgray background</span></p>
-        <p class="spanCommandP"><span onclick="Res1()" class="spanpointer">600 x 450 Resolution</span></p>
-        <p class="spanCommandP"><span onclick="Res2()" class="spanpointer">900 x 600 Resolution</span></p>
-        <p class="spanCommandP"><span onclick="Res3()" class="spanpointer">1200 x 800 Resolution</span></p>
-        <p class="spanCommandP"><span onclick="html()" class="spanpointer">HTML</span></p>
-        <p class="spanCommandP"><span onclick="css()" class="spanpointer">CSS</span></p>
-        <p class="spanCommandP"><span onclick="javascript()" class="spanpointer">JavaScript</span></p>
-        <p class="spanCommandP"><span onclick="csharp()" class="spanpointer">C#</span></p>
-        <p class="spanCommandP"><span onclick="php()" class="spanpointer">PHP</span></p>
-        <p class="spanCommandP"><span onclick="sql()" class="spanpointer">SQL</span></p>
-        <p class="spanCommandP"><span onclick="monokai()" class="spanpointer">monokai theme</span></p>
-        <p class="spanCommandP"><span onclick="iplastic()" class="spanpointer">iplastic theme</span></p>
-        <p class="spanCommandP"><span onclick="cobalt()" class="spanpointer">cobalt theme</span></p>
-        <p class="spanCommandP"><span onclick="tomorrow()" class="spanpointer">tomorrow theme</span></p>
+        <p class="spanCommandP"><span title="Transforms the editor into full screen size" id="full1" class="spanpointer">Fullscreen</span></p>
+        <p class="spanCommandP"><span title="Revert the full screen editor into normal size" id="rev1" class="spanpointer">Window Mode</span></p>
+        <p class="spanCommandP"><span title="Gives the background a dark color" id="b1" class="spanpointer">Dark background</span></p>
+        <p class="spanCommandP"><span title="Gives the background a white color" id="w1" class="spanpointer">White background</span></p>
+        <p class="spanCommandP"><span title="Gives the background a grayish color" id="gb1" class="spanpointer">Lightgray background</span></p>
+        <p class="spanCommandP"><span title="Editor resolution 600px x 450px" id="res1" class="spanpointer">600 x 450 Resolution</span></p>
+        <p class="spanCommandP"><span title="Editor resolution 900px x 600px" id="res2" class="spanpointer">900 x 600 Resolution</span></p>
+        <p class="spanCommandP"><span title="Editor resolution 1200px x 800px" id="res3" class="spanpointer">1200 x 800 Resolution</span></p>
+        <p class="spanCommandP"><span title="Changes editor language to HTML" id="html1" class="spanpointer">HTML</span></p>
+        <p class="spanCommandP"><span title="Changes editor language to CSS" id="css1" class="spanpointer">CSS</span></p>
+        <p class="spanCommandP"><span title="Changes editor language to JavaScript" id="js1" class="spanpointer">JavaScript</span></p>
+        <p class="spanCommandP"><span title="Changes editor language to C#" id="cs1" class="spanpointer">C#</span></p>
+        <p class="spanCommandP"><span title="Changes editor language to PHP" id="phps" class="spanpointer">PHP</span></p>
+        <p class="spanCommandP"><span title="Changes editor language to SQL" id="sqls" class="spanpointer">SQL</span></p>
+        <p class="spanCommandP"><span title="Changes editor theme to monokai(dark)" id="mn1" class="spanpointer">monokai theme</span></p>
+        <p class="spanCommandP"><span title="Changes editor theme to iplastic(bright)" id="isp1" class="spanpointer">iplastic theme</span></p>
+        <p class="spanCommandP"><span title="Changes editor theme to cobalt(dark-blue)" id="cb1" class="spanpointer">cobalt theme</span></p>
+        <p class="spanCommandP"><span title="Changes editor theme to tomorrow(white)" id="tm1" class="spanpointer">tomorrow theme</span></p>
     </div>
     <!-- Text editor begins -->
     <h1 id="de">Text editor - <span id="spanlanguageholder">JavaScript</span></h1>
     <pre id="editor"></pre>
     
     
-
 
     
 
