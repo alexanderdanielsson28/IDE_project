@@ -38,13 +38,25 @@ function findDuplicatesAndPlaceAnnotations() {
     if (matches) {
         for (var i = 0; i < matches.length; i++) {
             //matches[i] = matches[i].replace(JSComments, '')
+            //console.log(matches)
             if (i % 2 == 0 || i == 0) {
                 matches[i + 1] = matches[i + 1].replace(/\s+/g, ' ')
                 var index = $.inArray(matches[i + 1], textAndRows)
                 if (index == -1) {
-                    textAndRows.push([matches[i]], matches[i + 1]);
+                    var startArr = []
+                    startArr.push(matches[i])
+                    textAndRows.push(startArr, matches[i + 1]);
+                    
+                    
+
+                    //textAndRows[i].push(matches[i]);
+                    
+                    //console.log(textAndRows[i], matches[i + 1])
                 }
                 else {
+                    if (i > matches.length-4) {
+                    }
+                    //console.log(index)
                     textAndRows[index-1].push(matches[i])
                 }
             }
