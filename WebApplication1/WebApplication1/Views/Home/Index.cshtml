@@ -5,9 +5,6 @@
 <meta charset="utf-8" />
 
 
-
-
-
 <head>
     <meta charset="UTF-8">
     <title>ACE Autocompletion demo</title>
@@ -55,17 +52,15 @@
     <div class="well" style="margin-bottom:0px; padding:0px;">
 
         <a href="#" id="btnAdd"><i class="icon-plus-sign-alt"></i> Add Tab</a>
+        <a href="#" id="btnRemove"><i class="icon-plus-sign-alt"></i> Remove Tab</a>
         <br><br>
         <ul class="nav nav-tabs" id="tabs" style="margin-bottom:0px;">
             <li class="active"><a href="#tab1">Tab 1</a></li>
         </ul>
 
-        
+
     </div>
- 
 </div>
-
-
 
 <pre id="editor" style="height:400px;margin:0px; width:100%;border:none;">
        
@@ -83,6 +78,9 @@
         <script src="~/myjs/header.js"></script>
         <script src="~/myjs/tabs.js"></script>
 
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <script>
     var editor = ace.edit("editor");
@@ -144,13 +142,9 @@
 
                 myTerminal.print("black");
                 myTerminal.print("white");
-                myTerminal.print("bluegray");
+                myTerminal.print("bluegray");                
 
-                
-
-                myTerminal.input("", function (userInput2) {
-
-                  
+                myTerminal.input("", function (userInput2) {    
 
                     if (userInput2 == "black") {
                         black();
@@ -190,6 +184,10 @@
                 myTerminal.print("The commands are: | date | creator | errorlog | theme | clear |");
                 lock = false;
             }
+            
+               
+                
+            
             else {
                 myTerminal.print("There Is No Such Command,Try Another One");
                 lock = false;
