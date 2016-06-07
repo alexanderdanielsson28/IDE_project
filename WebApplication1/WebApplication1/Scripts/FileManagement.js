@@ -20,10 +20,26 @@ var dblClickedElement;
 
 
 //dummy variables
-var testSubFolder = [];
-var testsub2folder = [];
-var testsub3folder = [];
-var testsub4folder = [];
+var testsubFolder = {
+    Name: "html",
+    Content:[]
+}
+var testsub2Folder = {
+    Name: "style",
+    Content: []
+}
+var testsub3Folder = {
+    Name: "scripts",
+    Content: []
+}
+var testsub3Folder = {
+    Name: "tests",
+    Content: []
+}
+var testsub4Folder = {
+    Name: "images",
+    Content: []
+}
 var File1 = {
     Name: "markup.html",
     Content: "<div id=''></div>",
@@ -77,17 +93,17 @@ var File9 = {
 
 
 //----------------------------"SETTING UP DUMMY ARRAYS"-----------------------------
-testSubFolder.push(File4);
-testSubFolder.push(testsub2folder);
-testsub2folder.push(File5);
-testsub2folder.push(testsub3folder);
-testsub3folder.push(File7);
-testsub3folder.push(testsub4folder);
-testsub4folder.push(File8);
-testsub2folder.push(File6);
+testsubFolder.Content.push(File4);
+testsubFolder.Content.push(testsub2Folder);
+testsub2Folder.Content.push(File5);
+testsub2Folder.Content.push(testsub3Folder);
+testsub3Folder.Content.push(File7);
+testsub3Folder.Content.push(testsub4Folder);
+testsub4Folder.Content.push(File8);
+testsub2Folder.Content.push(File6);
 fileArray.push(File1);
 fileArray.push(File2);
-fileArray.push(testSubFolder);
+fileArray.push(testsubFolder);
 fileArray.push(File3);
 
 //----------------------------"END OF SETTING UP DUMMY ARRAYS"-----------------------------
@@ -97,7 +113,7 @@ fileArray.push(File3);
 
 $(document).ready(function () {
 
-
+    console.log(fileArray)
     callFileGeneration();
 
 
@@ -113,7 +129,7 @@ function callFileGeneration() {
 
     var folderCount = 1;
     for (var i = 0; i < fileArray.length; i++) {
-        generateFilesAndFolders(fileArray, i, folderCount);
+        generateFilesAndFolders(fileArray, i);
     }
     $("#FileManager").append(html);
 }
@@ -124,13 +140,12 @@ function callFileGeneration() {
  * we use a css-standard that uses ol/li tags to simulate a file hierarchy, all this function does is generate html code ín that format.
  * 
  */
-function generateFilesAndFolders(array, iterator, folderCount) {
-    if (Array.isArray(array[iterator])) {
-        html += "<li><label  for=" + "folder" + folderCount + ">" + "folder " + folderCount + "</label> <input type='checkbox' id=" + "folder" + folderCount + "></input><ol>";
-        folderCount++
-        for (var j = 0; j < array[iterator].length; j++) {
+function generateFilesAndFolders(array, iterator) {
+    if (Array.isArray(array[iterator].Content)) {
+        html += "<li><label  for=" + array[iterator].Name + ">" +  array[iterator].Name + "</label> <input type='checkbox' id=" +array[iterator].Name + "></input><ol>";
+        for (var j = 0; j < array[iterator].Content.length; j++) {
 
-            generateFilesAndFolders(array[iterator], j, folderCount);
+            generateFilesAndFolders(array[iterator].Content, j);
         }
         html += "</ol></li>"
     }
@@ -212,8 +227,8 @@ function GetFileFromID(Element) {
  */
 function IterateForFile(array, id) {
     for (var i = 0; i < array.length; i++) {
-        if (Array.isArray(array[i])) {
-            var file = IterateForFile(array[i], id)
+        if (Array.isArray(array[i].Content)) {
+            var file = IterateForFile(array[i].Content, id)
             if (typeof file != 'undefined') {
                 if (file.Name == id) {
                     return file;
@@ -230,8 +245,8 @@ function IterateForFile(array, id) {
  */
 function SetFileprop(array, property, olddata, newdata) {
         for (var i = 0; i < array.length; i++) {
-            if (Array.isArray(array[i])) {
-            SetFileprop(array[i], property, olddata, newdata)
+            if (Array.isArray(array[i].Content)) {
+                SetFileprop(array[i].Content, property, olddata, newdata)
             }
             else if (array[i][property] == olddata) {
                 array[i][property] = newdata;
