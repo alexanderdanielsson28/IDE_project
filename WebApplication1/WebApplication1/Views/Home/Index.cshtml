@@ -4,21 +4,9 @@
 <link href="~/Content/FileManagerDesign.css" rel="stylesheet" />
 
 <link href="~/Content/styleIndex.css" rel="stylesheet" />
-<h1 id="DocumentHeader">IDE Prototype</h1>
+
 <div id="consoleError"></div>
-<p>
-<meta charset="utf-8" />
 
-    <button type="button" class="btn">
-        <span class="glyphicon glyphicon-floppy-saved"></span> File Saved
-    </button>
-    <span id="msg"></span>
-    <span id="errormess"></span>
-    <span>
-
-        <!--<span id="img-unChecked">...</span>-->
-        <img id="img-check" src="~/img/good_or_tick.png" width="20" height="20" hidden="hidden" /></span>
-</p>
 
 <head>
     <meta charset="UTF-8">
@@ -28,41 +16,54 @@
     <link rel="stylesheet" href="../../Content/bootstrap.css" />
     <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
     <link href="~/mycss/StyleSheet1.css" rel="stylesheet" />
-    
+
 </head>
 
-    <div id="fullwidth1pxheight">
-        <div id="tinybox" onclick="onf()"></div>
-        <div onclick="full()" id="f11" class="clickdivf11f11r">FullScreen</div>
-        <div onclick="revert()" id="f11r" class="clickdivf11f11r">Window Mode</div>
-        <div class="dropdown">
-            <p onclick="myFunction()" class="dropbtn">Färgschema</p>
-            <div id="myDropdown" class="dropdown-content">
-                <p onclick="white()" class="p-aligncenter">white</p>
-                <p onclick="black()" class="p-aligncenter">black</p>
-                <p onclick="grayblue()" class="p-aligncenter">grayblue</p>
-            </div>
-        </div>
-        <div class="dropdown">
-            <p onclick="myFunctionRes()" class="dropbtn">Upplösning</p>
-            <div id="myDropdownRes" class="dropdown-content">
-                <p onclick="Res1()" class="p-aligncenter">600 x 450</p>
-                <p onclick="Res2()" class="p-aligncenter">900 x 600</p>
-                <p onclick="Res3()" class="p-aligncenter">1200 x 800</p>
-            </div>
-        </div>
-        <div class="dropdown">
-            <p onclick="myFunctionSch()" class="dropbtn">Förintställt</p>
-            <div id="myDropdownSch" class="dropdown-content">
-                <p onclick="white(); Res1()" class="p-aligncenter">Stark</p>
-                <p onclick="black(); Res2()" class="p-aligncenter">Dark</p>
-                <p onclick="grayblue(); Res3()" class="p-aligncenter">Bark</p>
-            </div>
+<div id="fullwidth1pxheight">
+    <div id="tinybox" onclick="onf()"></div>
+    <div onclick="full()" id="f11" class="clickdivf11f11r">FullScreen</div>
+    <div onclick="revert()" id="f11r" class="clickdivf11f11r">Window Mode</div>
+    <div class="dropdown">
+        <p onclick="myFunction()" class="dropbtn">Färgschema</p>
+        <div id="myDropdown" class="dropdown-content">
+            <p onclick="white()" class="p-aligncenter">white</p>
+            <p onclick="black()" class="p-aligncenter">black</p>
+            <p onclick="grayblue()" class="p-aligncenter">grayblue</p>
         </div>
     </div>
+    <div class="dropdown">
+        <p onclick="myFunctionRes()" class="dropbtn">Upplösning</p>
+        <div id="myDropdownRes" class="dropdown-content">
+            <p onclick="Res1()" class="p-aligncenter">600 x 450</p>
+            <p onclick="Res2()" class="p-aligncenter">900 x 600</p>
+            <p onclick="Res3()" class="p-aligncenter">1200 x 800</p>
+        </div>
+    </div>
+    <div class="dropdown">
+        <p onclick="myFunctionSch()" class="dropbtn">Förintställt</p>
+        <div id="myDropdownSch" class="dropdown-content">
+            <p onclick="white(); Res1()" class="p-aligncenter">Stark</p>
+            <p onclick="black(); Res2()" class="p-aligncenter">Dark</p>
+            <p onclick="grayblue(); Res3()" class="p-aligncenter">Bark</p>
+        </div>
+    </div>
+</div>
 
-    <h1 id="DocumentHeader">Apirix IDE Prototype</h1>
-       
+<h1 id="DocumentHeader">Apirix IDE Prototype</h1>
+<p>
+    <meta charset="utf-8" />
+
+    <button type="button" class="btn">
+        <span class="glyphicon glyphicon-floppy-saved"></span> File Saved
+    </button>
+    <span id="msg"></span>
+    <span id="errormess"></span>
+    <span>
+
+        <!--<span id="img-unChecked">...</span>-->
+        <img id="img-check" src="~/img/good_or_tick.png" width="20" height="20" hidden="hidden" />
+    </span>
+</p>
 
 
 
@@ -82,40 +83,39 @@
     <ul id="sortable">
         <li><a href="#tabs-1">Tab 1</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
     </ul>
-    
+
 </div>
 
 
-<pre id="editor" style="height:400px;margin:0px; width:100%;border:none;">
+<pre id="editor" style="height:400px;margin:0; width:100%;border:none;">
        
 </pre>
 
-    <div id="term" ></div>
+<div id="term"></div>
 
 <ol id="FileManager"></ol>
 
-    <div style="width:100%;max-height:100px;min-height:100px;height:100px; max-width:100%; background-color:black;">
-   <div id="error"></div>
-    </div>
+<div style="width:100%;max-height:100px;min-height:100px;height:100px; max-width:100%; background-color:black;">
+    <div id="error"></div>
+</div>
 
 
 
 
-<script src="~/Scripts/jquery-1.10.2.js"></script>
-        <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-        <script src="~/ace/ace.js"></script>
-        <script src="~/ace/ext-language_tools.js"></script>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="~/ace/ace.js"></script>
+<script src="~/ace/ext-language_tools.js"></script>
 <script src="~/Scripts/FileManagement.js"></script>
 
-        <script src="~/myjs/terminal.js"></script>
-        <script src="~/myjs/header.js"></script>
-        <script src="~/myjs/tabs.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-        <script src="~/myjs/tabs.js"></script>
+<script src="~/myjs/terminal.js"></script>
+<script src="~/myjs/header.js"></script>
 
-    <script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="~/myjs/tabs.js"></script>
+
+<script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
     editor.getSession().setMode("ace/mode/javascript");
@@ -126,8 +126,8 @@
         enableLiveAutocompletion: true
 
     });
-    </script>
-<script src="~/Scripts/jquery-1.10.2.js"></script>
+</script>
+
 <script src="~/Scripts/autoSave.js"></script>
 
 
