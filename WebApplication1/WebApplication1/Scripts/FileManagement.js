@@ -94,7 +94,7 @@ fileArray.push(File3);
 
 $(document).ready(function () {
 
-    
+
     callFileGeneration();
 
 
@@ -118,7 +118,7 @@ function callFileGeneration() {
 
 function generateFilesAndFolders(array, iterator, folderCount) {
     if (Array.isArray(array[iterator])) {
-      html += "<li><label  for=" + "folder" + folderCount + ">" + "folder " + folderCount + "</label> <input type='checkbox' id=" + "folder" + folderCount + "></input><ol>";
+        html += "<li><label  for=" + "folder" + folderCount + ">" + "folder " + folderCount + "</label> <input type='checkbox' id=" + "folder" + folderCount + "></input><ol>";
         folderCount++
         for (var j = 0; j < array[iterator].length; j++) {
 
@@ -127,7 +127,7 @@ function generateFilesAndFolders(array, iterator, folderCount) {
         html += "</ol></li>"
     }
     else {
-       html += ("<li class='file' id=" + array[iterator].Name + "><a href='" + array[iterator].Type+ "'>" + array[iterator].Name + "</a></li>");
+        html += ("<li class='file' id=" + array[iterator].Name + "><a href='" + array[iterator].Type + "'>" + array[iterator].Name + "</a></li>");
         matchArray.push(array[iterator]);
     }
 }
@@ -141,31 +141,128 @@ $(document).on('click', ".file a", function (e) {
 
     if (!$(".ace_gutter-layer").children().hasClass("ace_error")) {
 
-    $(".file a").removeClass("selectedFile");
-    $(this).addClass("selectedFile")
-    var clickedFile = GetFileFromID($(this).parent())
+        $(".file a").removeClass("selectedFile");
+        $(this).addClass("selectedFile")
+        var clickedFile = GetFileFromID($(this).parent())
+        console.log(clickedFile)
 
-    
-    editor.setValue("", 0);
-    setSessionLanguage(editor.getSession(), clickedFile[0].Type)
-    editor.setValue(clickedFile[0].Content, 1);
-    fileText = clickedFile[0].Content
+        editor.setValue("", 0);
+        setSessionLanguage(editor.getSession(), clickedFile.Type)
+        editor.setValue(clickedFile.Content, 1);
+        fileText = clickedFile.Content
     }
 });
 
+$('html').click(function (e) {
+    if (!$(e.target).hasClass('file')) {
+       
+    }
+});
+var dblClickedFile;
+var dblClickedElement;
+$(document).on('dblclick', ".file a", function (e) {
+    e.preventDefault();
+    
+    //$(this).text("")
+   // $(this).parent().append("<input type='text' class='NameChangeInput' value=" + dblClickedFile.Name + ">")
+    //console.log($(".NameChangeInput").length)
+    
+    if (!$(".NameChangeInput").length >= 1) {
+        dblClickedElement = $(this);
+        dblClickedFile = GetFileFromID($(this).parent())
+        $(this).parent().append("<input type='text' class='NameChangeInput' value=" + dblClickedFile.Name + ">")
+        console.log("appended input!")
+    }
+    else {
+        console.log(dblClickedElement.parent())
+        //dblClickedElement.parent().css("display", "none")
+        dblClickedElement.parent().attr("id", $(".NameChangeInput").val())
+        dblClickedElement.text($(".NameChangeInput").val())
+        SetFileprop(fileArray, "Name", dblClickedFile.Name, $(".NameChangeInput").val());
+        $(".NameChangeInput").remove();
+    }
+   console.log(fileArray)
+})
 //----------------END OF CLICK EVENTS---------------------------
 
 
 
 //----------------FILE-RELATED FUNCTIONS---------------------------
-function GetFileFromID(Element) {
+/*function GetFileFromID(Element) {
     var id = $(Element).attr('id');
-    return $.map(matchArray, function (n) {
-        if (n.Name === id) {
-            return n;
+    return $.map(matchArray, function (file) {
+        if (file.Name === id) {
+            return file;
         }
     });
 }
+*/
+
+function GetFileFromID(Element) {
+    var id = $(Element).attr('id');
+    console.log(id);
+    /*/for (var i = 0; i < fileArray.length; i++) {
+        var ClickedFile = lookDeeperForFile(id,i, fileArray);
+        if (typeof(ClickedFile) != 'undefined') {
+            return ClickedFile;
+        }
+    }*/
+
+    var clickedFile = IterateForFile(fileArray, id)
+    return clickedFile;
+}
+
+function IterateForFile(array, id) {
+    for (var i = 0; i < array.length; i++) {
+        if (Array.isArray(array[i])) {
+            var file = IterateForFile(array[i], id)
+            if (typeof file != 'undefined') {
+                if (file.Name == id) {
+                    return file;
+                }
+            }
+        }
+        else if (array[i].Name == id) {
+            return array[i];
+        }   
+    }
+}
+function SetFileprop(array,property, olddata,newdata ) {
+        for (var i = 0; i < array.length; i++) {
+            if (Array.isArray(array[i])) {
+                SetFileprop(array[i],property,olddata, newdata)
+            }
+            else if (array[i][property] == olddata) {
+                array[i][property] = newdata;
+            }
+        }
+}
+function lookDeeperForFile(id,iterator, array) {
+
+   
+        console.log(array[iterator])
+        if (Array.isArray(array[iterator])) {
+            for (var i = 0; i < array[iterator].length; i++) {
+            //for (var j = 0; j < array[i].length; j++) {
+
+                console.log("we are going deeper!");
+                console.log(array[iterator])
+                return lookDeeperForFile(id,i, array[iterator]);
+            }
+            //}
+        }
+            
+        else if (array[iterator].Name == id) {
+            console.log(array[iterator], id)
+            console.log("Emil found!");
+            return array[iterator];
+        }
+        console.log(array[iterator].Name)
+    
+
+}
+
+
 //----------------END OF FILE-RELATED FUNCTIONS---------------------------
 
 

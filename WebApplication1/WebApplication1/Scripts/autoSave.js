@@ -97,8 +97,8 @@ var delay3 = 5000;
 var delay4 = 8000;
 var validCodeFunc = function () {
 
-    var currentFileArray = GetFileFromID($(".selectedFile").parent())
-    currentFileArray[0].Content = editor.getValue();
+    var currentFile = GetFileFromID($(".selectedFile").parent())
+    currentFile.Content = editor.getValue();
 
 
     $("#msg").text("ALL CHANGES SAVED!");
