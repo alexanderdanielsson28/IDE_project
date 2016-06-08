@@ -9,7 +9,6 @@ var File2 = {
     Content: "<div id='asda'></div>",
     fileEnding: ".html"
 }
-
 var File3 = {
     Name: "three",
     Content: "<div id='asda'></div>",
@@ -26,28 +25,29 @@ var _editorText = "";
 /*
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/monokai");
-editor.getSession().setMode("ace/mode/javascript");
+editor.getSession().setMode("ace/mode/html");
+
+
 
 editor.setOptions({
     enableBasicAutocompletion: true,
     enableSnippets: true,
     enableLiveAutocompletion: true
-});
+});*/
 
 
 // trigger extension
-ace.require("ace/ext/language_tools");
-var editor = ace.edit("editor");
-editor.session.setMode("ace/mode/javascript");
-editor.setTheme("ace/theme/tomorrow");
-// enable autocompletion and snippets
-editor.setOptions({
-    enableBasicAutocompletion: true,
-    enableSnippets: true,
-    enableLiveAutocompletion: true,
+//ace.require("ace/ext/language_tools");
+//var editor = ace.edit("editor");
+//editor.session.setMode("ace/mode/javascript");
+//editor.setTheme("ace/theme/tomorrow");
+//// enable autocompletion and snippets
+//editor.setOptions({
+//    enableBasicAutocompletion: true,
+//    enableSnippets: true,
+//    enableLiveAutocompletion: true,
 
-});
-*/
+//});
 
 
 
@@ -92,11 +92,26 @@ var delay = (function () {
 })();
 
 
+
+// STARTS and Resets the loop if any
+window.setInterval(function () {
+    doSomething();/// call your function here
+}, 1000);
+
+
+function doSomething() {
+    // (do something here)
+    $("#testData").val(editor.getValue());
+
+    console.log($("#testData").val());
+}
+
+
 //Start ValidSaveFunction
 var delay3 = 5000;
 var delay4 = 8000;
 var validCodeFunc = function () {
-
+    
     var currentFile = GetFileFromID($(".selectedFile").parent())
     currentFile.Content = editor.getValue();
 
@@ -129,7 +144,7 @@ var update = function () {
 
 // code for saveButton, if code are same or not
 $(".btn").click(function () {
-
+  //  callback();
 
     var editorText = editor.getValue();
     var _fileText = fileText.replace(/\s+$/, '');
@@ -219,8 +234,37 @@ var NotEmptyFile = function () {
 
 }
 
+//$(".run").click(function () {
+//    console.log("run exec");
+//    code = editor.getValue()
+//    console.log(code);
+//    $("#textarea2").val(code);
+//});
+
+//function myFunction() {
+//    var x = editor.getValue();
+  
+
+//    document.getElementById("demo").innerHTML = x;
+//}
+//function run() {
+//    var consoleTextIsEmpty = editor.getValue();
+//    consoleTextIsEmpty && eval(consoleTextIsEmpty);
+//}
 
 
 
 
+function testfunc() {
 
+    var x = editor.getValue();
+    console.log(x);
+
+    document.getElementById("UploadButton").click();
+
+    }
+
+//function setMyValue(value) {
+//    $('#myVar').val(value);       
+//}
+//@Html.Hidden("myVar", 0);

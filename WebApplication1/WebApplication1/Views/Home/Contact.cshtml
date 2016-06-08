@@ -4,14 +4,71 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+@model WebApplication1.Models.aboutModel
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<textarea style="display:none" id="textbox">@Html.Raw(Model.html).ToString()</textarea>
+
+<script>
+    eval(localStorage.myCode);
+    var teststring = '@Html.Raw(Model.html)';
+
+    console.log(teststring);
+    var testObject;
+
+    // Retrieve the object from storage
+    //var retrievedObject = localStorage.getItem('testObject');
+
+    //console.log('retrievedObject: ', JSON.parse(retrievedObject));
+
+    // var test = localStorage.getItem("code");
+
+
+
+
+    /*
+    makeTextFile = function (text) {
+      var data = new Blob([text], {type: 'text/plain'});
+
+      // If we are replacing a previously generated file we need to
+      // manually revoke the object URL to avoid memory leaks.
+      if (textFile !== null) {
+        window.URL.revokeObjectURL(textFile);
+      }
+
+      textFile = window.URL.createObjectURL(data);
+
+      return textFile;
+    };
+
+
+    var create = document.getElementById('create'),
+      textbox = document.getElementById('textbox');
+
+    create.addEventListener('click', function () {
+      var link = document.getElementById('downloadlink');
+      link.href = makeTextFile(textbox.value);
+      link.style.display = 'block';
+    }, false);
+  })();*/
+
+    $("body").append("<div id='h1text'><h1>PREVIEW PAGE</h1></div>");
+        $("body").append(teststring.toString());
+</script>
+<style>
+    #h1text {
+        color: silver;
+        border-bottom: solid 2px;
+        border-color: black;
+    }
+
+    footer {
+        display: none;
+    }
+</style>
+<body>
+
+</body>   

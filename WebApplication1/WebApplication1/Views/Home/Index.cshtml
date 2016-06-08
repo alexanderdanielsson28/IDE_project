@@ -1,7 +1,21 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Home Page";
+       
 }
 <link href="~/Content/FileManagerDesign.css" rel="stylesheet" />
+
+
+
+    <style>
+        #textarea2 {
+            width: 1500px;
+            height: 150px;
+        }
+    </style>
+
+
+
 
 <link href="~/Content/styleIndex.css" rel="stylesheet" />
 
@@ -87,9 +101,22 @@
     </div>
 
 
-<pre id="editor" style="height:400px;margin:0; width:100%;border:none;">
+
+    //view
+    @using (Html.BeginForm())
+    {
+
+        //  <input type="text" id="testData" />
+        <input style="display:none" type="text" id="testData" name="reportName" />
+        <input type="submit" />
+    }
        
+<pre id="editor" style="height:300px">
 </pre>
+
+
+
+
 
 <div id="term"></div>
 
