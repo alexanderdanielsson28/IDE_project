@@ -85,6 +85,57 @@ p {
 .dropdown:hover {
     background-color:aliceblue;
 }
+.clickmetoopen {
+    float:left;
+    width:10px;
+    height:10px;
+    background-image:url("../../pics/../pics/plus.png");
+    background-size:contain;
+    margin-top:7px;
+    margin-left:15px;
+}
+.clickmetoopenThemes {
+    float:left;
+    width:10px;
+    height:10px;
+    background-image:url("../../pics/../pics/plus.png");
+    background-size:contain;
+    margin-top:7px;
+    margin-left:15px;
+}
+.clickmetoopenLang {
+    float:left;
+    width:10px;
+    height:10px;
+    background-image:url("../../pics/../pics/plus.png");
+    background-size:contain;
+    margin-top:7px;
+    margin-left:15px;
+}
+.clickmetoopenBK {
+    float:left;
+    width:10px;
+    height:10px;    
+    background-image:url("../../pics/../pics/plus.png");
+    background-size:contain;
+    margin-top:7px;
+    margin-left:15px;
+}
+.textOpener {
+    margin-left:5px;
+    float:left;
+    font-size:20px;
+    font-weight:bold;
+}
+.myboxopenarea {
+    margin-left:auto;
+    margin-right:auto;
+}
+.anitfloat {
+    margin-left:auto;
+    margin-right:auto;
+    height:10px;
+}
 #de {
     text-align:center;
 }
@@ -253,4 +304,70 @@ p {
 }
 #tomorrow {
     width:100px;
+}
+#full1 {
+    display:none;
+}
+#rev1 {
+    display:none;
+}
+#mn1 {
+    display:none;
+}
+#isp1 {
+    display:none;
+}
+#cb1 {
+    display:none;
+}
+#tm1 {
+    display:none;
+}
+#res1 {
+    display:none;
+}
+#res2 {
+    display:none;
+}
+#res3 {
+    display:none;
+}
+#testfloat {
+    margin-top:15px;
+}
+#testfloatThemes {
+    margin-top:15px;
+}
+#imtestfloating {
+    margin-top:15px;
+}
+#testfloatBK {
+    margin-top:15px;
+}
+#html1 {
+    display:none;
+}
+#css1 {
+    display:none;
+}
+#js1 {
+    display:none;
+}
+#cs1 {
+    display:none;
+}
+#phps {
+    display:none;
+}
+#sqls {
+    display:none;
+}
+#b1 {
+    display:none;
+}
+#w1 {
+    display:none;
+}
+#gb1 {
+    display:none;
 }
