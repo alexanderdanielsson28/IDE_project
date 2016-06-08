@@ -1,4 +1,4 @@
-﻿/* Here starts the styling of default tags */
+﻿/* Here starts the styling of raw tags */
 body {
     width:100%;
     height:100%;
@@ -16,8 +16,8 @@ a {
 p {
     margin:0px 0px 0px 0px;
 }
-/* Here ends the styling of default tags */
-/* Here starts the styling of Class tags */
+/* Here ends the styling of raw tags */
+/* Here starts the styling of Classes */
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column */
 .dl-horizontal dt {
@@ -142,8 +142,8 @@ p {
     margin-right:auto;
     height:10px;
 }
-/* Here ends the styling of Class tags */
-/* Here starts the section of ID tags which are to be styled with css */
+/* Here ends the styling of Classes */
+/* Here starts the section of IDs which are to be styled with css */
 #de {
     text-align:center;
 }
@@ -231,20 +231,22 @@ p {
     background-image:url("../pics/../pics/cartoongearwheel.png");
     background-size:cover;
     background-repeat:no-repeat;
-    width:20px;
-    height:20px;
+    width:30px;
+    height:30px;
     float:right;
     cursor:pointer;
+    margin-right:25px;
 }
 #boxieR {
     background-image:url("../pics/../pics/picof.png");
     background-size:cover;
     background-repeat:no-repeat;
-    width:20px;
-    height:20px;
+    width:30px;
+    height:30px;
     float:right;
     display:none;
     cursor:pointer;
+    margin-right:25px;
 }
 #showcontent {
     width:300px;
@@ -379,4 +381,4 @@ p {
 #gb1 {
     display:none;
 }
-/* Here ends the styling of ID-tags */
+/* Here ends the styling of IDs */
