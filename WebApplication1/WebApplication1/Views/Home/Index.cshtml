@@ -1,7 +1,21 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Home Page";
+       
 }
 <link href="~/Content/FileManagerDesign.css" rel="stylesheet" />
+
+
+
+    <style>
+        #textarea2 {
+            width: 1500px;
+            height: 150px;
+        }
+    </style>
+
+
+
 
 <link href="~/Content/styleIndex.css" rel="stylesheet" />
 
@@ -61,8 +75,8 @@
     <span>
 
         <!--<span id="img-unChecked">...</span>-->
-        <img id="img-check" src="~/img/good_or_tick.png" width="20" height="20" hidden="hidden" />
-    </span>
+            <img id="img-check" src="~/img/good_or_tick.png" width="20" height="20" hidden="hidden" />
+        </span>
 </p>
 
 
@@ -85,6 +99,21 @@
     </ul>
 
     </div>
+
+
+
+    //view
+    @using (Html.BeginForm())
+    {
+
+        //  <input type="text" id="testData" />
+        <input style="display:none" type="text" id="testData" name="reportName" />
+        <input type="submit" />
+    }
+
+<pre id="editor" style="height:300px">
+</pre>
+  
 
 
 <pre id="editor" style="height:400px;margin:0; width:100%;border:none;">
