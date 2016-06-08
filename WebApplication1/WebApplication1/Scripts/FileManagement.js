@@ -22,22 +22,27 @@ var dblClickedElement;
 //dummy variables
 var testsubFolder = {
     Name: "html",
+    Type:"folder",
     Content:[]
 }
 var testsub2Folder = {
     Name: "style",
+    Type: "folder",
     Content: []
 }
 var testsub3Folder = {
     Name: "scripts",
+    Type: "folder",
     Content: []
 }
 var testsub3Folder = {
     Name: "tests",
+    Type: "folder",
     Content: []
 }
 var testsub4Folder = {
     Name: "images",
+    Type: "folder",
     Content: []
 }
 var File1 = {
@@ -142,7 +147,7 @@ function callFileGeneration() {
  */
 function generateFilesAndFolders(array, iterator) {
     if (Array.isArray(array[iterator].Content)) {
-        html += "<li id='" + array[iterator].Name + "' class='folder'><label  for=" + array[iterator].Name + ">" + array[iterator].Name + "</label> <input type='checkbox'></input><ol>";
+        html += "<li class='folder'><label  for=" + array[iterator].Name + ">" + array[iterator].Name + "</label> <input id='" + array[iterator].Name + "'type='checkbox'></input><ol>";
         for (var j = 0; j < array[iterator].Content.length; j++) {
 
             generateFilesAndFolders(array[iterator].Content, j);
@@ -195,18 +200,22 @@ $('html').click(function (e) {
  */
 $(document).on('dblclick', ".file a, .folder", function (e) {
     e.preventDefault();
-    $(this).text("")
+    
     if (!$(".NameChangeInput").length >= 1) {
         dblClickedElement = $(this);
-         console.log($(this).parent())
-        if ($(e.target).hasClass('folder')) {
-           
-            dblClickedFile = GetFileFromID($(this))
+        console.log($(this))
+        console.log($(this).children("input"))
+        if ($(this).hasClass('folder')) {
+            
+            dblClickedFile = GetFileFromID($(this).children("input"))
+            $(this).append("<input type='text' class='NameChangeInput' value=" +dblClickedFile.Name + ">")
         }
         else {
+            $(this).text("")
             dblClickedFile = GetFileFromID($(this).parent())
+            $(this).parent().append("<input type='text' class='NameChangeInput' value=" + dblClickedFile.Name + ">")
         }
-        $(this).parent().append("<input type='text' class='NameChangeInput' value=" + dblClickedFile.Name + ">")
+        
     }
 })
 //----------------END OF CLICK EVENTS---------------------------
@@ -268,11 +277,21 @@ function SetFileprop(array, property, olddata, newdata) {
  * removes the input field for changing name and sets the name of the visual file and the property of the matching file-object
  */
 function clearNaming(Element, fileObject) {
-    if ( $(".NameChangeInput").length >= 1) { 
-    Element.parent().attr("id", $(".NameChangeInput").val())
-    Element.text($(".NameChangeInput").val())
-    SetFileprop(fileArray, "Name", fileObject.Name, $(".NameChangeInput").val());
-    $(".NameChangeInput").remove();
+    console.log( Element)
+    if ($(".NameChangeInput").length >= 1) {
+        if (fileObject.Type == "folder") {
+            Element.children("label").text($(".NameChangeInput").val())
+            Element.children("input").attr("id", $(".NameChangeInput").val())
+            Element.children("label").attr("for", $(".NameChangeInput").val())
+            $(".NameChangeInput").remove();
+        }
+        else {
+            Element.parent().attr("id", $(".NameChangeInput").val())
+            Element.text($(".NameChangeInput").val())
+            SetFileprop(fileArray, "Name", fileObject.Name, $(".NameChangeInput").val());
+            $(".NameChangeInput").remove();
+        }
+    
         }
 
 }
