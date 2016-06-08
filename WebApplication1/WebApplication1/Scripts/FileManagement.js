@@ -142,7 +142,7 @@ function callFileGeneration() {
  */
 function generateFilesAndFolders(array, iterator) {
     if (Array.isArray(array[iterator].Content)) {
-        html += "<li><label  for=" + array[iterator].Name + ">" +  array[iterator].Name + "</label> <input type='checkbox' id=" +array[iterator].Name + "></input><ol>";
+        html += "<li id='" + array[iterator].Name + "' class='folder'><label  for=" + array[iterator].Name + ">" + array[iterator].Name + "</label> <input type='checkbox'></input><ol>";
         for (var j = 0; j < array[iterator].Content.length; j++) {
 
             generateFilesAndFolders(array[iterator].Content, j);
@@ -184,20 +184,28 @@ $(document).on('click', ".file a", function (e) {
  * then calls the clearnaming function
  */
 $('html').click(function (e) {
-    if (!$(e.target).hasClass('file') && !$(e.target).hasClass('NameChangeInput')) {
+    if (!$(e.target).hasClass('file') && !$(e.target).hasClass('NameChangeInput') && !$(e.target).hasClass('folder')) {
         clearNaming(dblClickedElement, dblClickedFile);
     }
+
 });
 
 /*
  * appends an input field for changing filename 
  */
-$(document).on('dblclick', ".file a", function (e) {
+$(document).on('dblclick', ".file a, .folder", function (e) {
     e.preventDefault();
     $(this).text("")
     if (!$(".NameChangeInput").length >= 1) {
         dblClickedElement = $(this);
-        dblClickedFile = GetFileFromID($(this).parent())
+         console.log($(this).parent())
+        if ($(e.target).hasClass('folder')) {
+           
+            dblClickedFile = GetFileFromID($(this))
+        }
+        else {
+            dblClickedFile = GetFileFromID($(this).parent())
+        }
         $(this).parent().append("<input type='text' class='NameChangeInput' value=" + dblClickedFile.Name + ">")
     }
 })
@@ -227,6 +235,9 @@ function GetFileFromID(Element) {
  */
 function IterateForFile(array, id) {
     for (var i = 0; i < array.length; i++) {
+        if (array[i].Name == id) {
+            return array[i];
+        }
         if (Array.isArray(array[i].Content)) {
             var file = IterateForFile(array[i].Content, id)
             if (typeof file != 'undefined') {
