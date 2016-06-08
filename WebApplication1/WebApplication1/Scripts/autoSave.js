@@ -106,6 +106,7 @@ window.setInterval(function () {
 function doSomething() {
     // (do something here)
     $("#testData").val(editor.getValue());
+
     console.log("doSomething");
 }
     
