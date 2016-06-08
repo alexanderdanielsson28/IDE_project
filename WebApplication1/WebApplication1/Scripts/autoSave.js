@@ -33,7 +33,7 @@ editor.setOptions({
     enableBasicAutocompletion: true,
     enableSnippets: true,
     enableLiveAutocompletion: true
-});
+});*/
 
 
 // trigger extension
@@ -97,11 +97,13 @@ var delay = (function () {
 window.setInterval(function () {
     doSomething();/// call your function here
 }, 1000);
+
+
 function doSomething() {
     // (do something here)
     $("#testData").val(editor.getValue());
 
-    console.log("doSomething");
+    console.log($("#testData").val());
 }
 
 
@@ -142,7 +144,7 @@ var update = function () {
 
 // code for saveButton, if code are same or not
 $(".btn").click(function () {
-    callback();
+  //  callback();
 
     var editorText = editor.getValue();
     var _fileText = fileText.replace(/\s+$/, '');

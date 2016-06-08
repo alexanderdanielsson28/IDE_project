@@ -25,22 +25,22 @@ namespace WebApplication1.Controllers
             data.html = reportName;
             //check for reportName parameter value now
             //to do : Return something
-            return RedirectToAction("About", data);
+            return RedirectToAction("Contact", data);
 
         }
-        [ValidateInput(false)]
-        public ActionResult About(aboutModel data)
+       
+        public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
-            return View(data);
+            return View();
         }
-
-        public ActionResult Contact()
+        [ValidateInput(false)]
+        public ActionResult Contact(aboutModel data)
         {
             ViewBag.Message = "Your contact page.";
 
-            return View();
+            return View(data);
         }
         //controller
 
