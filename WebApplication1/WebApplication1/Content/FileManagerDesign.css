@@ -106,6 +106,9 @@ ol.FileManager
 #FileManager{
     list-style-type: none;
 }
+#FileManager ol{
+
+}
 .file{
     text-decoration:none;
     cursor:pointer;
@@ -116,7 +119,9 @@ ol.FileManager
 .selectedFile{
     color:red !important;
 }
-
+.ui-selected{
+    border:5px solid black;
+}
 .NameChangeInput{
     color:black;
     position:relative;
