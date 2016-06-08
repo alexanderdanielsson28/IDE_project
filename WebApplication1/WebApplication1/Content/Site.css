@@ -1,4 +1,5 @@
-﻿body {
+﻿/* Here starts the styling of default tags */
+body {
     width:100%;
     height:100%;
     margin:0px;
@@ -15,9 +16,10 @@ a {
 p {
     margin:0px 0px 0px 0px;
 }
+/* Here ends the styling of default tags */
+/* Here starts the styling of Class tags */
 /* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
+   will truncate terms that are too long to fit in the left column */
 .dl-horizontal dt {
     white-space: normal;
 }
@@ -93,6 +95,7 @@ p {
     background-size:contain;
     margin-top:7px;
     margin-left:15px;
+    cursor:pointer;
 }
 .clickmetoopenThemes {
     float:left;
@@ -102,6 +105,7 @@ p {
     background-size:contain;
     margin-top:7px;
     margin-left:15px;
+    cursor:pointer;
 }
 .clickmetoopenLang {
     float:left;
@@ -111,6 +115,7 @@ p {
     background-size:contain;
     margin-top:7px;
     margin-left:15px;
+    cursor:pointer;
 }
 .clickmetoopenBK {
     float:left;
@@ -120,6 +125,7 @@ p {
     background-size:contain;
     margin-top:7px;
     margin-left:15px;
+    cursor:pointer;
 }
 .textOpener {
     margin-left:5px;
@@ -136,6 +142,8 @@ p {
     margin-right:auto;
     height:10px;
 }
+/* Here ends the styling of Class tags */
+/* Here starts the section of ID tags which are to be styled with css */
 #de {
     text-align:center;
 }
@@ -371,3 +379,4 @@ p {
 #gb1 {
     display:none;
 }
+/* Here ends the styling of ID-tags */
