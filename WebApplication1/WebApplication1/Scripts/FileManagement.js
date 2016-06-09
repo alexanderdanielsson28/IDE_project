@@ -17,7 +17,8 @@ var matchArray = [];
 var fileArray = [];
 var dblClickedFile;
 var dblClickedElement;
-
+var mouseX;
+var mouseY;
 
 //dummy variables
 var testsubFolder = {
@@ -225,7 +226,10 @@ $(document).on('click', ".file a", function (e) {
         setSessionLanguage(editor.getSession(), clickedFile.Type)
         editor.setValue(clickedFile.Content, 1);
         fileText = clickedFile.Content
+
+        addTabz(clickedFile);
     }
+
 });
 /*
  * checks if you click anything but a file or the input field for changing name
@@ -260,6 +264,27 @@ $(document).on('dblclick', ".file a, .folder", function (e) {
         }
     }
 })
+
+
+$('#FileManager, .fileMenu').on('contextmenu', function () {
+
+    return false;
+});
+
+$("#FileManager").on("mouseup","li", function (e) {
+    console.log(e);
+    if (e.button == 2) {
+       
+        $(".fileMenu").css({"display":"block", "top":mouseY,"left":mouseX});
+
+        
+        return false;
+    }
+    return true;
+});
+
+
+
 //----------------END OF CLICK EVENTS---------------------------
 
 
@@ -338,6 +363,10 @@ function clearNaming(Element, fileObject) {
 
 }
 
+$(document).mousemove(function (e) {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+});
 
 /*
 function lookDeeperForFile(id,iterator, array) {
