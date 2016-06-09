@@ -1,7 +1,21 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Home Page";
+       
 }
 <link href="~/Content/FileManagerDesign.css" rel="stylesheet" />
+
+
+
+    <style>
+        #textarea2 {
+            width: 1500px;
+            height: 150px;
+        }
+    </style>
+
+
+
 
 <link href="~/Content/styleIndex.css" rel="stylesheet" />
 
@@ -61,8 +75,8 @@
     <span>
 
         <!--<span id="img-unChecked">...</span>-->
-        <img id="img-check" src="~/img/good_or_tick.png" width="20" height="20" hidden="hidden" />
-    </span>
+            <img id="img-check" src="~/img/good_or_tick.png" width="20" height="20" hidden="hidden" />
+        </span>
 </p>
 
 
@@ -77,20 +91,32 @@
     </form>
 </div>
        
-<button id="add_tab"><img src="~/pics/plus.png" style="width:30px; height:30px;"  /></button>
+<button id="add_tab">Add Tab</button>
 
 <div id="tabs">
     <ul id="sortable">
         <li><a href="#tabs-1">Tab 1</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
-     
     </ul>
 
     </div>
 
 
-<pre id="editor" style="height:400px;margin:0; width:100%;border:none;">
-       
+
+    //view
+    @using (Html.BeginForm())
+    {
+
+        //  <input type="text" id="testData" />
+        <input style="display:none" type="text" id="testData" name="reportName" />
+        <input type="submit" />
+    }
+
+<pre id="editor" style="height:300px">
 </pre>
+  
+
+
+
 
 <div id="term"></div>
 
@@ -100,20 +126,21 @@
     <div id="error"></div>
 </div>
 
-  
+
+    
+    
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 <script src="~/ace/ace.js"></script>
 <script src="~/ace/ext-language_tools.js"></script>
-
+<script src="~/Scripts/FileManagement.js"></script>
 
 <script src="~/myjs/terminal.js"></script>
-<script src="~/myjs/header.js"></script>re
+<script src="~/myjs/header.js"></script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="~/myjs/tabs.js"></script>
-<script src="~/Scripts/FileManagement.js"></script>
 
 <script>
     var editor = ace.edit("editor");
@@ -129,7 +156,13 @@
 </script>
 
 <script src="~/Scripts/autoSave.js"></script>
+    
+
 
 <script src="~/myjs/loadTheTerminal.js"></script>
+
+
+
+
 
 <script src="~/Scripts/VariableChecks.js"></script>
