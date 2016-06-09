@@ -589,6 +589,7 @@
     <Content Include="myjs\loadTheTerminal.js" />
     <Content Include="myjs\tabs.js" />
     <Content Include="myjs\terminal.js" />
+    <Content Include="pics\plus.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\autoSave.js" />
@@ -646,6 +647,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="pictures\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

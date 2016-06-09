@@ -69,6 +69,8 @@ var File9 = {
     Content: "var asdasdasdasdasdcccccccccasd = 22225;",
     Type: "javascript"
 }
+
+
 //end of dummy variables
 
 
@@ -162,6 +164,8 @@ $(document).on('click', ".file a", function (e) {
         setSessionLanguage(editor.getSession(), clickedFile.Type)
         editor.setValue(clickedFile.Content, 1);
         fileText = clickedFile.Content
+       
+        addTabz(clickedFile);
     }
 });
 /*
@@ -295,3 +299,16 @@ function setSessionLanguage(editSession, Language) {
 
 //----------------SESSION-RELATED FUNCTIONS--------------------------------
 
+
+
+//----------------TAB-RELATED FUNCTIONS------------------------------------
+
+
+
+
+
+   
+
+
+
+//----------------TAB-RELATED FUNCTIONS------------------------------------
