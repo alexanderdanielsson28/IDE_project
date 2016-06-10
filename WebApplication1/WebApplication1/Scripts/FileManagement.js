@@ -158,8 +158,7 @@ $(document).ready(function () {
         zIndex: 9999,
     })//.disableSelection();
    
-
-                // put the selected LIs after the just-dropped sorting LI
+    GenerateArray($("#FileManager"))
 
 });
 
@@ -167,7 +166,7 @@ $(document).ready(function () {
 
  
 
-//})
+
 //----------------------------END OF INITIATOR--------------------------
 
 
@@ -187,7 +186,7 @@ function callFileGeneration() {
 
 
 /*
- * This function iterates through the incoming array, in our case an array that looks like a file-hierarchy but instead of files and folders, there is objects and arrays
+ * This function iterates through the incoming array, in our case an array that looks like a file-hierarchy but instead of files and folders, there is objects and objects containing arrays
  * we use a css-standard that uses ol/li tags to simulate a file hierarchy, all this function does is generate html code ín that format.
  * 
  */
@@ -205,11 +204,16 @@ function generateFilesAndFolders(array, iterator) {
         matchArray.push(array[iterator]);
     }
 }
+
+
+
+
+
 //---------------END OF GENERATING OF DISPLAY FILES---------------------
 
 
 
-//----------------CLICK EVENTS---------------------------
+//----------------MOUSE EVENTS---------------------------
 /*
  * this onClick function sets a marker on the selected file and gets it's type, then sets the current language to that of the selected file-object
  * it also inserts any content in the file-object into the editor
@@ -289,8 +293,11 @@ $("#DeleteFileButton").on("click", function (e) {
     removeFileById(rightClickedElement);
 
 })
-
-//----------------END OF CLICK EVENTS---------------------------
+$(document).mousemove(function (e) {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+});
+//----------------END OF MOUSE EVENTS---------------------------
 
 
 
@@ -311,23 +318,6 @@ function GetFileFromID(Element) {
     var clickedFile = IterateForFile(fileArray, id)
     return clickedFile;
 }
-function removeFileById(Element) {
-    console.log(Element)
-    var id = $(Element).attr('id');
-
-    
-    console.log(fileArray)
-    //$.grep(removeFromThis, function (n) { return n.Name == id })
-    removeFromArray(fileArray, id)
-    $(Element).remove()
-    console.log(fileArray)
-    $(".fileMenu").hide();
-}
-
-
-/*
- * searches for a specific file-object and returns it
- */
 function IterateForFile(array, id) {
     for (var i = 0; i < array.length; i++) {
         if (array[i].Name == id) {
@@ -346,10 +336,18 @@ function IterateForFile(array, id) {
         }
     }
 }
+function removeFileById(Element) {
+    console.log(Element)
+    var id = $(Element).attr('id');
 
-/*
- * searches for a specific file-object and returns the array it belongs to
- */
+    
+    console.log(fileArray)
+    //$.grep(removeFromThis, function (n) { return n.Name == id })
+    removeFromArray(fileArray, id)
+    $(Element).remove()
+    console.log(fileArray)
+    $(".fileMenu").hide();
+}
 function removeFromArray(array, id) {
     for (var i = 0; i < array.length; i++) {
         if (array[i].Name == id) {
@@ -363,6 +361,16 @@ function removeFromArray(array, id) {
         }
     }
 }
+
+/*
+ * searches for a specific file-object and returns it
+ */
+
+
+/*
+ * searches for a specific file-object and returns the array it belongs to
+ */
+
 
 
 function InsertNewObject(array, object, position) {
@@ -421,10 +429,7 @@ function clearNaming(Element, fileObject) {
 
 }
 
-$(document).mousemove(function (e) {
-    mouseX = e.pageX;
-    mouseY = e.pageY;
-});
+
 
 /*
 function lookDeeperForFile(id,iterator, array) {
