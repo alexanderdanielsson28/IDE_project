@@ -101,9 +101,9 @@ window.setInterval(function () {
 
 function doSomething() {
     // (do something here)
-    $("#testData").val(editor.getValue());
+   var x= $("#testData").val(editor.getValue());
 
-    console.log($("#testData").val());
+    console.log(x.val());
 }
 
 
@@ -113,7 +113,7 @@ var delay4 = 8000;
 var validCodeFunc = function () {
     
     var currentFile = GetFileFromID($(".selectedFile").parent())
-    currentFile.Content = editor.getValue();
+   currentFile.Content = editor.getValue();
 
 
     $("#msg").text("ALL CHANGES SAVED!");
