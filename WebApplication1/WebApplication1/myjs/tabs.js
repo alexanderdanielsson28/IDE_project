@@ -1,8 +1,9 @@
 ﻿
-  $(function() {
+
       var tabTitle = $( "#tab_title" ),
         tabContent = $( "#tab_content" ),
         tabTemplate = "<li class='ui-state-default'><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close ui-icon-arrowthick-2-n-s' role='presentation'>Remove Tab</span></li>",
+        tabPlusTemplate = "<li id='add_tab'><a href='#{href}'>#{label}</a> </li>",
         tabCounter = 2;
  
       var tabs = $( "#tabs" ).tabs();
@@ -31,23 +32,32 @@
           dialog.dialog( "close" );
           event.preventDefault();
       });
+
+
+
+      //$(document).ready(function addPlusTab() {
+
+         
+          
+      //    var plustabe = tabTitle.val() || "+",
+      //     de = "plus-" + tabCounter,
+      //     se = $(tabPlusTemplate.replace(/#\{href\}/g, "#" + de).replace(/#\{label\}/g, plustabe)),
+      //     tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
+
+      //    tabs.find(".ui-tabs-nav").append(se);
+      //    tabs.append("<div id='" + de + "'><p>" + tabContentHtml + "</p></div>");
+      //    tabs.tabs("refresh");
+      //    tabCounter++;
+      //});
+
+
  
       // actual addTab function: adds new tab using the input from the form above
-      function addTab() {
-        
-        
-          var label = tabTitle.val() || "Tab " + tabCounter,
-            id = "tabs-" + tabCounter,
-            li = $( tabTemplate.replace( /#\{href\}/g, "#" + id ).replace( /#\{label\}/g, label ) ),
-            tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
- 
-          tabs.find( ".ui-tabs-nav" ).append( li );
-          tabs.append( "<div id='" + id + "'><p>" + tabContentHtml + "</p></div>" );
-          tabs.tabs( "refresh" );
-          tabCounter++;
-        
-      }
- 
+      
+
+     
+
+
       // addTab button: just opens the dialog
       $( "#add_tab" )
         .button()
@@ -69,7 +79,7 @@
               tabs.tabs( "refresh" );
           }
       });
-  });
+
 
   
   
@@ -78,3 +88,47 @@ $(function() {
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
 });
+
+
+function addTab() {
+
+
+
+    var label = tabTitle.val() || "Tab " + tabCounter,
+      id = "tabs-" + tabCounter,
+      li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label)),
+      tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
+
+    tabs.find(".ui-tabs-nav").append(li);
+    tabs.append("<div id='" + id + "'><p>" + tabContentHtml + "</p></div>");
+    tabs.tabs("refresh");
+    tabCounter++;
+
+
+
+
+
+}
+
+
+
+function addTabz(s) {
+    
+    
+   
+    
+    var label = tabTitle.val() || s.Name,
+      id = "tabs-" + tabCounter,
+      li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label)),
+      tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
+
+    tabs.find(".ui-tabs-nav").append(li);
+    tabs.append("<div id='" + id + "'><p>" + tabContentHtml + "</p></div>");
+    tabs.tabs("refresh");
+    tabCounter++;
+
+
+
+
+
+}
