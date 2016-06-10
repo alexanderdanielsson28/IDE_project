@@ -191,6 +191,14 @@ function CreateNewObject(name,type){
         Type: type
     }
     
+    var positionObject = GetFileFromID(rightClickedElement)
+
+    console.log(fileArray);
+
+    InsertNewObject(fileArray, newObject, positionObject);
+
+    console.log(fileArray);
+
     console.log(newObject);
 
 

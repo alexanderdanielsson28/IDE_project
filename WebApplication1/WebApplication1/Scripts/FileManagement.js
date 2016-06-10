@@ -365,6 +365,26 @@ function removeFromArray(array, id) {
 }
 
 
+function InsertNewObject(array, object, position) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].Name == position.Name) {
+            array.splice(i, 0, object);
+            return;
+        }
+        else if (Array.isArray(array[i].Content)) {
+            InsertNewObject(array[i].Content, object, position)
+
+            
+        }
+        else if (array[i].Name == position.Name) {
+            array.splice(i, 0, object);
+            return;
+        }
+       
+    }
+}
+
+
 /*
  * searches for a specific file-object and sets a specific property
  */
