@@ -1,4 +1,5 @@
-﻿body {
+﻿/* Here starts the styling of raw tags */
+body {
     width:100%;
     height:100%;
     margin:0px;
@@ -15,9 +16,10 @@ a {
 p {
     margin:0px 0px 0px 0px;
 }
+/* Here ends the styling of raw tags */
+/* Here starts the styling of Classes */
 /* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
+   will truncate terms that are too long to fit in the left column */
 .dl-horizontal dt {
     white-space: normal;
 }
@@ -85,6 +87,63 @@ p {
 .dropdown:hover {
     background-color:aliceblue;
 }
+.clickmetoopen {
+    float:left;
+    width:10px;
+    height:10px;
+    background-image:url("../../pics/../pics/plus.png");
+    background-size:contain;
+    margin-top:7px;
+    margin-left:15px;
+    cursor:pointer;
+}
+.clickmetoopenThemes {
+    float:left;
+    width:10px;
+    height:10px;
+    background-image:url("../../pics/../pics/plus.png");
+    background-size:contain;
+    margin-top:7px;
+    margin-left:15px;
+    cursor:pointer;
+}
+.clickmetoopenLang {
+    float:left;
+    width:10px;
+    height:10px;
+    background-image:url("../../pics/../pics/plus.png");
+    background-size:contain;
+    margin-top:7px;
+    margin-left:15px;
+    cursor:pointer;
+}
+.clickmetoopenBK {
+    float:left;
+    width:10px;
+    height:10px;    
+    background-image:url("../../pics/../pics/plus.png");
+    background-size:contain;
+    margin-top:7px;
+    margin-left:15px;
+    cursor:pointer;
+}
+.textOpener {
+    margin-left:5px;
+    float:left;
+    font-size:20px;
+    font-weight:bold;
+}
+.myboxopenarea {
+    margin-left:auto;
+    margin-right:auto;
+}
+.anitfloat {
+    margin-left:auto;
+    margin-right:auto;
+    height:10px;
+}
+/* Here ends the styling of Classes */
+/* Here starts the section of IDs which are to be styled with css */
 #de {
     text-align:center;
 }
@@ -172,20 +231,22 @@ p {
     background-image:url("../pics/../pics/cartoongearwheel.png");
     background-size:cover;
     background-repeat:no-repeat;
-    width:20px;
-    height:20px;
+    width:30px;
+    height:30px;
     float:right;
     cursor:pointer;
+    margin-right:25px;
 }
 #boxieR {
     background-image:url("../pics/../pics/picof.png");
     background-size:cover;
     background-repeat:no-repeat;
-    width:20px;
-    height:20px;
+    width:30px;
+    height:30px;
     float:right;
     display:none;
     cursor:pointer;
+    margin-right:25px;
 }
 #showcontent {
     width:300px;
@@ -254,77 +315,70 @@ p {
 #tomorrow {
     width:100px;
 }
-
-/*Tabs CSS BEGINING*/
-
-#dialog label, #dialog input {
-        display: block;
-    }
-
-    #dialog label {
-        margin-top: 0.5em;
-    }
-
-    #dialog input, #dialog textarea {
-        width: 95%;
-    }
-
-    #tabs {
-        margin-top: 0.5em;
-    }
-
-        #tabs li .ui-icon-close {
-            float: left;
-            margin: 0.1em 0.2em 0 0;
-            cursor: pointer;
-        }
-
-    #add_tab {
-        cursor: pointer;
-    }
-
-    #sortable {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-    }
-
-        #sortable li {
-            margin: 0 3px 3px 3px;
-            padding: 0.4em;
-            padding-left: 0em;
-            font-size: 1.4em;
-            height: 18px;
-        }
-
-            #sortable li span {
-                position: absolute;
-                margin-left: -1.3em;
-            }
-
-
-    .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
-        float: left;
-        padding: 0.0em 1em;
-        text-decoration: none;
-        margin: -0.1em 0em;
-    }
-
-    .ui-tabs{
-            padding:  0 0.1em;
-    }
-
-    .ui-widget-content {
-        border:none;
-    }
-
-    /*Tabs CSS END*/
-
-
-
-    .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
-    float: left;
-    padding: 0em 1em; 
-    text-decoration: none;
+#full1 {
+    display:none;
 }
+#rev1 {
+    display:none;
+}
+#mn1 {
+    display:none;
+}
+#isp1 {
+    display:none;
+}
+#cb1 {
+    display:none;
+}
+#tm1 {
+    display:none;
+}
+#res1 {
+    display:none;
+}
+#res2 {
+    display:none;
+}
+#res3 {
+    display:none;
+}
+#testfloat {
+    margin-top:15px;
+}
+#testfloatThemes {
+    margin-top:15px;
+}
+#imtestfloating {
+    margin-top:15px;
+}
+#testfloatBK {
+    margin-top:15px;
+}
+#html1 {
+    display:none;
+}
+#css1 {
+    display:none;
+}
+#js1 {
+    display:none;
+}
+#cs1 {
+    display:none;
+}
+#phps {
+    display:none;
+}
+#sqls {
+    display:none;
+}
+#b1 {
+    display:none;
+}
+#w1 {
+    display:none;
+}
+#gb1 {
+    display:none;
+}
+/* Here ends the styling of IDs */

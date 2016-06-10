@@ -305,3 +305,97 @@ document.getElementById("res3").onclick = function res3() {
     document.getElementById('editor').style.height = "800px";
     document.getElementById('editor').style.border = "1px solid gray";
 }
+//Handles the settings + and - functions that hide/shows the different sections of settings to choose from
+//Settings that handle resolution of the editor
+var startstop = 1;
+document.getElementById("firstopen").onclick = function OpenFullRev() {
+    if (startstop % 2 === 0) //Hides the option if startstop is divideable by 2 till it reaches 0
+    {
+        document.getElementById('full1').style.display = "none";
+        document.getElementById('rev1').style.display = "none";
+        document.getElementById('res1').style.display = "none";
+        document.getElementById('res2').style.display = "none";
+        document.getElementById('res3').style.display = "none";
+        document.getElementById('testfloat').style.height = "10px";
+        document.getElementById('firstopen').style.backgroundImage = "url(../../pics/../pics/plus.png)";
+        startstop++;
+    }   
+    else { //shows all the options if startstop does not divide itself by 2 till it reaches 0 value
+        document.getElementById('full1').style.display = "block";
+        document.getElementById('rev1').style.display = "block";
+        document.getElementById('res1').style.display = "block";
+        document.getElementById('res2').style.display = "block";
+        document.getElementById('res3').style.display = "block";
+        document.getElementById('testfloat').style.height = "150px";
+        document.getElementById('firstopen').style.backgroundImage = "url(../../pics/../pics/minus.png)";
+        startstop++;
+    }
+}
+//settings for theme section, changes theme on the editor
+var startstopThemes = 1;
+document.getElementById("secondopen").onclick = function OpenThemes() {
+    if (startstopThemes % 2 === 0) { //Hides the option if startstopThemes is divideable by 2 till it reaches 0
+        document.getElementById('mn1').style.display = "none";
+        document.getElementById('isp1').style.display = "none";
+        document.getElementById('cb1').style.display = "none";
+        document.getElementById('tm1').style.display = "none";
+        document.getElementById('testfloatThemes').style.height = "10px";
+        document.getElementById('secondopen').style.backgroundImage = "url(../../pics/../pics/plus.png)";
+        startstopThemes++;
+    }
+    else { //shows all the options if startstopThemes does not divide itself by 2 till it reaches 0 value
+        document.getElementById('mn1').style.display = "block";
+        document.getElementById('isp1').style.display = "block";
+        document.getElementById('cb1').style.display = "block";
+        document.getElementById('tm1').style.display = "block";
+        document.getElementById('testfloatThemes').style.height = "120px";
+        document.getElementById('secondopen').style.backgroundImage = "url(../../pics/../pics/minus.png)";
+        startstopThemes++;
+    }
+}
+//Settings that handle different languages in the editor
+var startstopLanguages = 1;
+document.getElementById("thirdopen").onclick = function OpenThemes() {
+    if (startstopLanguages % 2 === 0) { //Hides the option if startstopLanguages is divideable by 2 till it reaches 0
+        document.getElementById('html1').style.display = "none";
+        document.getElementById('css1').style.display = "none";
+        document.getElementById('js1').style.display = "none";
+        document.getElementById('cs1').style.display = "none";
+        document.getElementById('phps').style.display = "none";
+        document.getElementById('sqls').style.display = "none";
+        document.getElementById('imtestfloating').style.height = "10px";
+        document.getElementById('thirdopen').style.backgroundImage = "url(../../pics/../pics/plus.png)";
+        startstopLanguages++;
+    }
+    else { //shows all the options if startstopLanguages does not divide itself by 2 till it reaches 0 value
+        document.getElementById('html1').style.display = "block";
+        document.getElementById('css1').style.display = "block";
+        document.getElementById('js1').style.display = "block";
+        document.getElementById('cs1').style.display = "block";
+        document.getElementById('phps').style.display = "block";
+        document.getElementById('sqls').style.display = "block";
+        document.getElementById('imtestfloating').style.height = "180px";
+        document.getElementById('thirdopen').style.backgroundImage = "url(../../pics/../pics/minus.png)";
+        startstopLanguages++;
+    }
+}
+//Settings that handle the background color section, changed the background color of body tag
+var startstopBK = 1;
+document.getElementById("fourthopen").onclick = function openBK() {
+    if (startstopBK % 2 === 0) { //Hides the option if startstopBK is divideable by 2 till it reaches 0
+        document.getElementById('b1').style.display = "none";
+        document.getElementById('w1').style.display = "none";
+        document.getElementById('gb1').style.display = "none";
+        document.getElementById('testfloatBK').style.height = "10px";
+        document.getElementById('fourthopen').style.backgroundImage = "url(../../pics/../pics/plus.png)";
+        startstopBK++;
+    }
+    else { //shows all the options if startstopBK does not divide itself by 2 till it reaches 0 value
+        document.getElementById('b1').style.display = "block";
+        document.getElementById('w1').style.display = "block";
+        document.getElementById('gb1').style.display = "block";
+        document.getElementById('testfloatBK').style.height = "90px";
+        document.getElementById('fourthopen').style.backgroundImage = "url(../../pics/../pics/minus.png)";
+        startstopBK++;
+    }
+}
