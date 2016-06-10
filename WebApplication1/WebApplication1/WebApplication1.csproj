@@ -556,6 +556,7 @@
     <Content Include="Content\Icons\JSIcon16X16.png" />
     <Content Include="Content\Icons\toggle-small-expand.png" />
     <Content Include="Content\Icons\toggle-small.png" />
+    <Content Include="Content\Task67Styling.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
