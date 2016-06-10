@@ -93,38 +93,46 @@
        
 <button id="add_tab"><img src="~/pics/plus.png" style="width:35px; height:35px;"/></button>
 
-<div id="tabs">
-    <ul id="sortable">
-        <li><a href="#tabs-1">Tab 1</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
-    </ul>
-
-    </div>
 
 
 
-    //view
+
+
     @using (Html.BeginForm())
     {
 
-        //  <input type="text" id="testData" />
+    // <input type="text" id="testData" />
         <input style="display:none" type="text" id="testData" name="reportName" />
-        <input type="submit" />
+    <input type="submit" value="testData" id="preButton" />
     }
+<div id="editor-box">
 
-<pre id="editor" style="height:300px">
+
+    <div id="ram">
+        <ol id="FileManager"></ol>
+    </div>
+
+    <div id="tabs">
+        <ul id="sortable">
+            <li><a href="#tabs-1">Tab 1</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
+        </ul>
+
+    </div>
+    <pre id="editor">
 </pre>
   
 
 
 
 
+
+ 
+</div>
 <div id="term"></div>
 
-<ol id="FileManager"></ol>
-
-<div style="width:100%;max-height:100px;min-height:100px;height:100px; max-width:100%; background-color:black;">
+@*<div style="width:100%;max-height:100px;min-height:100px;height:100px; max-width:100%; background-color:black;">
     <div id="error"></div>
-</div>
+    </div>*@
 
 
     

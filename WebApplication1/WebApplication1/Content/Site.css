@@ -1,5 +1,4 @@
-﻿/* Here starts the styling of raw tags */
-body {
+﻿body {
     width:100%;
     height:100%;
     margin:0px;
@@ -16,10 +15,9 @@ a {
 p {
     margin:0px 0px 0px 0px;
 }
-/* Here ends the styling of raw tags */
-/* Here starts the styling of Classes */
 /* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column */
+   will truncate terms that are too long to fit in the left column 
+*/
 .dl-horizontal dt {
     white-space: normal;
 }
@@ -87,67 +85,10 @@ p {
 .dropdown:hover {
     background-color:aliceblue;
 }
-.clickmetoopen {
-    float:left;
-    width:10px;
-    height:10px;
-    background-image:url("../../pics/../pics/plus.png");
-    background-size:contain;
-    margin-top:7px;
-    margin-left:15px;
-    cursor:pointer;
-}
-.clickmetoopenThemes {
-    float:left;
-    width:10px;
-    height:10px;
-    background-image:url("../../pics/../pics/plus.png");
-    background-size:contain;
-    margin-top:7px;
-    margin-left:15px;
-    cursor:pointer;
-}
-.clickmetoopenLang {
-    float:left;
-    width:10px;
-    height:10px;
-    background-image:url("../../pics/../pics/plus.png");
-    background-size:contain;
-    margin-top:7px;
-    margin-left:15px;
-    cursor:pointer;
-}
-.clickmetoopenBK {
-    float:left;
-    width:10px;
-    height:10px;    
-    background-image:url("../../pics/../pics/plus.png");
-    background-size:contain;
-    margin-top:7px;
-    margin-left:15px;
-    cursor:pointer;
-}
-.textOpener {
-    margin-left:5px;
-    float:left;
-    font-size:20px;
-    font-weight:bold;
-}
-.myboxopenarea {
-    margin-left:auto;
-    margin-right:auto;
-}
-.anitfloat {
-    margin-left:auto;
-    margin-right:auto;
-    height:10px;
-}
-/* Here ends the styling of Classes */
-/* Here starts the section of IDs which are to be styled with css */
 #de {
     text-align:center;
 }
-#editor {
+/*#editor {
     margin: 0;
     width:900px;
     height:600px;
@@ -160,7 +101,7 @@ p {
     margin-right:auto;
     border:1px solid gray;
     box-shadow:1px 1px 1px;
-}
+}*/
 #DocumentHeader {
     text-align:center;
 }
@@ -231,22 +172,20 @@ p {
     background-image:url("../pics/../pics/cartoongearwheel.png");
     background-size:cover;
     background-repeat:no-repeat;
-    width:30px;
-    height:30px;
+    width:20px;
+    height:20px;
     float:right;
     cursor:pointer;
-    margin-right:25px;
 }
 #boxieR {
     background-image:url("../pics/../pics/picof.png");
     background-size:cover;
     background-repeat:no-repeat;
-    width:30px;
-    height:30px;
+    width:20px;
+    height:20px;
     float:right;
     display:none;
     cursor:pointer;
-    margin-right:25px;
 }
 #showcontent {
     width:300px;
@@ -315,70 +254,155 @@ p {
 #tomorrow {
     width:100px;
 }
-#full1 {
-    display:none;
+
+/*Tabs CSS BEGINING*/
+
+#dialog label, #dialog input {
+        display: block;
+    }
+
+    #dialog label {
+       
+        margin-top: 0.5em;
+    }
+
+    #dialog input, #dialog textarea {
+        width: 95%;
+    }
+
+    #tabs {
+        width:79.50%;
+      
+        /*position: absolute;*/
+        display: inline-block;
+        padding-left:0;
+-webkit-box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
+    }
+
+        #tabs li .ui-icon-close {
+            float: left;
+            margin: 0.1em 0.2em 0 0;
+            cursor: pointer;
+        }
+
+    #add_tab {
+        cursor: pointer;
+    }
+
+    #sortable {
+        
+        list-style-type: none;
+    
+        /*box-shadow: inset 0 0 1em black, 0 0 1em black;*/
+        border-right-color:silver;
+        border-top-color:silver;
+        border-bottom-color:silver;
+  
+        width:100%;
+  
+      
+
+    }
+
+        #sortable li {
+            margin: 0 3px 3px 3px;
+            padding: 0.4em;
+            padding-left: 0em;
+            font-size: 1.0em;
+            height: 15px;
+           
+        }
+
+            #sortable li span {
+                position: absolute;
+                margin-left: -1.3em;
+            }
+
+
+    .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+        float: left;
+        padding: 0.0em 1em;
+        text-decoration: none;
+        margin: -0.1em 0em;
+       
+    }
+
+    .ui-tabs{
+            padding:  0 0.1em;
+            
+    }
+
+   
+
+    /*Tabs CSS END*/
+
+
+
+    .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+  
+    padding: 0em 1em; 
+    text-decoration: none;
+    
 }
-#rev1 {
-    display:none;
+    .ui-tabs {
+        width:60%;    
+     
+    
+    /* padding: .2em; */
 }
-#mn1 {
-    display:none;
+    .ui-widget-header {
+    border: 1px solid #aaaaaa;
+    border-color:darkgray;
+    background: #9B9B9B 50% 50% repeat-x;
+    color: #222222;
+    font-weight: bold;
 }
-#isp1 {
-    display:none;
+  #preview_button {
+	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
+	background:-moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
+	background-color:#768d87;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:11px 23px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+    
 }
-#cb1 {
-    display:none;
+#preview_button  {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
+	background:-moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-webkit-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-ms-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
+	background-color:#6c7c7c;
 }
-#tm1 {
-    display:none;
+#preview_button {
+	position:relative;
+	top:1px;
 }
-#res1 {
-    display:none;
+
+.ui-corner-all {
+    border-radius: 0px;
 }
-#res2 {
-    display:none;
-}
-#res3 {
-    display:none;
-}
-#testfloat {
-    margin-top:15px;
-}
-#testfloatThemes {
-    margin-top:15px;
-}
-#imtestfloating {
-    margin-top:15px;
-}
-#testfloatBK {
-    margin-top:15px;
-}
-#html1 {
-    display:none;
-}
-#css1 {
-    display:none;
-}
-#js1 {
-    display:none;
-}
-#cs1 {
-    display:none;
-}
-#phps {
-    display:none;
-}
-#sqls {
-    display:none;
-}
-#b1 {
-    display:none;
-}
-#w1 {
-    display:none;
-}
-#gb1 {
-    display:none;
-}
-/* Here ends the styling of IDs */
+/*Button preview*/
+
