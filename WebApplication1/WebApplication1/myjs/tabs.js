@@ -16,7 +16,11 @@
           buttons: {
               Add: function() {
                   addTab();
-                  $( this ).dialog( "close" );
+                  
+                  $(this).dialog("close");
+                  alertTab();
+                  
+                  
               },
               Cancel: function() {
                   $( this ).dialog( "close" );
@@ -32,6 +36,7 @@
           addTab();
           dialog.dialog( "close" );
           event.preventDefault();
+          
       });
 
 
@@ -63,7 +68,8 @@
       $( "#add_tab" )
         .button()
         .click(function() {
-            dialog.dialog( "open" );
+            dialog.dialog("open");
+            
         });
  
       // close icon: removing the tab on click
@@ -94,6 +100,7 @@ $(function() {
 
 function addTab() {
 
+    
    
     var label = tabTitle.val() || "Tab " + tabCounter,
       id = "tabs-" + tabCounter,
@@ -125,7 +132,7 @@ function addTabz(fileObject) {
     console.log(result);
     if (result.length < 1) {
 
-    
+        
     openTabs.push(fileObject);
 
     var label = tabTitle.val() || fileObject.Name,
@@ -161,6 +168,9 @@ $(document).on('click', ".tabSelect", function (e) {
     editor.setValue(object.Content);
     setSessionLanguage(editor.getSession(),object.Type);
 });
+
+
+
 
 
 
