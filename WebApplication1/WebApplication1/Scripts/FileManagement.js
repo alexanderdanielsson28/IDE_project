@@ -17,6 +17,7 @@ var matchArray = [];
 var fileArray = [];
 var dblClickedFile;
 var dblClickedElement;
+var rightClickedElement;
 var mouseX;
 var mouseY;
 
@@ -191,7 +192,7 @@ function callFileGeneration() {
  */
 function generateFilesAndFolders(array, iterator) {
     if (Array.isArray(array[iterator].Content)) {
-        html += "<li class='folder'><label  for=" + array[iterator].Name + ">" + array[iterator].Name + "</label> <input id='" + array[iterator].Name + "'type='checkbox'></input><ol class='sortable'>";
+        html += "<li id='" + array[iterator].Name + "' class='folder'><label  for=" + array[iterator].Name + "input" + ">" + array[iterator].Name + "</label> <input id='" + array[iterator].Name + "input" + "'type='checkbox'></input><ol class='sortable'>";
         for (var j = 0; j < array[iterator].Content.length; j++) {
 
             generateFilesAndFolders(array[iterator].Content, j);
@@ -272,9 +273,9 @@ $('#FileManager, .fileMenu').on('contextmenu', function () {
 });
 
 $("#FileManager").on("mouseup","li", function (e) {
-    console.log(e);
     if (e.button == 2) {
-       
+        console.log($(this))
+        rightClickedElement = $(this)
         $(".fileMenu").css({"display":"block", "top":mouseY,"left":mouseX});
 
         
@@ -283,7 +284,10 @@ $("#FileManager").on("mouseup","li", function (e) {
     return true;
 });
 
+$("#DeleteFileButton").on("click", function (e) {
+    removeFileById(rightClickedElement);
 
+})
 
 //----------------END OF CLICK EVENTS---------------------------
 
@@ -306,6 +310,20 @@ function GetFileFromID(Element) {
     var clickedFile = IterateForFile(fileArray, id)
     return clickedFile;
 }
+function removeFileById(Element) {
+    console.log(Element)
+    var id = $(Element).attr('id');
+
+    
+    console.log(fileArray)
+    //$.grep(removeFromThis, function (n) { return n.Name == id })
+    removeFromArray(fileArray, id)
+    $(Element).remove()
+    console.log(fileArray)
+    $(".fileMenu").hide();
+}
+
+
 /*
  * searches for a specific file-object and returns it
  */
@@ -327,6 +345,25 @@ function IterateForFile(array, id) {
         }
     }
 }
+
+/*
+ * searches for a specific file-object and returns the array it belongs to
+ */
+function removeFromArray(array, id) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i].Name == id) {
+            array.splice(i, 1);
+        }
+        else if (Array.isArray(array[i].Content)) {
+            removeFromArray(array[i].Content, id)
+        }
+        else if (array[i].Name == id) {
+            array.splice(i, 1);
+        }
+    }
+}
+
+
 /*
  * searches for a specific file-object and sets a specific property
  */
