@@ -111,6 +111,7 @@ fileArray.push(File1);
 fileArray.push(File2);
 fileArray.push(testsubFolder);
 fileArray.push(File3);
+fileArray.push();
 
 //----------------------------"END OF SETTING UP DUMMY ARRAYS"-----------------------------
 

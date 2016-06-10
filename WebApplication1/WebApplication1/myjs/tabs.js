@@ -1,6 +1,7 @@
 ﻿
-
-      var tabTitle = $( "#tab_title" ),
+      var dropdownValue = $("#createTabsDropdown :selected").val();
+      var tabTitle = $("#tab_title"),
+          
         tabContent = $( "#tab_content" ),
         tabTemplate = "<li class='tabSelect ui-state-default'><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close ui-icon-arrowthick-2-n-s' role='presentation'>Remove Tab</span></li>",
         tabPlusTemplate = "<li id='add_tab'><a href='#{href}'>#{label}</a> </li>",
@@ -17,8 +18,18 @@
               Add: function() {
                   addTab();
                   
+                  dropdownValue = $("#createTabDropdown :selected").text();
+                  tabTitle = $("#tab_title").val();
+
+                  
+
                   $(this).dialog("close");
-                  alertTab();
+
+                  
+
+                  
+
+                  CreateNewObject(tabTitle,dropdownValue);
                   
                   
               },
@@ -169,7 +180,21 @@ $(document).on('click', ".tabSelect", function (e) {
     setSessionLanguage(editor.getSession(),object.Type);
 });
 
+//Function that creates a new object to the file hierachy
+function CreateNewObject(name,type){
 
+    $("#createTabsDropdown :selected").val();
+
+    var newObject = {
+        Name: name,
+        Content: "",
+        Type: type
+    }
+    
+    console.log(newObject);
+
+
+}
 
 
 
