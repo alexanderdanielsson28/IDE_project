@@ -2,11 +2,12 @@
 
       var tabTitle = $( "#tab_title" ),
         tabContent = $( "#tab_content" ),
-        tabTemplate = "<li class='ui-state-default'><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close ui-icon-arrowthick-2-n-s' role='presentation'>Remove Tab</span></li>",
+        tabTemplate = "<li class='tabSelect ui-state-default'><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close ui-icon-arrowthick-2-n-s' role='presentation'>Remove Tab</span></li>",
         tabPlusTemplate = "<li id='add_tab'><a href='#{href}'>#{label}</a> </li>",
-        tabCounter = 2;
+        tabCounter = 1;
  
       var tabs = $( "#tabs" ).tabs();
+      var openTabs = [];
  
       // modal dialog init: custom buttons and a "close" callback resetting the form inside
       var dialog = $( "#dialog" ).dialog({
@@ -69,7 +70,8 @@
       tabs.delegate( "span.ui-icon-close", "click", function() {
           var panelId = $( this ).closest( "li" ).remove().attr( "aria-controls" );
           $( "#" + panelId ).remove();
-          tabs.tabs( "refresh" );
+          tabs.tabs("refresh");
+          removeArrayObject($(this).closest("li"))
       });
  
       tabs.bind( "keyup", function( event ) {
@@ -93,42 +95,74 @@ $(function() {
 function addTab() {
 
 
-
     var label = tabTitle.val() || "Tab " + tabCounter,
       id = "tabs-" + tabCounter,
-      li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label)),
-      tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
+      li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label))
+      //tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
 
     tabs.find(".ui-tabs-nav").append(li);
-    tabs.append("<div id='" + id + "'><p>" + tabContentHtml + "</p></div>");
-    tabs.tabs("refresh");
-    tabCounter++;
-
-
-
-
-
-}
-
-
-
-function addTabz(s) {
-    
-    
    
-    
-    var label = tabTitle.val() || s.Name,
-      id = "tabs-" + tabCounter,
-      li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label)),
-      tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
-
-    tabs.find(".ui-tabs-nav").append(li);
-    tabs.append("<div id='" + id + "'><p>" + tabContentHtml + "</p></div>");
     tabs.tabs("refresh");
     tabCounter++;
 
 
+}
+
+function removeArrayObject(element) {
+    var openTabName = $(element).children()[0].text;
+    for (var i = 0; i < openTabs.length; i++) {
+        if (openTabs[i].Name == openTabName) {
+            openTabs.splice(i, 1);
+
+        }
+
+}
+    console.log(openTabs)
+}
+
+function addTabz(fileObject) {
+    var result = $.grep(openTabs, function (e) { return e.Name == fileObject.Name; });
+    console.log(result);
+    if (result.length < 1) {
+
+    
+    openTabs.push(fileObject);
+
+    var label = tabTitle.val() || fileObject.Name,
+      id = label,
+      li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label))
+      //tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
+
+    tabs.find(".ui-tabs-nav").append(li);
+    
+    tabs.tabs("refresh");
+    tabCounter++;
+    }
+    
+    else {
+   
+    }
+    
 
 
 
 }
+
+
+$(document).on('click', ".tabSelect", function (e) {
+    var object;
+    var openTabName = $(this).children()[0].text;
+    for (var i = 0; i < openTabs.length; i++) {
+        if(openTabs[i].Name == openTabName){
+            object = openTabs[i];
+
+}
+    }
+    editor.setValue(object.Content);
+    setSessionLanguage(editor.getSession(),object.Type);
+});
+
+
+
+
+

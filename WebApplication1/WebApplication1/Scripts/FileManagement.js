@@ -17,13 +17,35 @@ var matchArray = [];
 var fileArray = [];
 var dblClickedFile;
 var dblClickedElement;
-
+var mouseX;
+var mouseY;
 
 //dummy variables
-var testSubFolder = [];
-var testsub2folder = [];
-var testsub3folder = [];
-var testsub4folder = [];
+var testsubFolder = {
+    Name: "html",
+    Type: "folder",
+    Content: []
+}
+var testsub2Folder = {
+    Name: "style",
+    Type: "folder",
+    Content: []
+}
+var testsub3Folder = {
+    Name: "scripts",
+    Type: "folder",
+    Content: []
+}
+var testsub3Folder = {
+    Name: "tests",
+    Type: "folder",
+    Content: []
+}
+var testsub4Folder = {
+    Name: "images",
+    Type: "folder",
+    Content: []
+}
 var File1 = {
     Name: "markup.html",
     Content: "<div id=''></div>",
@@ -69,8 +91,6 @@ var File9 = {
     Content: "var asdasdasdasdasdcccccccccasd = 22225;",
     Type: "javascript"
 }
-
-
 //end of dummy variables
 
 
@@ -79,17 +99,17 @@ var File9 = {
 
 
 //----------------------------"SETTING UP DUMMY ARRAYS"-----------------------------
-testSubFolder.push(File4);
-testSubFolder.push(testsub2folder);
-testsub2folder.push(File5);
-testsub2folder.push(testsub3folder);
-testsub3folder.push(File7);
-testsub3folder.push(testsub4folder);
-testsub4folder.push(File8);
-testsub2folder.push(File6);
+testsubFolder.Content.push(File4);
+testsubFolder.Content.push(testsub2Folder);
+testsub2Folder.Content.push(File5);
+testsub2Folder.Content.push(testsub3Folder);
+testsub3Folder.Content.push(File7);
+testsub3Folder.Content.push(testsub4Folder);
+testsub4Folder.Content.push(File8);
+testsub2Folder.Content.push(File6);
 fileArray.push(File1);
 fileArray.push(File2);
-fileArray.push(testSubFolder);
+fileArray.push(testsubFolder);
 fileArray.push(File3);
 
 //----------------------------"END OF SETTING UP DUMMY ARRAYS"-----------------------------
@@ -98,12 +118,54 @@ fileArray.push(File3);
 //----------------------------INITIATOR--------------------------
 
 $(document).ready(function () {
+    //$("#FileManager").sortable();
 
-
+    //$("#Filemanager").selectable();
+    console.log(fileArray)
     callFileGeneration();
+    $("#FileManager").sortable({
+        connectWith: '.sortable',
+        cursor: 'move',
+        placeholder: 'sortable-placeholder',
+        cursorAt: {
+            left: 15, top: 17
+        },
+        tolerance: 'pointer',
+        scroll: false,
+        zIndex: 9999,
+    });
+
+    /*$("#Filemanager").sortable({
+        connectWith: ".file",
+
+    });*/
+    //$("#Filemanager").disableSelection();
+    /*$(".file").sortable({
+        connectWith: ".sortable",
+        handle: ".handle"
+    });*/
+    $(".sortable").sortable({
+        connectWith: '.sortable',
+        cursor: 'move',
+        placeholder: 'sortable-placeholder',
+        cursorAt: {
+            left: 15, top: 17
+        },
+        tolerance: 'pointer',
+        scroll: false,
+        zIndex: 9999,
+    })//.disableSelection();
+   
+
+                // put the selected LIs after the just-dropped sorting LI
+
+});
 
 
-})
+
+ 
+
+//})
 //----------------------------END OF INITIATOR--------------------------
 
 
@@ -115,9 +177,10 @@ function callFileGeneration() {
 
     var folderCount = 1;
     for (var i = 0; i < fileArray.length; i++) {
-        generateFilesAndFolders(fileArray, i, folderCount);
+        generateFilesAndFolders(fileArray, i);
     }
     $("#FileManager").append(html);
+
 }
 
 
@@ -126,18 +189,17 @@ function callFileGeneration() {
  * we use a css-standard that uses ol/li tags to simulate a file hierarchy, all this function does is generate html code ín that format.
  * 
  */
-function generateFilesAndFolders(array, iterator, folderCount) {
-    if (Array.isArray(array[iterator])) {
-        html += "<li><label  for=" + "folder" + folderCount + ">" + "folder " + folderCount + "</label> <input type='checkbox' id=" + "folder" + folderCount + "></input><ol>";
-        folderCount++
-        for (var j = 0; j < array[iterator].length; j++) {
+function generateFilesAndFolders(array, iterator) {
+    if (Array.isArray(array[iterator].Content)) {
+        html += "<li class='folder'><label  for=" + array[iterator].Name + ">" + array[iterator].Name + "</label> <input id='" + array[iterator].Name + "'type='checkbox'></input><ol class='sortable'>";
+        for (var j = 0; j < array[iterator].Content.length; j++) {
 
-            generateFilesAndFolders(array[iterator], j, folderCount);
+            generateFilesAndFolders(array[iterator].Content, j);
         }
         html += "</ol></li>"
     }
     else {
-        html += ("<li class='file' id=" + array[iterator].Name + "><a href='" + array[iterator].Type + "'>" + array[iterator].Name + "</a></li>");
+        html += ("<li class='file' id=" + array[iterator].Name + "><a   href='" + array[iterator].Type + "'>" + array[iterator].Name + "</a></li>");
         matchArray.push(array[iterator]);
     }
 }
@@ -167,29 +229,62 @@ $(document).on('click', ".file a", function (e) {
        
         addTabz(clickedFile);
     }
+
 });
 /*
  * checks if you click anything but a file or the input field for changing name
  * then calls the clearnaming function
  */
 $('html').click(function (e) {
-    if (!$(e.target).hasClass('file') && !$(e.target).hasClass('NameChangeInput')) {
+    if (!$(e.target).hasClass('file') && !$(e.target).hasClass('NameChangeInput') && !$(e.target).hasClass('folder')) {
         clearNaming(dblClickedElement, dblClickedFile);
     }
+
 });
 
 /*
  * appends an input field for changing filename 
  */
-$(document).on('dblclick', ".file a", function (e) {
+$(document).on('dblclick', ".file a, .folder", function (e) {
     e.preventDefault();
-    $(this).text("")
+
     if (!$(".NameChangeInput").length >= 1) {
         dblClickedElement = $(this);
+        console.log($(this))
+        console.log($(this).children("input"))
+        if ($(this).hasClass('folder')) {
+
+            dblClickedFile = GetFileFromID($(this).children("input"))
+            $(this).append("<input type='text' class='NameChangeInput' value=" + dblClickedFile.Name + ">")
+        }
+        else {
+            $(this).text("")
         dblClickedFile = GetFileFromID($(this).parent())
         $(this).parent().append("<input type='text' class='NameChangeInput' value=" + dblClickedFile.Name + ">")
     }
+    }
 })
+
+
+$('#FileManager, .fileMenu').on('contextmenu', function () {
+
+    return false;
+});
+
+$("#FileManager").on("mouseup","li", function (e) {
+    console.log(e);
+    if (e.button == 2) {
+       
+        $(".fileMenu").css({"display":"block", "top":mouseY,"left":mouseX});
+
+        
+        return false;
+    }
+    return true;
+});
+
+
+
 //----------------END OF CLICK EVENTS---------------------------
 
 
@@ -216,8 +311,11 @@ function GetFileFromID(Element) {
  */
 function IterateForFile(array, id) {
     for (var i = 0; i < array.length; i++) {
-        if (Array.isArray(array[i])) {
-            var file = IterateForFile(array[i], id)
+        if (array[i].Name == id) {
+            return array[i];
+        }
+        if (Array.isArray(array[i].Content)) {
+            var file = IterateForFile(array[i].Content, id)
             if (typeof file != 'undefined') {
                 if (file.Name == id) {
                     return file;
@@ -234,8 +332,8 @@ function IterateForFile(array, id) {
  */
 function SetFileprop(array, property, olddata, newdata) {
         for (var i = 0; i < array.length; i++) {
-            if (Array.isArray(array[i])) {
-            SetFileprop(array[i], property, olddata, newdata)
+        if (Array.isArray(array[i].Content)) {
+            SetFileprop(array[i].Content, property, olddata, newdata)
             }
             else if (array[i][property] == olddata) {
                 array[i][property] = newdata;
@@ -246,7 +344,15 @@ function SetFileprop(array, property, olddata, newdata) {
  * removes the input field for changing name and sets the name of the visual file and the property of the matching file-object
  */
 function clearNaming(Element, fileObject) {
-    if ( $(".NameChangeInput").length >= 1) { 
+    console.log(Element)
+    if ($(".NameChangeInput").length >= 1) {
+        if (fileObject.Type == "folder") {
+            Element.children("label").text($(".NameChangeInput").val())
+            Element.children("input").attr("id", $(".NameChangeInput").val())
+            Element.children("label").attr("for", $(".NameChangeInput").val())
+            $(".NameChangeInput").remove();
+        }
+        else {
     Element.parent().attr("id", $(".NameChangeInput").val())
     Element.text($(".NameChangeInput").val())
     SetFileprop(fileArray, "Name", fileObject.Name, $(".NameChangeInput").val());
@@ -255,6 +361,12 @@ function clearNaming(Element, fileObject) {
 
 }
 
+}
+
+$(document).mousemove(function (e) {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+});
    
 /*
 function lookDeeperForFile(id,iterator, array) {
@@ -299,16 +411,3 @@ function setSessionLanguage(editSession, Language) {
 
 //----------------SESSION-RELATED FUNCTIONS--------------------------------
 
-
-
-//----------------TAB-RELATED FUNCTIONS------------------------------------
-
-
-
-
-
-   
-
-
-
-//----------------TAB-RELATED FUNCTIONS------------------------------------
