@@ -1,1 +1,384 @@
-﻿
+﻿/* Here starts the styling of raw tags */
+body {
+    width:100%;
+    height:100%;
+    margin:0px;
+}
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+a {
+    text-decoration:none;
+}
+p {
+    margin:0px 0px 0px 0px;
+}
+/* Here ends the styling of raw tags */
+/* Here starts the styling of Classes */
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column */
+.dl-horizontal dt {
+    white-space: normal;
+}
+.p-aligncenter {
+    text-align:center;
+    font-weight:bold;
+    margin:0px;
+    width:92px;
+    height:20px;
+}
+.p-aligncenter:hover {
+    background-color:aliceblue;
+}
+/* Dropdown Button */
+.dropbtn {
+    border: none;
+    cursor: pointer;
+    background-color:transparent;
+    padding:5px;
+    font-size:17px;
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 92px;
+    height:60px;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+    text-decoration: none;
+    display: block;
+    background-color:white;
+}
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display:block;
+}
+.clickdivf11f11r:hover {
+    background-color:aliceblue;
+}
+.pshow {
+    text-align:center;
+}
+.spanp {
+    background-color:yellow;
+    margin-bottom:5px;
+}
+.spanCommandP {
+    text-align:center;
+    font-size:20px;
+    line-height:1.5em;
+}
+.spanpointer {
+    cursor: pointer;
+}
+.spanCommandP:hover {
+    background-color:aliceblue;
+}
+.dropdown:hover {
+    background-color:aliceblue;
+}
+.clickmetoopen {
+    float:left;
+    width:10px;
+    height:10px;
+    background-image:url("../../pics/../pics/plus.png");
+    background-size:contain;
+    margin-top:7px;
+    margin-left:15px;
+    cursor:pointer;
+}
+.clickmetoopenThemes {
+    float:left;
+    width:10px;
+    height:10px;
+    background-image:url("../../pics/../pics/plus.png");
+    background-size:contain;
+    margin-top:7px;
+    margin-left:15px;
+    cursor:pointer;
+}
+.clickmetoopenLang {
+    float:left;
+    width:10px;
+    height:10px;
+    background-image:url("../../pics/../pics/plus.png");
+    background-size:contain;
+    margin-top:7px;
+    margin-left:15px;
+    cursor:pointer;
+}
+.clickmetoopenBK {
+    float:left;
+    width:10px;
+    height:10px;    
+    background-image:url("../../pics/../pics/plus.png");
+    background-size:contain;
+    margin-top:7px;
+    margin-left:15px;
+    cursor:pointer;
+}
+.textOpener {
+    margin-left:5px;
+    float:left;
+    font-size:20px;
+    font-weight:bold;
+}
+.myboxopenarea {
+    margin-left:auto;
+    margin-right:auto;
+}
+.anitfloat {
+    margin-left:auto;
+    margin-right:auto;
+    height:10px;
+}
+/* Here ends the styling of Classes */
+/* Here starts the section of IDs which are to be styled with css */
+#de {
+    text-align:center;
+}
+#editor {
+    margin: 0;
+    width:900px;
+    height:600px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index:50;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px solid gray;
+    box-shadow:1px 1px 1px;
+}
+#DocumentHeader {
+    text-align:center;
+}
+#myDropdown {
+    background-color:white;
+    z-index:100;
+}
+#myDropdownSch {
+    background-color:white;
+    z-index:100;
+}
+#myDropdownRes {
+    background-color:white;
+    width:85px;
+    z-index:100;
+}
+#dropdownContent {
+    position: relative;
+    display: inline-block;
+}
+#fullwidth1pxheight {
+    width:100%;
+    height:30px;
+    background-color:white;
+    z-index:52;
+    box-shadow:1px 1px 5px;
+}
+#tinybox {
+    width:20px;
+    height:20px;
+    float:left;
+    background-image:url("../../pics/arrows.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    margin:5px;
+    cursor:pointer;
+}
+#tinyboxtwin {
+    display:none;
+    width:20px;
+    height:20px;
+    background-image:url("../../pics/arrowsup.png");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-color:white;
+    cursor:pointer;
+}
+#twinbox {
+    width:25px;
+    height:25px;
+    display:none;
+    margin-left:5px;
+    margin-top:5px;
+    cursor:pointer;
+}
+#f11 {
+    float:left;
+    padding:6px;
+    cursor:pointer;
+}
+#f11r {
+    float:left;
+    padding:6px;
+    margin-left:1px;
+    cursor:pointer;
+}
+#boxie {
+    background-image:url("../pics/../pics/cartoongearwheel.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+    width:30px;
+    height:30px;
+    float:right;
+    cursor:pointer;
+    margin-right:25px;
+}
+#boxieR {
+    background-image:url("../pics/../pics/picof.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+    width:30px;
+    height:30px;
+    float:right;
+    display:none;
+    cursor:pointer;
+    margin-right:25px;
+}
+#showcontent {
+    width:300px;
+    display:none;
+    float:right;
+    z-index:62;
+    position:fixed;
+    right:5px;
+    background-color:white;
+    box-shadow:1px 1px 5px;
+}
+#span1 {
+    display:none;
+}
+#CommandHeader {
+    text-align:center;
+}
+#myDropdownLan {
+    background-color:white;
+    width:115px;
+    height:120px;
+    z-index:100;
+}
+#myDropdownTheme {
+    background-color:white;
+    width:100px;
+    height:80px;
+    z-index:100;
+}
+#w110 {
+    width:115px;
+}
+#w111 {
+    width:115px;
+}
+#w112 {
+    width:115px;
+}
+#w113 {
+    width:115px;
+}
+#w114 {
+    width:115px;
+}
+#w115 {
+    width:115px;
+}
+#first {
+    width:85px;
+}
+#second {
+    width:85px;
+}
+#third {
+    width:85px;
+}
+#monokai {
+    width:100px;
+}
+#iplastic {
+    width:100px;
+}
+#cobalt {
+    width:100px;
+}
+#tomorrow {
+    width:100px;
+}
+#full1 {
+    display:none;
+}
+#rev1 {
+    display:none;
+}
+#mn1 {
+    display:none;
+}
+#isp1 {
+    display:none;
+}
+#cb1 {
+    display:none;
+}
+#tm1 {
+    display:none;
+}
+#res1 {
+    display:none;
+}
+#res2 {
+    display:none;
+}
+#res3 {
+    display:none;
+}
+#testfloat {
+    margin-top:15px;
+}
+#testfloatThemes {
+    margin-top:15px;
+}
+#imtestfloating {
+    margin-top:15px;
+}
+#testfloatBK {
+    margin-top:15px;
+}
+#html1 {
+    display:none;
+}
+#css1 {
+    display:none;
+}
+#js1 {
+    display:none;
+}
+#cs1 {
+    display:none;
+}
+#phps {
+    display:none;
+}
+#sqls {
+    display:none;
+}
+#b1 {
+    display:none;
+}
+#w1 {
+    display:none;
+}
+#gb1 {
+    display:none;
+}
+/* Here ends the styling of IDs */
