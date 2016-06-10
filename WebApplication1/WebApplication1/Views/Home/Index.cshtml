@@ -81,7 +81,7 @@
 
 <div class='fileMenu'>
     
-    <button id="CreateFileButton">Create New File</button>
+    <button id="add_tab">Create New File</button>
 
     <button id="DeleteFileButton">Delete File</button>
     
@@ -89,7 +89,7 @@
     
     </div>
 
-<div id="dialog" title="Tab data">
+@*<div id="dialog2" title="Tab data">
     <form>
         <fieldset class="ui-helper-reset">
             <label for="tab_title">Filetype</label>
@@ -97,20 +97,29 @@
 
         </fieldset>
     </form>
-</div>
+</div>*@
 
-<div id="dialog" title="Tab data">
+<div id="dialog" title="Create New File">
     <form>
         <fieldset class="ui-helper-reset">
-            <label for="tab_title">Filetype</label>
-            <input type="text" name="tab_title" id="tab_title" placeholder="javascript,c# or html" class="ui-widget-content ui-corner-all">
+            
+            <label>Filename</label>
+            <input type="text" name="tab_title" id="tab_title" placeholder="Name" class="ui-widget-content ui-corner-all">
+            
+            <label>Syntax</label>
+            <select id="createTabDropdown">
+                <option value="HTML">HTML</option>e
+                <option value="CSS">CSS</option>
+                <option value="C#">C#</option>
+                <option value="jJAVASCRIPT">JAVASCRIPT</option>
+            </select>
 
         </fieldset>
     </form>
 </div>
 
        
-<button id="add_tab"><img src="~/pics/plus.png" style="width:35px; height:35px;"/></button>
+@*<button id="add_tab"><img src="~/pics/plus.png" style="width:35px; height:35px;"/></button>*@
 
 <div id="tabs">
     <ul id="sortable">
@@ -121,7 +130,6 @@
 
 
 
-    //view
     @using (Html.BeginForm())
     {
 
@@ -132,6 +140,7 @@
        
 <pre id="editor" style="height:300px">
 </pre>
+
 
 
 
