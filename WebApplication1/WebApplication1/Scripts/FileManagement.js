@@ -206,6 +206,33 @@ function generateFilesAndFolders(array, iterator) {
 }
 
 
+function GenerateArray(Element) {
+    var array = $(Element);
+    console.log(array);
+    GenerateArrayRecursion(array, Element)
+
+}
+function GenerateArrayRecursion(array, Element) {
+
+    var currentArray = $(Element).children()
+    for (var i = 0; i < currentArray.length; i++) {
+        if ($(currentArray[i]).has("ol").length > 0) {
+            GenerateArrayRecursion(currentArray, $(currentArray[i]))
+            //console.log($(currentArray[i]))
+        }
+        else {
+
+        
+        var fileObject = {
+            Name: $(currentArray[i]).val(),
+            Content: "",
+            Type: $(currentArray[i]).attr('href')
+        }
+        currentArray.push(fileObject);
+        }
+    }
+}
+
 
 
 
