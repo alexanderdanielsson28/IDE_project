@@ -120,12 +120,12 @@ fileArray.push();
 //----------------------------INITIATOR--------------------------
 
 $(document).ready(function () {
-    //$("#FileManager").sortable();
-
-    //$("#Filemanager").selectable();
-    console.log(fileArray)
     callFileGeneration();
-    $("#FileManager").sortable({
+
+    //-----JQUERY UI SPECIFIC-----
+
+
+    /*$("#FileManager").sortable({
         connectWith: '.sortable',
         cursor: 'move',
         placeholder: 'sortable-placeholder',
@@ -137,15 +137,6 @@ $(document).ready(function () {
         zIndex: 9999,
     });
 
-    /*$("#Filemanager").sortable({
-        connectWith: ".file",
-    
-    });*/
-    //$("#Filemanager").disableSelection();
-    /*$(".file").sortable({
-        connectWith: ".sortable",
-        handle: ".handle"
-    });*/
     $(".sortable").sortable({
         connectWith: '.sortable',
         cursor: 'move',
@@ -156,13 +147,47 @@ $(document).ready(function () {
         tolerance: 'pointer',
         scroll: false,
         zIndex: 9999,
-    })//.disableSelection();
-   
-    GenerateArray($("#FileManager"))
+    })*/
+    //-----JQUERY UI SPECIFIC-----
+    
 
 });
 
+$(function () {
 
+    var draggedFile;
+    $(".file").draggable({
+        start: function (e, ui) {
+            draggedFile = $(this);
+            var draggedObject = GetFileFromID($(this));
+            removeFileById($(this))
+            console.log(draggedObject)
+        }
+    })
+
+    $(".file").droppable({
+        drop: function (e, ui) {
+            var droppedFile = GetFileFromID($(this));
+            
+            if ($(e.target).hasClass("file")) {
+                
+                $(draggedFile).insertAfter(e.target);
+                $(draggedFile).css("left", 0);
+                $(draggedFile).css("top", 0);
+                console.log("placed on file");
+            }
+            else if ($(e.target).attr("id") == "FileManager") {
+                console.log($(ui));
+                
+                console.log("returned");
+            }
+            //console.log(e.target)
+        }
+    })
+
+
+
+})
 
  
 
@@ -205,7 +230,7 @@ function generateFilesAndFolders(array, iterator) {
     }
 }
 
-
+//----------------------IN PROGRESS---------------------
 function GenerateArray(Element) {
     var array = $(Element);
     console.log(array);
@@ -231,7 +256,7 @@ function GenerateArrayRecursion(array, Element) {
         currentArray.push(fileObject);
         }
     }
-}
+}//----------------------IN PROGRESS---------------------
 
 
 
@@ -371,7 +396,7 @@ function removeFileById(Element) {
     console.log(fileArray)
     //$.grep(removeFromThis, function (n) { return n.Name == id })
     removeFromArray(fileArray, id)
-    $(Element).remove()
+    
     console.log(fileArray)
     $(".fileMenu").hide();
 }
@@ -437,7 +462,6 @@ function SetFileprop(array, property, olddata, newdata) {
  * removes the input field for changing name and sets the name of the visual file and the property of the matching file-object
  */
 function clearNaming(Element, fileObject) {
-    console.log(Element)
     if ($(".NameChangeInput").length >= 1) {
         if (fileObject.Type == "folder") {
             Element.children("label").text($(".NameChangeInput").val())
@@ -488,7 +512,7 @@ function lookDeeperForFile(id,iterator, array) {
 
 
 
-//----------------SESSION-RELATED FUNCTIONS--------------------------------
+//----------------ACE-EDITOR SPECIFIC FUNCTIONS--------------------------------
 /*
  * sets the current syntax of a session
  */
@@ -499,5 +523,5 @@ function setSessionLanguage(editSession, Language) {
     editSession.setMode("ace/mode/" + Language);
 }
 
-//----------------SESSION-RELATED FUNCTIONS--------------------------------
+//----------------END OF ACE-EDITOR SPECIFIC FUNCTIONS--------------------------------
 
