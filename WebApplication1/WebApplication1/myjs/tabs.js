@@ -156,11 +156,11 @@ function addTabz(fileObject) {
     
     openTabs.push(fileObject);
 
-    var label = tabTitle.val() || fileObject.Name,
+    var label = fileObject.Name,
       id = label,
-      li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label))
+     li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label))
       //tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
-
+        
     tabs.find(".ui-tabs-nav").append(li);
     
     tabs.tabs("refresh");
@@ -177,17 +177,21 @@ function addTabz(fileObject) {
 }
 
 
-$(document).on('click', ".tabSelect", function (e) {
+$(document).on('click', ".ui-tabs-anchor", function (e) {
     var object;
-    var openTabName = $(this).children()[0].text;
+    console.log($(this).text())
+    var openTabName = $(this).text();
     for (var i = 0; i < openTabs.length; i++) {
-        if(openTabs[i].Name == openTabName){
+        if (openTabs[i].Name == openTabName) {
+            console.log(openTabs[i].Name)
             object = openTabs[i];
             
         }
-    }
+    } 
     editor.setValue(object.Content);
-    setSessionLanguage(editor.getSession(),object.Type);
+    console.log("here?")
+    setSessionLanguage(editor.getSession(), object.Type);
+    console.log("here maybe?")
 });
 
 //Function that creates a new object to the file hierachy
