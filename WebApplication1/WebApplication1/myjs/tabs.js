@@ -1,7 +1,7 @@
 ﻿
       var dropdownValue = $("#createTabsDropdown :selected").val();
       var tabTitle = $("#tab_title"),
-          
+
         tabContent = $( "#tab_content" ),
         tabTemplate = "<li class='tabSelect ui-state-default'><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close ui-icon-arrowthick-2-n-s' role='presentation'>Remove Tab</span></li>",
         tabPlusTemplate = "<li id='add_tab'><a href='#{href}'>#{label}</a> </li>",
@@ -121,7 +121,7 @@ $(function() {
 
 function addTab() {
 
-    
+   
    
     var label = tabTitle.val() || "Tab " + tabCounter,
       id = "tabs-" + tabCounter,
@@ -153,7 +153,7 @@ function addTabz(fileObject) {
     console.log(result);
     if (result.length < 1) {
 
-        
+    
     openTabs.push(fileObject);
 
     var label = tabTitle.val() || fileObject.Name,
