@@ -168,13 +168,18 @@ $(function () {
     $(".file").droppable({
         drop: function (e, ui) {
             var droppedFile = GetFileFromID($(this));
-            
+            var droppedonThisObject = GetFileFromID($(e.target))
+            var droppedFileObject = CreateNewObject(droppedFile.Name, droppedFile.Type, droppedFile.Content)
+            console.log(droppedonThisObject)
             if ($(e.target).hasClass("file")) {
-                
+
+                InsertNewObject(fileArray, droppedFileObject, droppedonThisObject)
+
                 $(draggedFile).insertAfter(e.target);
                 $(draggedFile).css("left", 0);
                 $(draggedFile).css("top", 0);
                 console.log("placed on file");
+
             }
             else if ($(e.target).attr("id") == "FileManager") {
                 console.log($(ui));

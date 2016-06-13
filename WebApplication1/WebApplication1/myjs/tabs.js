@@ -181,13 +181,13 @@ $(document).on('click', ".tabSelect", function (e) {
 });
 
 //Function that creates a new object to the file hierachy
-function CreateNewObject(name,type){
+function CreateNewObject(name,type, content){
 
     $("#createTabsDropdown :selected").val();
 
     var newObject = {
         Name: name,
-        Content: "",
+        Content: content,
         Type: type
     }
     
