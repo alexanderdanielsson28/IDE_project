@@ -16,9 +16,9 @@
           modal: true,
           buttons: {
               Add: function() {
-                  addTab();
+                  //addTab();
                   
-                  dropdownValue = $("#createTabDropdown :selected").text();
+                  dropdownValue = $("#createTabDropdown :selected").attr("value");
                   tabTitle = $("#tab_title").val();
 
                   
@@ -26,11 +26,21 @@
                   $(this).dialog("close");
 
                   
-
+                 
                   
 
-                  CreateNewObject(tabTitle,dropdownValue);
+                  var newObject = CreateNewObject(tabTitle,dropdownValue);
                   
+                  var positionObject = GetFileFromID(rightClickedElement)
+                  insertVisualFile(rightClickedElement, newObject);
+                  console.log(fileArray);
+
+                  InsertNewObject(fileArray, newObject, positionObject);
+
+                  console.log(fileArray);
+
+                  console.log(newObject);
+
                   
               },
               Cancel: function() {
@@ -190,16 +200,8 @@ function CreateNewObject(name,type){
         Content: "",
         Type: type
     }
+    return newObject;
     
-    var positionObject = GetFileFromID(rightClickedElement)
-
-    console.log(fileArray);
-
-    InsertNewObject(fileArray, newObject, positionObject);
-
-    console.log(fileArray);
-
-    console.log(newObject);
 
 
 }

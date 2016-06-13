@@ -158,7 +158,7 @@ $(document).ready(function () {
         zIndex: 9999,
     })//.disableSelection();
    
-    GenerateArray($("#FileManager"))
+    //GenerateArray($("#FileManager"))
 
 });
 
@@ -205,6 +205,14 @@ function generateFilesAndFolders(array, iterator) {
     }
 }
 
+
+
+function insertVisualFile(Element, FileObject) {
+
+    $(Element).after("<li class='file' id=" + FileObject.Name + "><a   href='" + FileObject.Type + "'>" + FileObject.Name + "</a></li>");
+
+
+}
 
 
 
@@ -291,7 +299,10 @@ $("#FileManager").on("mouseup","li", function (e) {
 
 $("#DeleteFileButton").on("click", function (e) {
     removeFileById(rightClickedElement);
-
+    $(".fileMenu").hide();
+})
+$("#add_tab").on("click", function (e) {
+    $(".fileMenu").hide();
 })
 $(document).mousemove(function (e) {
     mouseX = e.pageX;
@@ -346,7 +357,7 @@ function removeFileById(Element) {
     removeFromArray(fileArray, id)
     $(Element).remove()
     console.log(fileArray)
-    $(".fileMenu").hide();
+   
 }
 function removeFromArray(array, id) {
     for (var i = 0; i < array.length; i++) {
