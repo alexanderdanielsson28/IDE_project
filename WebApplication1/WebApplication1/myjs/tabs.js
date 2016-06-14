@@ -88,7 +88,7 @@
 
       // addTab button: just opens the dialog
       $( "#add_tab" )
-        //.button()
+        .button()
         .click(function() {
             dialog.dialog("open");
             
