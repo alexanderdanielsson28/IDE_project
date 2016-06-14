@@ -177,10 +177,12 @@ function addTabz(fileObject) {
 }
 
 
-$(document).on('click', ".ui-tabs-anchor", function (e) {
+$(document).on('click', ".tabSelect", function (e) {
     var object;
-    console.log($(this).text())
-    var openTabName = $(this).text();
+    $("#sortable").children().removeClass("ui-tabs-active, ui-state-active")
+    $(this).addClass("ui-tabs-active, ui-state-active");
+    console.log($(this).children(":first").text())
+    var openTabName = $(this).children(":first").text();
     for (var i = 0; i < openTabs.length; i++) {
         if (openTabs[i].Name == openTabName) {
             console.log(openTabs[i].Name)
@@ -189,9 +191,7 @@ $(document).on('click', ".ui-tabs-anchor", function (e) {
         }
     } 
     editor.setValue(object.Content);
-    console.log("here?")
     setSessionLanguage(editor.getSession(), object.Type);
-    console.log("here maybe?")
 });
 
 //Function that creates a new object to the file hierachy
