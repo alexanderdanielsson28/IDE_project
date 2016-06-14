@@ -62,10 +62,11 @@
 
 
 
-      //$(document).ready(function addPlusTab() {
-
-         
-          
+      $(document).ready(function() {
+          var tabsHeight = $("#sortable").height();
+          $("#measureMentTab").remove()
+          $("#sortable").height(tabsHeight);
+      })
       //    var plustabe = tabTitle.val() || "+",
       //     de = "plus-" + tabCounter,
       //     se = $(tabPlusTemplate.replace(/#\{href\}/g, "#" + de).replace(/#\{label\}/g, plustabe)),

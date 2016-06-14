@@ -549,6 +549,7 @@
     <Content Include="ace\worker-xquery.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrapnonscroll.css" />
     <Content Include="Content\style67.css" />
     <Content Include="Content\styleIndex.css" />
     <Content Include="Content\FileManagerDesign.css" />
