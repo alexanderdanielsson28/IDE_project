@@ -549,6 +549,7 @@
     <Content Include="ace\worker-xquery.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrapnonscroll.css" />
     <Content Include="Content\style67.css" />
     <Content Include="Content\styleIndex.css" />
     <Content Include="Content\FileManagerDesign.css" />
@@ -574,6 +575,7 @@
     <Content Include="pics\arrowsup.png" />
     <Content Include="pics\arrow_icon.png" />
     <Content Include="pics\cartoongearwheel.png" />
+    <Content Include="pics\minus.png" />
     <Content Include="pics\picof.png" />
     <Content Include="img\check-icon.png" />
     <Content Include="img\emblem-dropbox-unsyncable.png" />

@@ -268,10 +268,11 @@ p {
 #showcontent {
     width:300px;
     display:none;
-    float:right;
+    float:left;
     z-index:62;
     position:fixed;
-    right:5px;
+    left:200px;
+    top:40px;
     background-color:white;
     box-shadow:1px 1px 5px;
 }
@@ -280,6 +281,9 @@ p {
 }
 #CommandHeader {
     text-align:center;
+    font-size:25px;
+    margin-bottom:5px;
+    margin-top:5px;
 }
 #myDropdownLan {
     border-bottom-left-radius:5px;
@@ -387,21 +391,27 @@ p {
 }
 #html1 {
     display:none;
+    width:150px;
 }
 #css1 {
     display:none;
+    width:150px;
 }
 #js1 {
     display:none;
+    width:150px;
 }
 #cs1 {
     display:none;
+    width:150px;
 }
 #phps {
     display:none;
+    width:150px;
 }
 #sqls {
     display:none;
+    width:150px;
 }
 #b1 {
     display:none;
