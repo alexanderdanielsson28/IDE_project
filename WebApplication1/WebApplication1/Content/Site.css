@@ -1,4 +1,8 @@
-﻿
+﻿#textarea2 {
+            width: 1500px;
+            height: 150px;
+        }
+
 /*Tabs CSS BEGINING*/
 
 #dialog label, #dialog input {
@@ -209,7 +213,4 @@ box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
 #hide-test{
     width:90px;
     height:20px;
-}
-#term{
-    
 }
