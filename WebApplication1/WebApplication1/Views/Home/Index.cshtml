@@ -77,6 +77,25 @@
                 </ul>
             </div>
         </div>
+        <div id="dialog" title="Create New File">
+            <form>
+                <fieldset class="ui-helper-reset">
+                    <label>Filename</label>
+                    <input type="text" name="tab_title" id="tab_title" placeholder="Name" class="ui-widget-content ui-corner-all">
+                    <label>Syntax</label>
+                    <select id="createTabDropdown">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="csharp">C#</option>
+                        <option value="javascript">JAVASCRIPT</option>
+                    </select>
+                </fieldset>
+            </form>
+        </div>
+        <div class='fileMenu'>
+            <button id="add_tab">Create New File</button>
+            <button id="DeleteFileButton">Delete File</button>
+        </div>
         <div class="col-md-3" id="hierarchy">
             <div id="editor-box">
                 <div id="ram">
