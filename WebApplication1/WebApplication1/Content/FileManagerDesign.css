@@ -46,6 +46,7 @@ ol.FileManager
 			padding-left: 21px;
 			text-decoration: none;
 			display: block;
+            font-family:Consolas;
 		}
 		li.file a[href *= 'pdf']	{ background: url(Icons/document.png) 0 0 no-repeat; }
 		li.file a[href *= 'html']	{ background: url(Icons/document.png) 0 0 no-repeat; }
@@ -62,6 +63,7 @@ ol.FileManager
 		height: 1em;
 		width: 1em;
 		top: 0;
+       
 	}
 		li input + ol
 		{
@@ -73,6 +75,7 @@ ol.FileManager
 		li input + ol > li { display: none; margin-left: -14px !important; padding-left: 1px; }
 	li label
 	{
+         font-family:Consolas;
         background-position: left center;
 		background: url(Icons/folder-horizontal.png) 15px 1px no-repeat;
 		cursor: pointer;
@@ -195,16 +198,19 @@ box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
 /*style for scrollbar*/
 ::-webkit-scrollbar {
     width: 12px;
+    
 }
  
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-box-shadow: inset 0 0 20px rgb(255, 255, 255); 
+   
     /*border-radius: 10px;*/
 }
  
 ::-webkit-scrollbar-thumb {
     /*border-radius: 10px;*/
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    -webkit-box-shadow: inset 0 0 6px rgb(0, 0, 0); 
+    
 }
 
 
