@@ -1,31 +1,216 @@
-﻿html {
+﻿/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+html {
     height:100%;
     min-height:100%;
     max-height:100%;
+    margin:0px;
+    padding:0px;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 body {
     min-height:100%;
     max-height:100%;
     height:100%;
+    margin:0px;
+    padding:0px;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
-#headerArea {
-    float:left;
+#Container{
     min-height:100%;
     max-height:100%;
     height:100%;
+    margin:0px;
+    padding:0px;
+}
+#headerArea {
+    float:left;
+    min-height:5%;
+    max-height:5%;
+    height:5%;
+    margin:0px;
+    padding:0px;
 }
 #headerAreaFirstDiv {
     float:left;
-    height:10%;
-    background-color:pink;
+    min-height:5%;
+    max-height:5%;
+    height:5%;
+    background-color:rgb(200,200,200);
+    margin:0px;
+    padding:0px;
 }
 #HeaderAreaSecondDiv {
     float:left;
-    height:10%;
-    background-color:pink;
+    min-height:5%;
+    max-height:5%;
+    height:5%;
+    margin:0px;
+    padding:0px;
 }
-
-
+#bodyArea {
+    float:left;
+    min-height:95%;
+    max-height:95%;
+    height:95%;
+    margin:0px;
+    padding:0px;
+}
+#hierarchy {
+    float:left;
+    min-height:95%;
+    max-height:95%;
+    height:95%;
+    margin:0px;
+    padding:0px;
+}
+#editorArea {
+    float:right;
+    min-height:70%;
+    max-height:70%;
+    height:70%;
+    margin:0px;
+    padding:0px;
+}
+#consoleArea {
+    float:right;
+    min-height:25%;
+    max-height:25%;
+    height:25%;
+    margin:0px;
+    padding:0px;
+}
+#editor {
+    min-height:100%;
+    max-height:100%;
+    height:100%;
+    width:100%;
+    max-width:100%;
+    min-width:100%;
+    border-radius:0px;
+}
+.terminal{
+    min-height:100%;
+    max-height:100%;
+    height:100%;
+    width:100%;
+    max-width:100%;
+    min-width:100%;
+    margin:0px;
+    padding:0px;
+    float:right;
+}
+#tabs {
+    min-height:100%;
+    max-height:100%;
+    height:100%;
+    width:100%;
+    max-width:100%;
+    min-width:100%;
+    margin:0px;
+    padding:0px;
+    float:left;
+    border:0px;
+}
+#sortable{
+    min-height:100%;
+    max-height:100%;
+    height:100%;
+    width:100%;
+    max-width:100%;
+    min-width:100%;
+    margin:0px;
+    padding:0px;
+    float:left;
+    border:0px;
+}
+#sortable li {
+    min-height:100%;
+    max-height:100%;
+    height:100%;
+    width:10%;
+    max-width:10%;
+    min-width:10%;
+    margin:0px;
+    padding:0px;
+    float:left;
+    border:0px;
+}
+#editor-box{
+    min-height:100%;
+    max-height:100%;
+    height:100%;
+    width:100%;
+    max-width:100%;
+    min-width:100%;
+    margin:0px;
+    padding:0px;
+    float:left;
+    border:0px;
+}
+#ram {
+    min-height:100%;
+    max-height:100%;
+    height:100%;
+    width:100%;
+    max-width:100%;
+    min-width:100%;
+    margin:0px;
+    padding:0px;
+    float:left;
+    border:0px;
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
 /*
     <div id="tinybox"></div>
 */
@@ -82,19 +267,7 @@ body {
     <ul id="sortable"></ul>
 </div>*@
 
-<div id="editor-box">
-    <div id="ram">
-        <ol id="FileManager"></ol>
-    </div>
-    <div id="tabs">
-        <ul id="sortable">
-            <li><a href="#tabs-1">Tab 1</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
-        </ul>
-    </div>
-    <pre id="editor"></pre>
-    <div id="term"></div> 
-</div>
-<div id="term"></div>
+
 <ol id="FileManager" class="sortable"></ol>
 
 @*<div style="width:100%;max-height:100px;min-height:100px;height:100px; max-width:100%; background-color:black;">

@@ -24,65 +24,86 @@
     <link rel="stylesheet" href="../../Content/style67.css" />
     <link rel="stylesheet" href="../../Content/bootstrapnonscroll.css" />
 </head>
-
-<div class=".col-md-12" id="headerArea">
-    <div class=".col-md-3" id="headerAreaFirstDiv">
-        <!-- open and close settings -->
-        <div id="boxie"></div>
-        <div id="boxieR"></div>
-        <!-- Settings -->
-        <div id="showcontent">
-            <h2 id="CommandHeader">Settings</h2>
-            <div class="myboxopenarea">
-                <div class="anitfloat">
-                    <div class="clickmetoopenLang" id="thirdopen"></div>
-                    <p class="textOpener">Editor coding languages</p>
+<div class="col-md-12" id="Container">
+    <div class="col-md-12" id="bodyArea">
+        <div class="col-md-3" id="headerAreaFirstDiv">
+            <!-- open and close settings -->
+            <div id="boxie"></div>
+            <div id="boxieR"></div>
+            <!-- Settings -->
+            <div id="showcontent">
+                <h2 id="CommandHeader">Settings</h2>
+                <div class="myboxopenarea">
+                    <div class="anitfloat">
+                        <div class="clickmetoopenLang" id="thirdopen"></div>
+                        <p class="textOpener">Editor coding languages</p>
+                    </div>
+                    <div class="anitfloat" id="imtestfloating">
+                        <p class="spanCommandP"><span title="Changes editor language to HTML" id="html1" class="spanpointer">HTML</span></p>
+                        <p class="spanCommandP"><span title="Changes editor language to CSS" id="css1" class="spanpointer">CSS</span></p>
+                        <p class="spanCommandP"><span title="Changes editor language to JavaScript" id="js1" class="spanpointer">JavaScript</span></p>
+                        <p class="spanCommandP"><span title="Changes editor language to C#" id="cs1" class="spanpointer">C#</span></p>
+                        <p class="spanCommandP"><span title="Changes editor language to PHP" id="phps" class="spanpointer">PHP</span></p>
+                        <p class="spanCommandP"><span title="Changes editor language to SQL" id="sqls" class="spanpointer">SQL</span></p>
+                    </div>
+                    <div class="anitfloat">
+                        <div class="clickmetoopenThemes" id="secondopen"></div>
+                        <p class="textOpener">Editor themes</p>
+                    </div>
+                    <div class="anitfloat" id="testfloatThemes">
+                        <p class="spanCommandP"><span title="Changes editor theme to monokai(dark)" id="mn1" class="spanpointer">monokai theme</span></p>
+                        <p class="spanCommandP"><span title="Changes editor theme to iplastic(bright)" id="isp1" class="spanpointer">iplastic theme</span></p>
+                        <p class="spanCommandP"><span title="Changes editor theme to cobalt(dark-blue)" id="cb1" class="spanpointer">cobalt theme</span></p>
+                        <p class="spanCommandP"><span title="Changes editor theme to tomorrow(white)" id="tm1" class="spanpointer">tomorrow theme</span></p>
+                    </div>
                 </div>
-                <div class="anitfloat" id="imtestfloating">
-                    <p class="spanCommandP"><span title="Changes editor language to HTML" id="html1" class="spanpointer">HTML</span></p>
-                    <p class="spanCommandP"><span title="Changes editor language to CSS" id="css1" class="spanpointer">CSS</span></p>
-                    <p class="spanCommandP"><span title="Changes editor language to JavaScript" id="js1" class="spanpointer">JavaScript</span></p>
-                    <p class="spanCommandP"><span title="Changes editor language to C#" id="cs1" class="spanpointer">C#</span></p>
-                    <p class="spanCommandP"><span title="Changes editor language to PHP" id="phps" class="spanpointer">PHP</span></p>
-                    <p class="spanCommandP"><span title="Changes editor language to SQL" id="sqls" class="spanpointer">SQL</span></p>
-                </div>
-                <div class="anitfloat">
-                    <div class="clickmetoopenThemes" id="secondopen"></div>
-                    <p class="textOpener">Editor themes</p>
-                </div>
-                <div class="anitfloat" id="testfloatThemes">
-                    <p class="spanCommandP"><span title="Changes editor theme to monokai(dark)" id="mn1" class="spanpointer">monokai theme</span></p>
-                    <p class="spanCommandP"><span title="Changes editor theme to iplastic(bright)" id="isp1" class="spanpointer">iplastic theme</span></p>
-                    <p class="spanCommandP"><span title="Changes editor theme to cobalt(dark-blue)" id="cb1" class="spanpointer">cobalt theme</span></p>
-                    <p class="spanCommandP"><span title="Changes editor theme to tomorrow(white)" id="tm1" class="spanpointer">tomorrow theme</span></p>
+            </div>
+            <button type="button" class="btn">
+                <span class="glyphicon glyphicon-floppy-saved"></span>Save
+            </button>
+            <div id="form_button">
+                @using (Html.BeginForm())
+                {
+                    // <input type="text" id="testData" />
+                    <input style="display:none" type="text" id="testData" name="reportName" />
+                    <input type="submit" value="Run preview" id="preview_button" />
+                }
+            </div>
+        </div>
+        <div class="col-md-9" id="HeaderAreaSecondDiv">
+            <div id="tabs">
+                <ul id="sortable">
+                    <li><a href="#tabs-1">Tab 1</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3" id="hierarchy">
+            <div id="editor-box">
+                <div id="ram">
+                    <ol id="FileManager"></ol>
                 </div>
             </div>
         </div>
-        <button type="button" class="btn">
-            <span class="glyphicon glyphicon-floppy-saved"></span>Save
-        </button>
-        <div id="form_button">
-            @using (Html.BeginForm())
-            {
-                // <input type="text" id="testData" />
-                <input style="display:none" type="text" id="testData" name="reportName" />
-                <input type="submit" value="Run preview" id="preview_button" />
-            }
+        <div class="col-md-9" id="editorArea">
+            <pre id="editor"></pre>
+        </div>
+        <div class="col-md-9" id="consoleArea">
+            <div id="term"></div>
         </div>
     </div>
-    <div class=".col-md-9" id="HeaderAreaSecondDiv"></div>
 </div>
-<div class=".col-md-12">
-    <div class=".col-md-3"></div>
-    <div class=".col-md-9">
-        <pre id="editor"></pre>
-    </div>
-    <div class=".col-md-9"></div>
-</div>
+<!-- Kod nedan ska bytas ut och sättas över -->
+<!-- Kod nedan ska bytas ut och sättas över -->
+<!-- Kod nedan ska bytas ut och sättas över -->
 
-<!-- Kod nedan ska bytas ut och sättas över -->
-<!-- Kod nedan ska bytas ut och sättas över -->
-<!-- Kod nedan ska bytas ut och sättas över -->
+
+
+
+
+
+
+
+
 
 
 
