@@ -3,7 +3,7 @@
 
 /*Style for the file tree*/
 /* Just some base styles not needed for example to function */
-, html { font-family: Verdana, Arial, Helvetica, sans-serif; }
+html { font-family: Verdana, Arial, Helvetica, sans-serif; }
 
 body, form, ul, li, p, h1, h2, h3, h4, h5
 {
@@ -18,9 +18,9 @@ p
 	margin: 0 0 1em 0;
 }
 
-/*html { font-size: 100%; /* IE hack */ }
-/*body { font-size: 1em; /* Sets base font size to 16px */ }
-/*table { font-size: 100%; /* IE hack */ }
+/*html { font-size: 100%; /* IE hack */ 
+/*body { font-size: 1em; /* Sets base font size to 16px */ 
+/*table { font-size: 100%; /* IE hack */ 
 input, select, textarea, th, td { font-size: 1em; }
 	
 /* CSS Tree menu styles */
@@ -136,7 +136,14 @@ ol.FileManager
 
 }
 /*Css Alex*/
-
+#errormess{
+    float:left;
+    width:100px;
+}
+#msg{
+    float:left;
+    width:100px;
+}
 #editor-box{
     position:absolute;
  overflow:hidden;

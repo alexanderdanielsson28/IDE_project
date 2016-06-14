@@ -186,7 +186,7 @@ box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5bcc26', endColorstr='#598f3e',GradientType=0);
 	background-color:#5bcc26;
 	border:1px solid #3b6e22;
-	
+	margin-right:60px;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;

@@ -2,7 +2,7 @@
     ViewBag.Title = "Code editor by Apirix";
 }
 
-<div id="consoleError"></div>
+
 
 <head>
     <!-- Viewsport, desctription, ignore default mobile stylings, author -->
@@ -14,6 +14,7 @@
     <!-- Title of the webbsite -->
     <title>Apirix editor prototype</title>
     <!-- Cascading Style sheets -->
+   
     <link href="~/Content/FileManagerDesign.css" rel="stylesheet" />
     <link href="~/Content/styleIndex.css" rel="stylesheet" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -30,6 +31,9 @@
             <!-- open and close settings -->
             <div id="boxie"></div>
             <div id="boxieR"></div>
+            <div id="errormess"></div>
+           
+        
             <!-- Settings -->
             <div id="showcontent">
                 <h2 id="CommandHeader">Settings</h2>
@@ -58,18 +62,22 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn">
-                <span class="glyphicon glyphicon-floppy-saved"></span>Save
-            </button>
-            <div id="form_button">
+             <div id="form_button">
                 @using (Html.BeginForm())
                 {
                     // <input type="text" id="testData" />
-                    <input style="display:none" type="text" id="testData" name="reportName" />
                     <input type="submit" value="Run preview" id="preview_button" />
+                    <input style="display:none" type="text" id="testData" name="reportName" />
+                    
                 }
+                
             </div>
+           
+            <button type="button" class="btn">
+                <span class="glyphicon glyphicon-floppy-saved"></span>Save
+            </button>
         </div>
+        
         <div class="col-md-9" id="HeaderAreaSecondDiv">
             <div id="tabs">
                 <ul id="sortable">
