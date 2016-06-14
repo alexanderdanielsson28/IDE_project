@@ -253,7 +253,7 @@ $('html').click(function (e) {
     if (!$(e.target).hasClass('file') && !$(e.target).hasClass('NameChangeInput') && !$(e.target).hasClass('folder')) {
         clearNaming(dblClickedElement, dblClickedFile);
     }
-
+    $(".fileMenu").hide();
 });
 
 /*

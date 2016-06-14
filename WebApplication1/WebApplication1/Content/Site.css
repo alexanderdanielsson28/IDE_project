@@ -16,6 +16,7 @@
 
     #dialog input, #dialog textarea {
         width: 95%;
+        height: auto;
     }
 
     #tabs {
