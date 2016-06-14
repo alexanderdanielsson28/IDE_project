@@ -39,7 +39,7 @@ box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
         cursor: pointer;
     }
 
-    #sortable {
+    /*#sortable {
         
         list-style-type: none;
     
@@ -52,7 +52,7 @@ box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
   
       
 
-    }
+    }*/
 
         #sortable li {
             margin: 0 3px 3px 3px;

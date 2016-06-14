@@ -73,9 +73,28 @@
         <div class="col-md-9" id="HeaderAreaSecondDiv">
             <div id="tabs">
                 <ul id="sortable">
-                    <li><a href="#tabs-1">Tab 1</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>
+                    <li id="measureMentTab"><a>MeasureMent Tab</a> <span class="ui-icon ui-icon-close" role="presentation"></span></li>
                 </ul>
             </div>
+        </div>
+        <div id="dialog" title="Create New File">
+            <form>
+                <fieldset class="ui-helper-reset">
+                    <label>Filename</label>
+                    <input type="text" name="tab_title" id="tab_title" placeholder="Name" class="ui-widget-content ui-corner-all">
+                    <label>Syntax</label>
+                    <select id="createTabDropdown">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="csharp">C#</option>
+                        <option value="javascript">JAVASCRIPT</option>
+                    </select>
+                </fieldset>
+            </form>
+        </div>
+        <div class='fileMenu'>
+            <button id="add_tab">Create New File</button>
+            <button id="DeleteFileButton">Delete File</button>
         </div>
         <div class="col-md-3" id="hierarchy">
             <div id="editor-box">
