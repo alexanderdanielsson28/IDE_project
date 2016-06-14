@@ -143,11 +143,11 @@ $(document).ready(function () {
     });*/
     //$("#Filemanager").disableSelection();
     /*$(".file").sortable({
-        connectWith: ".sortable",
-        handle: ".handle"
+        connectWith: ".sortable"
+        //handle: ".handle"
     });*/
     $(".sortable").sortable({
-        connectWith: '.sortable',
+        connectWith: '.sortable, #FileManager',
         cursor: 'move',
         placeholder: 'sortable-placeholder',
         cursorAt: {
