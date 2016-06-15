@@ -110,13 +110,14 @@ function doSomething() {
 //Start ValidSaveFunction
 var delay3 = 5000;
 var delay4 = 8000;
+
 var validCodeFunc = function () {
     
     var currentFile = GetFileFromID($(".selectedFile").parent())
    currentFile.Content = editor.getValue();
 
- 
-   $("#errormess").text("SAVED");
+  
+   $("#errormess").text("SAVED").css('color', 'green');
     $("#img-check").show();
    
     {
@@ -136,11 +137,24 @@ var resMessage = function () {
 }
 
 
+
 var fu = function () {
-    $("#errormess").text("Error!");
+    //$("#errormess");
+  //  $("#errormess").attr("id", "valid");
+    // document.getElementById("errormess").appendChild('valid');
+ 
+    $("#errormess").text("ERROR").css('color', 'red');
+    
 }
+
+
+
+
+
 var update = function () {
-    $("#errormess").text("Redan sparat");
+ //  $("#errormess").text("SAVED").css('color', 'green');
+   // $("#errormess").addClass("errormess");
+    validCodeFunc();
 }
 
 // code for saveButton, if code are same or not

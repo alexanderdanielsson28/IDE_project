@@ -562,6 +562,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\300px-Button_Icon_Green.svg.png" />
+    <Content Include="img\glossy-red-icon-button-md.png" />
     <Content Include="no-fonflikt\ace.js" />
     <Content Include="no-fonflikt\doc.js" />
     <Content Include="no-fonflikt\edit_session.js" />
