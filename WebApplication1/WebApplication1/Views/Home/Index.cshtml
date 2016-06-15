@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../../Content/bootstrap.css" />
     <!-- Second bootstrap document -->
     <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
-    <link href="~/mycss/StyleSheet1.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="../../Content/Site.css" />
     <!-- CSS document for settings and other different features, not all are used -->
     <link rel="stylesheet" href="../../Content/style67.css" />
@@ -34,9 +34,8 @@
     <div class="col-md-12" id="bodyArea">
         <div class="col-md-2" id="headerAreaFirstDiv">
             <!-- open and close settings -->
-            <div id="boxie"></div>
-            <div id="boxieR"></div>
-            <div id="errormess"><span id="valid"></span></div>
+            
+          @*  <div id="errormess"><span id="valid"></span></div>*@
             
         
             <!-- Settings -->
@@ -75,20 +74,25 @@
                     <input style="display:none" type="text" id="testData" name="reportName" />
                     
                 }
-                
+             
             </div>
-           
+            
             <button type="button" class="btn">
                 <span class="glyphicon glyphicon-floppy-saved"></span>Save
             </button>
+         
         </div>
         <div class="col-md-10" id="HeaderAreaSecondDiv">
             <div id="tabs">
                 <ul id="sortable">
                     <li id="measureMentTab"><a>MeasureMent Tab</a> <span class="ui-icon ui-icon-close" role="presentation"></span></li>
+                    
                 </ul>
+   
             </div>
+           
         </div>
+      
         <div id="dialog" title="Create New File">
             <form>
                 <fieldset class="ui-helper-reset">
@@ -155,8 +159,10 @@
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="~/myjs/tabs.js"></script>
 <script src="~/Scripts/FileManagement.js"></script>
-<script src="~/Scripts/autoSave.js"></script>
+
+
 <script src="~/myjs/loadTheTerminal.js"></script>
 <script src="~/Scripts/VariableChecks.js"></script>
 <!-- JavaScript document that handles functions, settings functions and similiar -->
 <script src="~/no-fonflikt/doc.js"></script>
+<script src="~/Scripts/autoSave.js"></script>
