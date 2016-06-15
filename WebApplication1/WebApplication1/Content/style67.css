@@ -82,18 +82,15 @@ p {
     margin-bottom:5px;
 }
 .spanCommandP {
-    text-align:center;
+    padding-left:15px;
     font-size:20px;
     line-height:1.5em;
 }
 .spanpointer {
     cursor: pointer;
 }
-.spanCommandP:hover {
-    background-color:aliceblue;
-}
-.dropdown:hover {
-    background-color:aliceblue;
+.spanpointer:hover {
+    font-weight:bold;
 }
 .clickmetoopen {
     float:left;
@@ -150,6 +147,20 @@ p {
     margin-right:auto;
     height:10px;
 }
+.dropbtn:hover  + .dropdown-content {
+   display: block;
+}
+
+.dropdown-content:hover {
+   display: block;
+}
+.edidetor {
+    display:none;
+    max-width:100%;
+    min-width:100%;
+    max-height:100%;
+    min-height:100%;
+}
 /* Here ends the styling of Classes */
 /* Here starts the section of IDs which are to be styled with css */
 #de {
@@ -161,13 +172,6 @@ p {
 }
 #DocumentHeader {
     text-align:center;
-}
-.dropbtn:hover  + .dropdown-content {
-   display: block;
-}
-
-.dropdown-content:hover {
-   display: block;
 }
 #myDropdown {
     border-bottom-left-radius:5px;
@@ -310,7 +314,6 @@ p {
     border-bottom-right-radius:5px;
     background-color:white;
     border-bottom:solid 1px;
-    
     border-left:solid 1px;
     border-right:solid 1px;
     border-color:silver;
@@ -359,9 +362,11 @@ p {
 }
 #full1 {
     display:none;
+    width:150px;
 }
 #rev1 {
     display:none;
+    width:150px;
 }
 #mn1 {
     display:none;
