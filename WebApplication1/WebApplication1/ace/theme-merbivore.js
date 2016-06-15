@@ -11,7 +11,7 @@ width: 1px;\
 background: #555651\
 }\
 .ace-merbivore {\
-background-color: #161616;\
+background-color: #002B36;\
 color: #E6E1DC\
 }\
 .ace-merbivore .ace_cursor {\
@@ -21,7 +21,7 @@ color: #FFFFFF\
 background: #454545\
 }\
 .ace-merbivore.ace_multiselect .ace_selection.ace_start {\
-box-shadow: 0 0 3px 0px #161616;\
+box-shadow: 0 0 3px 0px #002B36;\
 }\
 .ace-merbivore .ace_marker-layer .ace_step {\
 background: rgb(102, 82, 0)\

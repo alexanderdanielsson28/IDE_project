@@ -103,7 +103,7 @@ function doSomething() {
     // (do something here)
    var x= $("#testData").val(editor.getValue());
 
-    console.log(x.val());
+    
 }
 
 

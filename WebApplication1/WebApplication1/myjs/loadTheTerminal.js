@@ -101,12 +101,14 @@ function myfunction() {
     })
 }
 myfunction();
-myTerminal.setBackgroundColor("#000000")
-myTerminal.setTextColor("#00ff00")
+myTerminal.setBackgroundColor("#1A355E")
+myTerminal.setTextColor("#ffffff")
 myTerminal.setWidth("100%")
-myTerminal.setHeight("140px");
+myTerminal.setHeight("100%");
 myTerminal.setscrollY("auto");
 myTerminal.blinkingCursor(true)
+myTerminal.setTextSize("13px");
+myTerminal.setmaxHeight("105px");
 
 $("#term").append(myTerminal.html)
 $("#term").css({

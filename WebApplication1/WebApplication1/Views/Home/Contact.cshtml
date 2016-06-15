@@ -14,9 +14,10 @@
 
 <script>
     eval(localStorage.myCode);
-    var teststring = '@Html.Raw(Model.html)';
-
-    console.log(teststring);
+    @*var teststring = '@Html.Raw(Model.html)';*@
+  var  teststring = '@Html.Raw(Model.html.Replace("'", "\\\'"))';
+   // console.log(ff);
+ //   console.log(teststring);
     var testObject;
 
     // Retrieve the object from storage
@@ -55,8 +56,8 @@
     }, false);
   })();*/
 
-    $("body").append("<div id='h1text'><h1>PREVIEW PAGE</h1></div>");
-        $("body").append(teststring.toString());
+    $("body").append("<div id='h1text'><h1>preview page</h1></div>");
+    $("body").append(teststring.toString());
 </script>
 <style>
     #h1text {
