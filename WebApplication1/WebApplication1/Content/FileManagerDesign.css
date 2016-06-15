@@ -217,8 +217,12 @@ box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
 /*END style for scrollbar*/
 
 
-
+.fileMenuButton{
+    display:block;
+    width:100%
+}
 .fileMenu {
+    background-color:white;
     position:absolute;
     z-index:999;
     display:none;
