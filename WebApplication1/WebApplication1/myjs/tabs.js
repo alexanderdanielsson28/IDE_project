@@ -33,13 +33,11 @@
                   
                   var positionObject = GetFileFromID(rightClickedElement)
                   insertVisualFile(rightClickedElement, newObject);
-                  console.log(fileArray);
+                  
 
                   InsertNewObject(fileArray, newObject, positionObject);
 
-                  console.log(fileArray);
-
-                  console.log(newObject);
+                  
 
                   
               },
@@ -145,12 +143,12 @@ function removeArrayObject(element) {
         }
         
     }
-    console.log(openTabs)
+    
 }
 
 function addTabz(fileObject) {
     var result = $.grep(openTabs, function (e) { return e.Name == fileObject.Name; });
-    console.log(result);
+   
     if (result.length < 1) {
 
     

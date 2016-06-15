@@ -421,7 +421,7 @@ function SetFileprop(array, property, olddata, newdata) {
  * removes the input field for changing name and sets the name of the visual file and the property of the matching file-object
  */
 function clearNaming(Element, fileObject) {
-    console.log(Element)
+    
     if ($(".NameChangeInput").length >= 1) {
         if (fileObject.Type == "folder") {
             Element.children("label").text($(".NameChangeInput").val())
