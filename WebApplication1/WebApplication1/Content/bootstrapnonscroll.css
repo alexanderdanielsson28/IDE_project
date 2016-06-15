@@ -123,9 +123,9 @@ body {
 }
 #consoleArea {
     float:right;
-    min-height:22%;
+    min-height:17%;
     max-height:22%;
-    height:22%;
+    height:10%;
     margin:0px;
     padding:0px;
 }
