@@ -22,13 +22,7 @@ window.onclick = function (event) {
         }
     }
 }
-//Default editor theme and programming language
-var editorr = ace.edit("editor");
-editorr.setTheme("ace/theme/tomorrow");
-editorr.getSession().setMode("ace/mode/javascript");
-editorr.setOptions({
-    enableBasicAutocompletion: true, enableSnippets: true, enableLiveAutocompletion: true
-});
+
 //Show settings
 document.getElementById("boxie").onclick = function settingsinfo() {
     document.getElementById('showcontent').style.display = "block";
@@ -89,4 +83,90 @@ document.getElementById("thirdopen").onclick = function OpenThemes() {
         document.getElementById('thirdopen').style.backgroundImage = "url(../../pics/../pics/minus.png)";
         startstopLanguages++;
     }
+}
+//Change language to HTML
+document.getElementById("html1").onclick = function html1() {
+    editor.getSession().setMode("ace/mode/html");
+    document.getElementById("spantext").innerHTML = "html";
+}
+//Change language to CSS
+document.getElementById("css1").onclick = function css1() {
+    editor.getSession().setMode("ace/mode/css");
+    document.getElementById("spantext").innerHTML = "css";
+}
+//Change language to JavaScript
+document.getElementById("js1").onclick = function js1() {
+    document.getElementById("spantext").innerHTML = "js";
+    editor.getSession().setMode("ace/mode/javascript");
+}
+//Change language to C#
+document.getElementById("cs1").onclick = function cs1() {
+    document.getElementById("spantext").innerHTML = "c#";
+    editor.getSession().setMode("ace/mode/csharp");
+}
+//Change language to PHP
+document.getElementById("phps").onclick = function phps() {
+    document.getElementById("spantext").innerHTML = "php";
+    editor.getSession().setMode("ace/mode/php");
+}
+//Change language to SQL
+document.getElementById("sqls").onclick = function sqls() {
+    document.getElementById("spantext").innerHTML = "sql";
+    editor.getSession().setMode("ace/mode/sql");
+}
+//Change theme to monokai
+document.getElementById("mn1").onclick = function mn1() {
+    editor.setTheme("ace/theme/monokai");
+}
+//Change theme to iplastic
+document.getElementById("isp1").onclick = function isp1() {
+    editor.setTheme("ace/theme/iplastic");
+}
+//Change theme to cobalt
+document.getElementById("cb1").onclick = function cb1() {
+    editor.setTheme("ace/theme/cobalt");
+}
+//Change theme to tomorrow
+document.getElementById("tm1").onclick = function tm1() {
+    editor.setTheme("ace/theme/tomorrow");
+}
+var startstoping = 1;
+document.getElementById("firstopen").onclick = function OpenFullRev() {
+    if (startstoping % 2 === 0) 
+    { //Hides the option if startstop is divideable by 2 till it reaches 0
+        document.getElementById('full1').style.display = "none";
+        document.getElementById('rev1').style.display = "none";
+        document.getElementById('testfloat').style.height = "10px";
+        document.getElementById('firstopen').style.backgroundImage = "url(../../pics/plus.png)";
+        startstoping++;
+    }
+    else { //shows all the options if startstop does not divide itself by 2 till it reaches 0 value
+        document.getElementById('full1').style.display = "block";
+        document.getElementById('rev1').style.display = "block";
+        document.getElementById('testfloat').style.height = "60px";
+        document.getElementById('firstopen').style.backgroundImage = "url(../../pics/minus.png)";
+        startstoping++;
+    }
+}
+//Transforms into fullscreen
+document.getElementById("full1").onclick = function full1() {
+    document.getElementById('hierarchy').style.display = "none";
+    document.getElementById('consoleArea').style.display = "none";
+    document.getElementById('editorArea').style.minWidth = "100%"
+    document.getElementById('editorArea').style.maxWidth = "100%";
+    document.getElementById('editorArea').style.width = "100%";
+    document.getElementById('editorArea').style.minHeight = "100%"
+    document.getElementById('editorArea').style.maxHeight = "100%";
+    document.getElementById('editorArea').style.height = "100%";
+}
+//Transforms from fullscreen back into normal state
+document.getElementById("rev1").onclick = function rev1() {
+    document.getElementById('hierarchy').style.display = "block";
+    document.getElementById('consoleArea').style.display = "block";
+    document.getElementById('editorArea').style.minWidth = "83.3333%"
+    document.getElementById('editorArea').style.maxWidth = "83.3333%";
+    document.getElementById('editorArea').style.width = "83.3333%";
+    document.getElementById('editorArea').style.minHeight = "70%"
+    document.getElementById('editorArea').style.maxHeight = "70%";
+    document.getElementById('editorArea').style.height = "70%";
 }
