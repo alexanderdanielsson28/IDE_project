@@ -13,10 +13,10 @@
     <link href="~/Content/FileManagerDesign.css" rel="stylesheet" />
     <link href="~/Content/styleIndex.css" rel="stylesheet" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <!-- Here we have 2 bootstrap document, a lot of css code. Basicly a library -->
-    <link rel="stylesheet" href="../../Content/bootstrap.css" />
-    <!-- Second bootstrap document -->
+    <!-- bootstrap documents, a lot of css code. Basicly a library -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
+    <!-- There are a few functions in here that are used -->
     <link rel="stylesheet" href="../../Content/Site.css" />
     <!-- CSS document for settings and other different features, not all are used -->
     <link rel="stylesheet" href="../../Content/style67.css" />
@@ -26,6 +26,7 @@
 <div class="col-md-12" id="Container">
     <div class="col-md-12" id="bodyArea">
         <div class="col-md-2" id="headerAreaFirstDiv">
+            <span id="spantext">js</span>
             <!-- open and close settings -->
             <div id="boxie"></div>
             <div id="boxieR"></div>
@@ -34,32 +35,43 @@
                 <h2 id="CommandHeader">Settings</h2>
                 <div class="myboxopenarea">
                     <div class="anitfloat">
+                        <div class="clickmetoopen" id="firstopen"></div>
+                        <p class="textOpener">Editor fullscreen</p>
+                    </div>
+                    <div class="anitfloat" id="testfloat">
+                        <p class="spanCommandP"><span title="Full screen coding" id="full1" class="spanpointer">Fullscreen</span></p>
+                        <p class="spanCommandP"><span title="Revert full screen into normal size" id="rev1" class="spanpointer">Window Mode</span></p>
+                    </div>
+                    <div class="anitfloat">
                         <div class="clickmetoopenLang" id="thirdopen"></div>
                         <p class="textOpener">Editor coding languages</p>
                     </div>
                     <div class="anitfloat" id="imtestfloating">
-                        <p class="spanCommandP"><span title="Changes editor language to HTML" id="html1" class="spanpointer">HTML</span></p>
-                        <p class="spanCommandP"><span title="Changes editor language to CSS" id="css1" class="spanpointer">CSS</span></p>
-                        <p class="spanCommandP"><span title="Changes editor language to JavaScript" id="js1" class="spanpointer">JavaScript</span></p>
-                        <p class="spanCommandP"><span title="Changes editor language to C#" id="cs1" class="spanpointer">C#</span></p>
-                        <p class="spanCommandP"><span title="Changes editor language to PHP" id="phps" class="spanpointer">PHP</span></p>
-                        <p class="spanCommandP"><span title="Changes editor language to SQL" id="sqls" class="spanpointer">SQL</span></p>
+                        <p class="spanCommandP"><span title="Web" id="html1" class="spanpointer">HTML</span></p>
+                        <p class="spanCommandP"><span title="Styling" id="css1" class="spanpointer">CSS</span></p>
+                        <p class="spanCommandP"><span title="Functions" id="js1" class="spanpointer">JavaScript</span></p>
+                        <p class="spanCommandP"><span title="Object oriented" id="cs1" class="spanpointer">C#</span></p>
+                        <p class="spanCommandP"><span title="Functions/web" id="phps" class="spanpointer">PHP</span></p>
+                        <p class="spanCommandP"><span title="Database" id="sqls" class="spanpointer">SQL</span></p>
                     </div>
                     <div class="anitfloat">
                         <div class="clickmetoopenThemes" id="secondopen"></div>
                         <p class="textOpener">Editor themes</p>
                     </div>
                     <div class="anitfloat" id="testfloatThemes">
-                        <p class="spanCommandP"><span title="Changes editor theme to monokai(dark)" id="mn1" class="spanpointer">monokai theme</span></p>
-                        <p class="spanCommandP"><span title="Changes editor theme to iplastic(bright)" id="isp1" class="spanpointer">iplastic theme</span></p>
-                        <p class="spanCommandP"><span title="Changes editor theme to cobalt(dark-blue)" id="cb1" class="spanpointer">cobalt theme</span></p>
-                        <p class="spanCommandP"><span title="Changes editor theme to tomorrow(white)" id="tm1" class="spanpointer">tomorrow theme</span></p>
+                        <p class="spanCommandP"><span title="Monokai is a dark theme" id="mn1" class="spanpointer">monokai theme</span></p>
+                        <p class="spanCommandP"><span title="Iplastic is a bright gray theme" id="isp1" class="spanpointer">iplastic theme</span></p>
+                        <p class="spanCommandP"><span title="Cobalt is a dark blue theme" id="cb1" class="spanpointer">cobalt theme</span></p>
+                        <p class="spanCommandP"><span title="Tomorrow is a white theme" id="tm1" class="spanpointer">tomorrow theme</span></p>
                     </div>
+                    <a href="https://i.gyazo.com/11423dfcf429a37268ba0b5051f0359e.png" alt="lol">dank editor 100%</a>
                 </div>
             </div>
+            <!-- Save button -->
             <button type="button" class="btn">
                 <span class="glyphicon glyphicon-floppy-saved"></span>Save
             </button>
+            <!-- Preview button -->
             <div id="form_button">
                 @using (Html.BeginForm())
                 {
@@ -69,6 +81,7 @@
                 }
             </div>
         </div>
+        <!-- Area for tabs -->
         <div class="col-md-10" id="HeaderAreaSecondDiv">
             <div id="tabs">
                 <ul id="sortable">
@@ -76,6 +89,7 @@
                 </ul>
             </div>
         </div>
+        <!-- 
         <div id="dialog" title="Create New File">
             <form>
                 <fieldset class="ui-helper-reset">
@@ -91,10 +105,11 @@
                 </fieldset>
             </form>
         </div>
-        <div class='fileMenu'>
-            <button class="fileMenuButton" id="CreateFileButton">Create New File</button>
-            <button class="fileMenuButton" id="DeleteFileButton">Delete File</button>
-        </div>
+               <div class='fileMenu'>
+            <button id="add_tab">Create New File</button>
+            <button id="DeleteFileButton">Delete File</button>
+        </div>-->
+        <!-- Filehieracrhy -->
         <div class="col-md-2" id="hierarchy">
             <div id="editor-box">
                 <div id="ram">
@@ -102,9 +117,11 @@
                 </div>
             </div>
         </div>
+        <!-- Editor -->
         <div class="col-md-10" id="editorArea">
             <pre id="editor"></pre>
         </div>
+        <!-- Terminal -->
         <div class="col-md-10" id="consoleArea">
             <div id="term"></div>
         </div>
@@ -113,19 +130,6 @@
 <!-- Kod nedan ska bytas ut och sättas över -->
 <!-- Kod nedan ska bytas ut och sättas över -->
 <!-- Kod nedan ska bytas ut och sättas över -->
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- JavaScript files begins -->
 <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>

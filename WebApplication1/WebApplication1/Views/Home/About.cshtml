@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Editor prototype";
+    ViewBag.Title = "Apirix editor prototype";
 }
 
 <!DOCTYPE html>
@@ -9,16 +9,16 @@
 <head>
     <!-- Viewsport, desctription, ignore default mobile stylings, author -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="Code editor">
+    <meta name="description" content="Code editor by Apirix">
     <meta name="format-detection" content="telephone=no" />
     <meta name="author" content="The Fantastic 4 Kalmar style">
     <meta charset="UTF-8">
     <!-- Title of the webbsite -->
     <title>Apirix editor prototype</title>
-    <!-- Cascading Style sheets -->
+    <!-- Cascading Style Sheets -->
     <link rel="stylesheet" href="../../Content/bootstrap.css" />
     <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="../../Content/Site.css" />
+    <link rel="stylesheet" href="../../Content/Task67Styling.css" />
 </head>
 
 <body>
@@ -65,7 +65,7 @@
             <div id="myDropdownTheme" class="dropdown-content">
                 <p class="p-aligncenter" id="monokai"><span title="A dark theme">monokai</span></p>
                 <p class="p-aligncenter" id="iplastic"><span title="A gray-white theme">iplastic</span></p>
-                <p class="p-aligncenter" id="cobalt"><span title="A dark-blue color">cobalt</span></p>
+                <p class="p-aligncenter" id="cobalt"><span title="A dark-blue theme">cobalt</span></p>
                 <p class="p-aligncenter" id="tomorrow"><span title="A white theme">tomorrow</span></p>
             </div>
         </div>
@@ -80,24 +80,50 @@
     <!-- Settings -->
     <div id="showcontent">
         <h2 id="CommandHeader">Settings</h2>
-        <p class="spanCommandP"><span title="Transforms the editor into full screen size" id="full1" class="spanpointer">Fullscreen</span></p>
-        <p class="spanCommandP"><span title="Revert the full screen editor into normal size" id="rev1" class="spanpointer">Window Mode</span></p>
-        <p class="spanCommandP"><span title="Gives the background a dark color" id="b1" class="spanpointer">Dark background</span></p>
-        <p class="spanCommandP"><span title="Gives the background a white color" id="w1" class="spanpointer">White background</span></p>
-        <p class="spanCommandP"><span title="Gives the background a lightgray color" id="gb1" class="spanpointer">Lightgray background</span></p>
-        <p class="spanCommandP"><span title="Editor resolution w600px h450px" id="res1" class="spanpointer">600 x 450 Resolution</span></p>
-        <p class="spanCommandP"><span title="Editor resolution w900px h600px" id="res2" class="spanpointer">900 x 600 Resolution</span></p>
-        <p class="spanCommandP"><span title="Editor resolution w1200px h800px" id="res3" class="spanpointer">1200 x 800 Resolution</span></p>
-        <p class="spanCommandP"><span title="Changes editor language to HTML" id="html1" class="spanpointer">HTML</span></p>
-        <p class="spanCommandP"><span title="Changes editor language to CSS" id="css1" class="spanpointer">CSS</span></p>
-        <p class="spanCommandP"><span title="Changes editor language to JavaScript" id="js1" class="spanpointer">JavaScript</span></p>
-        <p class="spanCommandP"><span title="Changes editor language to C#" id="cs1" class="spanpointer">C#</span></p>
-        <p class="spanCommandP"><span title="Changes editor language to PHP" id="phps" class="spanpointer">PHP</span></p>
-        <p class="spanCommandP"><span title="Changes editor language to SQL" id="sqls" class="spanpointer">SQL</span></p>
-        <p class="spanCommandP"><span title="Changes editor theme to monokai(dark)" id="mn1" class="spanpointer">monokai theme</span></p>
-        <p class="spanCommandP"><span title="Changes editor theme to iplastic(bright)" id="isp1" class="spanpointer">iplastic theme</span></p>
-        <p class="spanCommandP"><span title="Changes editor theme to cobalt(dark-blue)" id="cb1" class="spanpointer">cobalt theme</span></p>
-        <p class="spanCommandP"><span title="Changes editor theme to tomorrow(white)" id="tm1" class="spanpointer">tomorrow theme</span></p>
+        <div class="myboxopenarea">
+            <div class="anitfloat">
+                <div class="clickmetoopen" id="firstopen"></div>
+                <p class="textOpener">Editor resolutions</p>
+            </div>
+            <div class="anitfloat" id="testfloat">
+                <p class="spanCommandP"><span title="Transforms the editor into full screen size" id="full1" class="spanpointer">Fullscreen</span></p>
+                <p class="spanCommandP"><span title="Revert the full screen editor into normal size" id="rev1" class="spanpointer">Window Mode</span></p>
+                <p class="spanCommandP"><span title="Editor resolution w600px - h450px" id="res1" class="spanpointer">600 x 450 Resolution</span></p>
+                <p class="spanCommandP"><span title="Editor resolution w900px - h600px" id="res2" class="spanpointer">900 x 600 Resolution</span></p>
+                <p class="spanCommandP"><span title="Editor resolution w1200px - h800px" id="res3" class="spanpointer">1200 x 800 Resolution</span></p>
+            </div>
+            <div class="anitfloat">
+                <div class="clickmetoopenLang" id="thirdopen"></div>
+                <p class="textOpener">Editor coding languages</p>
+            </div>
+            <div class="anitfloat" id="imtestfloating">
+                <p class="spanCommandP"><span title="Changes editor language to HTML" id="html1" class="spanpointer">HTML</span></p>
+                <p class="spanCommandP"><span title="Changes editor language to CSS" id="css1" class="spanpointer">CSS</span></p>
+                <p class="spanCommandP"><span title="Changes editor language to JavaScript" id="js1" class="spanpointer">JavaScript</span></p>
+                <p class="spanCommandP"><span title="Changes editor language to C#" id="cs1" class="spanpointer">C#</span></p>
+                <p class="spanCommandP"><span title="Changes editor language to PHP" id="phps" class="spanpointer">PHP</span></p>
+                <p class="spanCommandP"><span title="Changes editor language to SQL" id="sqls" class="spanpointer">SQL</span></p>
+            </div>
+            <div class="anitfloat">
+                <div class="clickmetoopenBK" id="fourthopen"></div>
+                <p class="textOpener">Editor background</p>
+            </div>
+            <div class="anitfloat" id="testfloatBK">
+                <p class="spanCommandP"><span title="Gives the background a dark color" id="b1" class="spanpointer">Dark background</span></p>
+                <p class="spanCommandP"><span title="Gives the background a white color" id="w1" class="spanpointer">White background</span></p>
+                <p class="spanCommandP"><span title="Gives the background a lightgray color" id="gb1" class="spanpointer">Lightgray background</span></p>
+            </div>
+            <div class="anitfloat">
+                <div class="clickmetoopenThemes" id="secondopen"></div>
+                <p class="textOpener">Editor themes</p>
+            </div>
+            <div class="anitfloat" id="testfloatThemes">
+                <p class="spanCommandP"><span title="Changes editor theme to monokai(dark)" id="mn1" class="spanpointer">monokai theme</span></p>
+                <p class="spanCommandP"><span title="Changes editor theme to iplastic(bright)" id="isp1" class="spanpointer">iplastic theme</span></p>
+                <p class="spanCommandP"><span title="Changes editor theme to cobalt(dark-blue)" id="cb1" class="spanpointer">cobalt theme</span></p>
+                <p class="spanCommandP"><span title="Changes editor theme to tomorrow(white)" id="tm1" class="spanpointer">tomorrow theme</span></p>
+            </div>
+        </div>
     </div>
     <!-- Text editor begins -->
     <h1 id="de">Text editor - <span id="spanlanguageholder">JavaScript</span></h1>
@@ -106,6 +132,10 @@
     
 
     
+
+
+
+
 
     <!-- Javascript externals loading in ace editor js -->
     <script src="~/ace/ace.js"></script>
