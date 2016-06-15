@@ -192,7 +192,7 @@ var Terminal = (function () {
 		this.setTextSize('1em')
 		this.setWidth('100%')
 		this.setHeight('230px')
-		this.setmaxHeight('230px')
+		this.setmaxHeight('100px')
 		this.setscrollY('auto')
 	
 

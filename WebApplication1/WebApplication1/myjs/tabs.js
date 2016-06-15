@@ -33,13 +33,11 @@
                   
                   var positionObject = GetFileFromID(rightClickedElement)
                   insertVisualFile(rightClickedElement, newObject);
-                  console.log(fileArray);
+
 
                   InsertNewObject(fileArray, newObject, positionObject);
 
-                  console.log(fileArray);
 
-                  console.log(newObject);
 
                   
               },
@@ -79,7 +77,7 @@
       //});
 
 
-
+ 
  
       // actual addTab function: adds new tab using the input from the form above
       
@@ -167,7 +165,7 @@ function removeArrayObject(element) {
         }
         
     }
-    console.log(openTabs)
+    
 }
 
 function addTabz(fileObject) {
@@ -181,9 +179,9 @@ function addTabz(fileObject) {
 
     var label = fileObject.Name,
       id = label,
-     li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label))
+      li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label))
       //tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
-        
+
     tabs.find(".ui-tabs-nav").append(li);
     
     tabs.tabs("refresh");
@@ -216,7 +214,7 @@ $(document).on('click', ".tabSelect", function (e) {
     }
     if (typeof object != "undefined") {
 
-        editor.setValue(object.Content);
+    editor.setValue(object.Content);
         setSessionLanguage(editor.getSession(), object.Type);
         
     }
