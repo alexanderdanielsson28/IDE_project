@@ -82,15 +82,16 @@ p {
     margin-bottom:5px;
 }
 .spanCommandP {
-    padding-left:15px;
+    padding-left:50px;
     font-size:20px;
     line-height:1.5em;
 }
-.spanpointer {
+.spanCommandP:hover {
+    font-weight:bold;
     cursor: pointer;
 }
-.spanpointer:hover {
-    font-weight:bold;
+.spanpointer {
+    cursor: pointer;
 }
 .clickmetoopen {
     float:left;
@@ -321,7 +322,7 @@ p {
     width:100%;
     height:80px;
 }
-#w110 {
+/* #w110 {
     width:115px;
 }
 #w111 {
@@ -338,7 +339,7 @@ p {
 }
 #w115 {
     width:115px;
-}
+}*/
 #first {
     width:85px;
 }
@@ -401,29 +402,27 @@ p {
 #testfloatBK {
     margin-top:15px;
 }
+
 #html1 {
     display:none;
-    width:150px;
+    
 }
 #css1 {
     display:none;
-    width:150px;
+    
 }
 #js1 {
     display:none;
-    width:150px;
+    
 }
 #cs1 {
     display:none;
-    width:150px;
 }
 #phps {
     display:none;
-    width:150px;
 }
 #sqls {
     display:none;
-    width:150px;
 }
 #b1 {
     display:none;

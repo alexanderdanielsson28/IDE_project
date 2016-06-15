@@ -221,6 +221,12 @@ body {
     background-color:white;
     box-shadow:1px 1px 5px;
 }
+#spantext {
+    float:right;
+    width:20px;
+    margin-top:8px;
+    margin-right:15px;
+}
 /*
     <div id="tinybox"></div>
 */

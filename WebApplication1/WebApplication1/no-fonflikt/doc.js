@@ -92,35 +92,41 @@ document.getElementById("thirdopen").onclick = function OpenThemes() {
 //Change language to HTML
 document.getElementById("html1").onclick = function html1() {
     editorr.getSession().setMode("ace/mode/html");
+    document.getElementById("spantext").innerHTML = "html";
     document.getElementById('spanlanguageholder').innerHTML = "HTML";
     document.getElementById("myDropdownLan").classList.toggle("hide");
 }
 //Change language to CSS
 document.getElementById("css1").onclick = function css1() {
     editorr.getSession().setMode("ace/mode/css");
+    document.getElementById("spantext").innerHTML = "css";
     document.getElementById('spanlanguageholder').innerHTML = "CSS";
     document.getElementById("myDropdownLan").classList.toggle("hide");
 }
 //Change language to JavaScript
 document.getElementById("js1").onclick = function js1() {
+    document.getElementById("spantext").innerHTML = "js";
     editorr.getSession().setMode("ace/mode/javascript");
     document.getElementById('spanlanguageholder').innerHTML = "JavaScript";
     document.getElementById("myDropdownLan").classList.toggle("hide");
 }
 //Change language to C#
 document.getElementById("cs1").onclick = function cs1() {
+    document.getElementById("spantext").innerHTML = "c#";
     editorr.getSession().setMode("ace/mode/csharp");
     document.getElementById('spanlanguageholder').innerHTML = "C#";
     document.getElementById("myDropdownLan").classList.toggle("hide");
 }
 //Change language to PHP
 document.getElementById("phps").onclick = function phps() {
+    document.getElementById("spantext").innerHTML = "php";
     editorr.getSession().setMode("ace/mode/php");
     document.getElementById('spanlanguageholder').innerHTML = "PHP";
     document.getElementById("myDropdownLan").classList.toggle("hide");
 }
 //Change language to SQL
 document.getElementById("sqls").onclick = function sqls() {
+    document.getElementById("spantext").innerHTML = "sql";
     editorr.getSession().setMode("ace/mode/sql");
     document.getElementById('spanlanguageholder').innerHTML = "SQL";
     document.getElementById("myDropdownLan").classList.toggle("hide");
