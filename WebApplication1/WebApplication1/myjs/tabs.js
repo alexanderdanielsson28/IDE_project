@@ -4,7 +4,7 @@
 
         tabContent = $( "#tab_content" ),
         tabTemplate = "<li class='tabSelect ui-state-default'><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close ui-icon-arrowthick-2-n-s' role='presentation'>Remove Tab</span></li>",
-        tabPlusTemplate = "<li id='add_tab'><a href='#{href}'>#{label}</a> </li>",
+        tabPlusTemplate = "<li id='CreateFileButton'><a href='#{href}'>#{label}</a> </li>",
         tabCounter = 1;
  
       var tabs = $( "#tabs" ).tabs();
@@ -33,13 +33,11 @@
                   
                   var positionObject = GetFileFromID(rightClickedElement)
                   insertVisualFile(rightClickedElement, newObject);
-                  console.log(fileArray);
+
 
                   InsertNewObject(fileArray, newObject, positionObject);
 
-                  console.log(fileArray);
 
-                  console.log(newObject);
 
                   
               },
@@ -80,26 +78,38 @@
 
 
  
+ 
       // actual addTab function: adds new tab using the input from the form above
       
 
      
 
 
-      // addTab button: just opens the dialog
-      $( "#add_tab" )
-        .button()
+// CreateFileButton button: just opens the dialog
+      $( "#CreateFileButton" )
+        //.button()
         .click(function() {
             dialog.dialog("open");
             
         });
  
       // close icon: removing the tab on click
-      tabs.delegate( "span.ui-icon-close", "click", function() {
+      tabs.delegate("span.ui-icon-close", "click", function () {
+          //console.log($(this).closest("li").hasClass("ui-tabs-active, ui-state-active"))
+          if ($(this).closest("li").hasClass("ui-tabs-active, ui-state-active")) {
+              editor.setValue("", 0);
+              console.log(editor.getReadOnly())
+          }
+          //console.log(fileArray)
           var panelId = $( this ).closest( "li" ).remove().attr( "aria-controls" );
-          $( "#" + panelId ).remove();
-          tabs.tabs("refresh");
+          //$( "#" + panelId ).remove();
+          
+          //console.log(openTabs)
           removeArrayObject($(this).closest("li"))
+          //console.log(openTabs)
+          //console.log($(this).closest("li"))
+          
+          tabs.tabs("refresh");
       }); 
  
       tabs.bind( "keyup", function( event ) {
@@ -137,6 +147,15 @@ function addTab() {
 
 }
 
+function isInArray(fileObject, array) {
+    for (var i = 0; i < array.length; i++) {
+        if (fileObject.Name == array[i].Name) {
+            return true;
+        }
+    }
+    return false;
+}
+
 function removeArrayObject(element) {
     var openTabName = $(element).children()[0].text;
     for (var i = 0; i < openTabs.length; i++) {
@@ -146,22 +165,23 @@ function removeArrayObject(element) {
         }
         
     }
-    console.log(openTabs)
+    
 }
 
 function addTabz(fileObject) {
-    var result = $.grep(openTabs, function (e) { return e.Name == fileObject.Name; });
+    var result = isInArray(fileObject, openTabs)
+    //var result = $.grep(openTabs, function (e) { return e.Name == fileObject.Name; });
     console.log(result);
-    if (result.length < 1) {
+    if (!result) {
 
     
     openTabs.push(fileObject);
 
     var label = fileObject.Name,
       id = label,
-     li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label))
+      li = $(tabTemplate.replace(/#\{href\}/g, "#" + id).replace(/#\{label\}/g, label))
       //tabContentHtml = tabContent.val() || "Tab " + tabCounter + " content.";
-        
+
     tabs.find(".ui-tabs-nav").append(li);
     
     tabs.tabs("refresh");
@@ -182,6 +202,7 @@ $(document).on('click', ".tabSelect", function (e) {
     var object;
     $("#sortable").children().removeClass("ui-tabs-active, ui-state-active")
     $(this).addClass("ui-tabs-active, ui-state-active");
+    
     console.log($(this).children(":first").text())
     var openTabName = $(this).children(":first").text();
     for (var i = 0; i < openTabs.length; i++) {
@@ -190,9 +211,14 @@ $(document).on('click', ".tabSelect", function (e) {
             object = openTabs[i];
             
         }
-    } 
+    }
+    if (typeof object != "undefined") {
+
     editor.setValue(object.Content);
-    setSessionLanguage(editor.getSession(), object.Type);
+        setSessionLanguage(editor.getSession(), object.Type);
+        
+    }
+    
 });
 
 //Function that creates a new object to the file hierachy

@@ -103,7 +103,7 @@ function doSomething() {
     // (do something here)
    var x= $("#testData").val(editor.getValue());
 
-  //  console.log(x.val());
+    
 }
 
 
@@ -116,7 +116,7 @@ var validCodeFunc = function () {
     var currentFile = GetFileFromID($(".selectedFile").parent())
    currentFile.Content = editor.getValue();
 
-  
+
    $("#errormess").text("SAVED").css('color', 'green');
     $("#img-check").show();
    
@@ -207,7 +207,7 @@ var checkIfEmpty = function () {
 // command for shortcut (ctrl-s)
 var delay2 = 2000;
 
- editor.commands.addCommand({
+editor.commands.addCommand({
     name: 'save',
     bindKey: { win: 'Ctrl-S'},
 

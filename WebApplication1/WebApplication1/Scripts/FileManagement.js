@@ -143,11 +143,11 @@ $(document).ready(function () {
     });*/
     //$("#Filemanager").disableSelection();
     /*$(".file").sortable({
-        connectWith: ".sortable",
-        handle: ".handle"
+        connectWith: ".sortable"
+        //handle: ".handle"
     });*/
     $(".sortable").sortable({
-        connectWith: '.sortable',
+        connectWith: '.sortable, #FileManager',
         cursor: 'move',
         placeholder: 'sortable-placeholder',
         cursorAt: {
@@ -253,7 +253,7 @@ $('html').click(function (e) {
     if (!$(e.target).hasClass('file') && !$(e.target).hasClass('NameChangeInput') && !$(e.target).hasClass('folder')) {
         clearNaming(dblClickedElement, dblClickedFile);
     }
-
+    $(".fileMenu").hide();
 });
 
 /*
@@ -285,10 +285,12 @@ $('#FileManager, .fileMenu').on('contextmenu', function () {
     return false;
 });
 
-$("#FileManager").on("mouseup","li", function (e) {
+$("#FileManager").on("mouseup", function (e) {
     if (e.button == 2) {
-        console.log($(this))
-        rightClickedElement = $(this)
+        console.log("right click pressed")
+        
+        rightClickedElement = $(e.target).closest("li")
+        console.log(rightClickedElement)
         $(".fileMenu").css({"display":"block", "top":mouseY,"left":mouseX});
 
         
@@ -301,7 +303,7 @@ $("#DeleteFileButton").on("click", function (e) {
     removeFileById(rightClickedElement);
     $(".fileMenu").hide();
 })
-$("#add_tab").on("click", function (e) {
+$("#CreateFileButton").on("click", function (e) {
     $(".fileMenu").hide();
 })
 $(document).mousemove(function (e) {
@@ -421,7 +423,7 @@ function SetFileprop(array, property, olddata, newdata) {
  * removes the input field for changing name and sets the name of the visual file and the property of the matching file-object
  */
 function clearNaming(Element, fileObject) {
-    //console.log(Element)
+    
     if ($(".NameChangeInput").length >= 1) {
         if (fileObject.Type == "folder") {
             Element.children("label").text($(".NameChangeInput").val())
@@ -430,14 +432,15 @@ function clearNaming(Element, fileObject) {
             $(".NameChangeInput").remove();
         }
         else {
+            $("#sortable").find('a[href="#' + fileObject.Name + '"]').text($(".NameChangeInput").val())
+            console.log($("#sortable").find('a[href="#' + fileObject.Name + '"]'))
             Element.parent().attr("id", $(".NameChangeInput").val())
             Element.text($(".NameChangeInput").val())
             SetFileprop(fileArray, "Name", fileObject.Name, $(".NameChangeInput").val());
+            SetFileprop(openTabs, "Name", fileObject.Name, $(".NameChangeInput").val())
             $(".NameChangeInput").remove();
         }
-
     }
-
 }
 
 
