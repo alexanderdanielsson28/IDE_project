@@ -22,13 +22,7 @@ window.onclick = function (event) {
         }
     }
 }
-//Default editor theme and programming language
-var editorr = ace.edit("editor");
-editorr.setTheme("ace/theme/tomorrow");
-editorr.getSession().setMode("ace/mode/javascript");
-editorr.setOptions({
-    enableBasicAutocompletion: true, enableSnippets: true, enableLiveAutocompletion: true
-});
+
 //Show settings
 document.getElementById("boxie").onclick = function settingsinfo() {
     document.getElementById('showcontent').style.display = "block";
