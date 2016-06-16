@@ -130,7 +130,7 @@ var validCodeFunc = function () {
 var resMessage = function () {
     $("#msg").text("");
     $("#img-check").hide();
-    console.log("reset");
+    //console.log("reset");
 
 }
 

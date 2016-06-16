@@ -123,7 +123,7 @@ $(document).ready(function () {
     //$("#FileManager").sortable();
 
     //$("#Filemanager").selectable();
-    console.log(fileArray)
+    //console.log(fileArray)
     callFileGeneration();
     $("#FileManager").sortable({
         connectWith: '.sortable',
@@ -234,7 +234,7 @@ $(document).on('click', ".file a", function (e) {
         $(".file a").removeClass("selectedFile");
         $(this).addClass("selectedFile")
         var clickedFile = GetFileFromID($(this).parent())
-        console.log(clickedFile)
+        //console.log(clickedFile)
 
         editor.setValue("", 0);
         setSessionLanguage(editor.getSession(), clickedFile.Type)
@@ -287,10 +287,10 @@ $('#FileManager, .fileMenu').on('contextmenu', function () {
 
 $("#FileManager").on("mouseup", function (e) {
     if (e.button == 2) {
-        console.log("right click pressed")
+        //console.log("right click pressed")
         
         rightClickedElement = $(e.target).closest("li")
-        console.log(rightClickedElement)
+       //console.log(rightClickedElement)
         $(".fileMenu").css({"display":"block", "top":mouseY,"left":mouseX});
 
         
@@ -327,7 +327,7 @@ $(document).mousemove(function (e) {
 
 function GetFileFromID(Element) {
     var id = $(Element).attr('id');
-    console.log(id);
+    //console.log(id);
     var clickedFile = IterateForFile(fileArray, id)
     return clickedFile;
 }
@@ -350,15 +350,15 @@ function IterateForFile(array, id) {
     }
 }
 function removeFileById(Element) {
-    console.log(Element)
+    //console.log(Element)
     var id = $(Element).attr('id');
 
     
-    console.log(fileArray)
+    //console.log(fileArray)
     //$.grep(removeFromThis, function (n) { return n.Name == id })
     removeFromArray(fileArray, id)
     $(Element).remove()
-    console.log(fileArray)
+    //console.log(fileArray)
    
 }
 function removeFromArray(array, id) {
