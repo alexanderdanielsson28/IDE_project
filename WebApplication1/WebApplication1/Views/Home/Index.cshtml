@@ -88,7 +88,7 @@
                 </ul>
             </div>
         </div>
-         
+        <!--A Hidden window that will appear when the user want to create a file -->
         <div id="dialog" title="Create New File">
             <form>
                 <fieldset class="ui-helper-reset">
@@ -104,9 +104,9 @@
                 </fieldset>
             </form>
         </div>
-               <div class='fileMenu'>
-            <button id="add_tab">Create New File</button>
-            <button id="DeleteFileButton">Delete File</button>
+        <div class='fileMenu'>
+            <button class="fileMenuButton" id="CreateFileButton">Create New File</button>
+            <button class="fileMenuButton" id="DeleteFileButton">Delete File</button>
         </div>
         <!-- Filehieracrhy -->
         <div class="col-md-2" id="hierarchy">
@@ -118,10 +118,12 @@
         </div>
         <!-- Editor -->
         <div class="col-md-10" id="editorArea">
+            <!-- This is where we will print out our code editor -->
             <pre id="editor"></pre>
         </div>
         <!-- Terminal -->
         <div class="col-md-10" id="consoleArea">
+            <!-- This is where we will print out our terminal -->
             <div id="term"></div>
         </div>
     </div>

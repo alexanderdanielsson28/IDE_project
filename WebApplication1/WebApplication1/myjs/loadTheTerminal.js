@@ -16,7 +16,7 @@ function myfunction() {
             lock = false;
         }
         else if (userInput == "creator") {
-            myTerminal.print("The Apirix Terminal Was Brought To You By Wiggoviich ©");
+            myTerminal.print("The Apirix Terminal Was Brought To You By Andreas Vigertsson,Johan Stening,Erik Petersson & Alex Danielsson ©");
             lock = false;
         }
         else if (userInput == "errorlog") {
