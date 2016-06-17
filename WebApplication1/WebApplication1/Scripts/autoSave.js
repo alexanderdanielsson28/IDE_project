@@ -110,15 +110,16 @@ function doSomething() {
 //Start ValidSaveFunction
 var delay3 = 5000;
 var delay4 = 8000;
+
 var validCodeFunc = function () {
     
-    var currentFile = GetFileFromID($(".selectedFile").parent().attr("id"))
+    var currentFile = GetFileFromID($(".selectedFile").parent().attr("id"));
    currentFile.Content = editor.getValue();
 
 
-    $("#msg").text("ALL CHANGES SAVED!");
+   $("#errormess").text("SAVED").css('color', 'green');
     $("#img-check").show();
-    $("#errormess").text(" ");
+   
     {
         setTimeout(function () {
             resMessage();
@@ -130,16 +131,30 @@ var validCodeFunc = function () {
 var resMessage = function () {
     $("#msg").text("");
     $("#img-check").hide();
-    //console.log("reset");
+    $("#errormess").text("");
+   // console.log("reset");
 
 }
+
 
 
 var fu = function () {
-    $("#errormess").text("Error!");
+    //$("#errormess");
+  //  $("#errormess").attr("id", "valid");
+    // document.getElementById("errormess").appendChild('valid');
+ 
+    $("#errormess").text("ERROR").css('color', 'red');
+    
 }
+
+
+
+
+
 var update = function () {
-    $("#errormess").text("Redan sparat");
+ //  $("#errormess").text("SAVED").css('color', 'green');
+   // $("#errormess").addClass("errormess");
+    validCodeFunc();
 }
 
 // code for saveButton, if code are same or not
@@ -151,7 +166,7 @@ $(".btn").click(function () {
     _editorText = editorText.replace(/\s+$/, '');
     if (_fileText != _editorText) {
 
-        console.log("Ej samma kod som i fil");
+      //  console.log("Ej samma kod som i fil");
        
 
         var emptyString = checkIfEmpty();
@@ -167,7 +182,7 @@ $(".btn").click(function () {
 
     } else {
         update();
-        console.log("samma kod som i fil");
+    //    console.log("samma kod som i fil");
     }
 
 });
@@ -177,10 +192,10 @@ var checkIfEmpty = function () {
    
     var consoleTextIsEmpty = editor.getValue();
     var consoleTextIsEmpty = consoleTextIsEmpty.replace(/\s+$/, '');
-    console.log(consoleTextIsEmpty + "consoleTextIsEmpty");
+  //  console.log(consoleTextIsEmpty + "consoleTextIsEmpty");
 
     if (!(consoleTextIsEmpty)) {
-        console.log("empty1");
+       // console.log("empty1");
         return false;
         
     }
@@ -191,23 +206,24 @@ var checkIfEmpty = function () {
 }
 // command for shortcut (ctrl-s)
 var delay2 = 2000;
+
 editor.commands.addCommand({
     name: 'save',
-    bindKey: { win: "Ctrl-S"},
+    bindKey: { win: 'Ctrl-S'},
 
 
     exec: function (editor) {
         var emptyString = checkIfEmpty();
-        console.log(emptyString);
+  //      console.log(emptyString);
         if (emptyString == false){
-            console.log("empty exec")
+         //   console.log("empty exec")
             WarningEmptyFile();
             
         } else if (emptyString) {
-            console.log("Not empty");
+          //  console.log("Not empty");
             NotEmptyFile();
         }
-            // checkForErrors();
+             checkForErrors();
             
     
     }
@@ -258,7 +274,7 @@ var NotEmptyFile = function () {
 function testfunc() {
 
     var x = editor.getValue();
-    console.log(x);
+  //  console.log(x);
 
     document.getElementById("UploadButton").click();
 

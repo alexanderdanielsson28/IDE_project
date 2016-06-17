@@ -8,7 +8,8 @@ editor.$blockScrolling = Infinity
 editor.setOptions({
     enableBasicAutocompletion: true,
     enableSnippets: true,
-    enableLiveAutocompletion: true
+    enableLiveAutocompletion: true,
+    fontSize: "11pt"
 });
 //Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {

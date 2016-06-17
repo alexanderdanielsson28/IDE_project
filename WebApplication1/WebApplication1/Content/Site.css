@@ -43,9 +43,7 @@ box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
     /*#sortable {
         
         list-style-type: none;
-    
-        /*box-shadow: inset 0 0 1em black, 0 0 1em black;*/
-        border-right-color:silver;
+            border-right-color:silver;
         border-top-color:silver;
         border-bottom-color:silver;
   
@@ -140,6 +138,7 @@ box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
 	font-weight:bold;
 	/*padding:6px 12px;*/
 	text-decoration:none;
+    height:30px;
 }
 
 #preview_button:hover {
@@ -152,7 +151,7 @@ box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#598f3e', endColorstr='#5bcc26',GradientType=0);
 	background-color:#598f3e;
 }
-
+#preview_button:focus {outline:0 !important;}
 #preview_button:active {
 	
 	top:1px;
@@ -164,18 +163,18 @@ box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
     background-color:black;
 }
 #form_button{
-    width:50px;
-    height:20px;
+    width:30px;
+  
     float:right;
   position: relative;
-  right:50px;
+  right:60px;
   margin-top:4px;
 }
 
 
 .btn {
    
-    float:right;
+    /*float:right;*/
 	-moz-box-shadow:inset 0px 1px 0px 0px #8ab876;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #8ab876;
 	box-shadow:inset 0px 1px 0px 0px #8ab876;
@@ -187,8 +186,8 @@ box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
 	background:linear-gradient(to bottom, #5bcc26 5%, #598f3e 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5bcc26', endColorstr='#598f3e',GradientType=0);
 	background-color:#5bcc26;
-	border:1px solid #3b6e22;
-	
+    margin-top:4px;
+	margin-right:60px;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
@@ -196,8 +195,11 @@ box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
 	font-weight:bold;
 	/*padding:6px 12px;*/
 	text-decoration:none;
+    outline:0;
+    height:30px;
+    border-radius:0;
 }
-
+button:focus {outline:0 !important;}
 .btn:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #598f3e), color-stop(1, #5bcc26));
 	background:-moz-linear-gradient(top, #598f3e 5%, #5bcc26 100%);

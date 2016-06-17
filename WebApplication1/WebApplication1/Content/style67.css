@@ -257,17 +257,19 @@ p {
     font-size:medium;
 }
 #boxie {
-    background-image:url("../pics/../pics/cartoongearwheel.png");
+
+           font-family: FontAwesome;
     background-size:cover;
     background-repeat:no-repeat;
     width:30px;
     height:30px;
     float:right;
     cursor:pointer;
-    margin-right:25px;
+    margin-right:5px;
+    content: "\f013 ";   
 }
 #boxieR {
-    background-image:url("../pics/../pics/picof.png");
+    /*background-image:url("../pics/../pics/picof.png");*/
     background-size:cover;
     background-repeat:no-repeat;
     width:30px;
@@ -276,6 +278,9 @@ p {
     display:none;
     cursor:pointer;
     margin-right:25px;
+}
+.fa-cog{
+    color:silver;
 }
 #showcontent {
     width:300px;

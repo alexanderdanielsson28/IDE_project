@@ -217,7 +217,7 @@ body {
  -moz-transform: skew(30deg); 
  -o-transform: skew(30deg);
 
-    }
+}
         #sortable li span {
         
         -webkit-transform: skew(30deg);

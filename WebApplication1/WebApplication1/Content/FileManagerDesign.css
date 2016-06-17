@@ -3,7 +3,7 @@
 
 /*Style for the file tree*/
 /* Just some base styles not needed for example to function */
-, html { font-family: Verdana, Arial, Helvetica, sans-serif; }
+html { font-family: Verdana, Arial, Helvetica, sans-serif; }
 
 body, form, ul, li, p, h1, h2, h3, h4, h5
 {
@@ -18,9 +18,9 @@ p
 	margin: 0 0 1em 0;
 }
 
-/*html { font-size: 100%; /* IE hack */ }
-/*body { font-size: 1em; /* Sets base font size to 16px */ }
-/*table { font-size: 100%; /* IE hack */ }
+/*html { font-size: 100%; /* IE hack */ 
+/*body { font-size: 1em; /* Sets base font size to 16px */ 
+/*table { font-size: 100%; /* IE hack */ 
 input, select, textarea, th, td { font-size: 1em; }
 	
 /* CSS Tree menu styles */
@@ -46,7 +46,8 @@ ol.FileManager
 			padding-left: 21px;
 			text-decoration: none;
 			display: block;
-            font-family:Consolas;
+            font-family: Tahoma;
+            font-size:15px;
 		}
 		li.file a[href *= 'csharp']	{ background: url(Icons/csharp.png) 0 0 no-repeat; }
 		li.file a[href *= 'html']	{ background: url(Icons/html.png) 0 0 no-repeat; }
@@ -75,7 +76,8 @@ ol.FileManager
 		li input + ol > li { display: none; margin-left: -14px !important; padding-left: 1px; }
 	li label
 	{
-         font-family:Consolas;
+           font-family: Tahoma;
+            font-size:15px;
         background-position: left center;
 		background: url(Icons/folder-horizontal.png) 15px 1px no-repeat;
 		cursor: pointer;
@@ -137,7 +139,29 @@ ol.FileManager
 
 }
 /*Css Alex*/
-
+#errormess {
+     /*background-image: url('../img/300px-Button_Icon_Green.svg.png');*/
+    
+    background-size: 10px 10px;
+    background-repeat:no-repeat;
+    margin-top: 10px;
+    padding-left: 30px;
+    float: left;
+    width: 50px;
+}
+#valid {
+   
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    padding-left: 30px;
+    float: left;
+    width: 50px;
+}
+#msg{
+    float:left;
+    width:100px;
+}
 #editor-box{
     position:absolute;
  overflow:hidden;
@@ -228,4 +252,8 @@ box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
     position:absolute;
     z-index:999;
     display:none;
+}
+#sett{
+    float:left;
+
 }
