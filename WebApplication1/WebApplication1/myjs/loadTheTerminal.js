@@ -109,6 +109,10 @@ myTerminal.setscrollY("auto");
 myTerminal.blinkingCursor(true)
 myTerminal.setTextSize("13px");
 myTerminal.setmaxHeight("100%");
+myTerminal.setPaddingLeft("40px");
+myTerminal.setPaddingTop("15px");
+
+
 
 $("#term").append(myTerminal.html)
 $("#term").css({
