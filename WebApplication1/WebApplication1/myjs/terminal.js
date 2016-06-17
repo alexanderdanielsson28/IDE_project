@@ -107,8 +107,16 @@ var Terminal = (function () {
 		}
 
 		this.print = function (message) {
+
+
+
 		    var newLine = document.createElement('div')
-            
+
+		    newLine.style = "padding-top:4px; padding-bottom:4px"
+          
+		
+		    
+		    
 			newLine.textContent = message
 			this._output.appendChild(newLine)
 		}
@@ -214,7 +222,7 @@ var Terminal = (function () {
 
 		this.html.style.fontFamily = 'Monaco, Courier'
 		this.html.style.margin = '0'
-		this._innerWindow.style.padding = '0px'
+		this._innerWindow.style.padding = '0'
 		this._input.style.margin = '0'
 		this._output.style.margin = '0'
 		this._cursor.style.background = 'white'
