@@ -233,15 +233,17 @@ $(document).on('click', ".file a", function (e) {
 
         $(".file a").removeClass("selectedFile");
         $(this).addClass("selectedFile")
-        var clickedFile = GetFileFromID($(this).parent())
+        
+
+
+        var clickedFile = GetFileFromID($(this).parent().attr("id"))
+        
         //console.log(clickedFile)
-
-        editor.setValue("", 0);
+        setSessionContent(clickedFile)
         setSessionLanguage(editor.getSession(), clickedFile.Type)
-        editor.setValue(clickedFile.Content, 1);
-        fileText = clickedFile.Content
-
         addTabz(clickedFile);
+        $("#sortable").children().removeClass("ui-tabs-active, ui-state-active")
+        $("a[href='#" + clickedFile.Name + "']").parent().addClass("ui-tabs-active, ui-state-active")
     }
 
 });
@@ -268,12 +270,12 @@ $(document).on('dblclick', ".file a, .folder", function (e) {
         console.log($(this).children("input"))
         if ($(this).hasClass('folder')) {
 
-            dblClickedFile = GetFileFromID($(this).children("input"))
+            dblClickedFile = GetFileFromID($(this).children("input").attr("id"))
             $(this).append("<input type='text' class='NameChangeInput' value=" + dblClickedFile.Name + ">")
         }
         else {
             $(this).text("")
-            dblClickedFile = GetFileFromID($(this).parent())
+            dblClickedFile = GetFileFromID($(this).parent().attr("id"))
             $(this).parent().append("<input type='text' class='NameChangeInput' value=" + dblClickedFile.Name + ">")
         }
     }
@@ -325,8 +327,8 @@ $(document).mousemove(function (e) {
 }
 */
 
-function GetFileFromID(Element) {
-    var id = $(Element).attr('id');
+function GetFileFromID(id) {
+    
     //console.log(id);
     var clickedFile = IterateForFile(fileArray, id)
     return clickedFile;
@@ -484,6 +486,17 @@ function setSessionLanguage(editSession, Language) {
         return null;
     }
     editSession.setMode("ace/mode/" + Language);
+}
+
+function setSessionContent(fileObject) {
+
+    editor.setValue("", 0);
+    
+    editor.setValue(fileObject.Content, 1);
+    fileText = fileObject.Content
+
+
+
 }
 
 //----------------SESSION-RELATED FUNCTIONS--------------------------------
