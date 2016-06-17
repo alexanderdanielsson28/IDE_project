@@ -113,7 +113,7 @@ var delay4 = 8000;
 
 var validCodeFunc = function () {
     
-    var currentFile = GetFileFromID($(".selectedFile").parent())
+    var currentFile = GetFileFromID($(".selectedFile").parent().attr("id"));
    currentFile.Content = editor.getValue();
 
 
