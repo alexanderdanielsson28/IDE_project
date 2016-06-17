@@ -153,13 +153,12 @@ ol.FileManager
     height:90%;
     padding-top:20px;
 }
-#FileManager{
-      
-    
+#FileManager {
     display: inline-block;
-    padding-left:25px;
-
-    
+    padding-left: 25px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 #ram{
