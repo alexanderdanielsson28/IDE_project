@@ -176,7 +176,7 @@ box-shadow: 0px -5px 5px 0px rgba(0,0,0,0.75);
 
 .btn {
    
-    float:right;
+    /*float:right;*/
 	-moz-box-shadow:inset 0px 1px 0px 0px #8ab876;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #8ab876;
 	box-shadow:inset 0px 1px 0px 0px #8ab876;

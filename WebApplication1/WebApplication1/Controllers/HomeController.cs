@@ -39,7 +39,7 @@ namespace WebApplication1.Controllers
         public ActionResult Contact(aboutModel data)
         {
             ViewBag.Message = "Your contact page.";
-
+         
             return View(data);
         }
         //controller

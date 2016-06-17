@@ -32,7 +32,7 @@
 <div class="col-md-12" id="Container">
     <div class="col-md-12" id="bodyArea">
         <div class="col-md-2" id="headerAreaFirstDiv">
-            <span id="spantext">js</span>
+            @*<span id="spantext">js</span>*@
             <!-- open and close settings -->
             <div id="boxie"></div>
             <div id="boxieR"></div>
@@ -82,14 +82,20 @@
             </button>
             <!-- Preview button -->
             <div id="form_button">
-                @using (Html.BeginForm())
+                @using (Html.BeginForm("Action", "Controller", FormMethod.Get, new { target = "_blank" }))
+                {
+                    <input type="submit" value="Run preview" id="preview_button" />
+                    <input style="display:none" type="text" id="testData" name="reportName" />
+
+
+                @*@using (Html.BeginForm())
                 {
                     // <input type="text" id="testData" />
                     <input type="submit" value="Run preview" id="preview_button" />
                     <input style="display:none" type="text" id="testData" name="reportName" />
                     
+                }*@
                 }
-             
             </div>
         </div>
         <!-- Area for tabs -->
@@ -122,7 +128,7 @@
         <div class='fileMenu'>
             <button id="add_tab">Create New File</button>
             <button id="DeleteFileButton">Delete File</button>
-        </div>-->
+        </div>
         <!-- Filehieracrhy -->
         <div class="col-md-2" id="hierarchy">
             <div id="editor-box">
