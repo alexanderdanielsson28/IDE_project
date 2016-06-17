@@ -265,7 +265,8 @@ p {
     height:30px;
     float:right;
     cursor:pointer;
-    margin-right:5px;
+    padding-right:0;
+    /*margin-right:5px;*/
     content: "\f013 ";   
 }
 #boxieR {
@@ -277,10 +278,11 @@ p {
     float:right;
     display:none;
     cursor:pointer;
-    margin-right:25px;
+    /*margin-right:25px;*/
 }
 .fa-cog{
     color:silver;
+    margin-right:0;
 }
 #showcontent {
     width:300px;

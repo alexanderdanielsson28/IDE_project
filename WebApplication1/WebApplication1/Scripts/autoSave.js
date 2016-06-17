@@ -114,8 +114,11 @@ var delay4 = 8000;
 var validCodeFunc = function () {
     
     var currentFile = GetFileFromID($(".selectedFile").parent().attr("id"));
-   currentFile.Content = editor.getValue();
 
+    console.log($(".selectedFile").parent().attr("id"));
+    console.log(currentFile);
+    currentFile.Content = editor.getValue();
+   
 
    $("#errormess").text("SAVED").css('color', 'green');
     $("#img-check").show();
