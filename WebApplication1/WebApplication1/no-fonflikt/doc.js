@@ -9,7 +9,7 @@ editor.setOptions({
     enableBasicAutocompletion: true,
     enableSnippets: true,
     enableLiveAutocompletion: true,
-    fontSize: "11pt"
+    fontSize: "15px"
 });
 //Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
