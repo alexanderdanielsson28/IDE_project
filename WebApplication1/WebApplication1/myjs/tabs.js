@@ -31,7 +31,7 @@
 
                   var newObject = CreateNewObject(tabTitle,dropdownValue);
                   
-                  var positionObject = GetFileFromID(rightClickedElement)
+                  var positionObject = GetFileFromID($(rightClickedElement).attr("id"))
                   insertVisualFile(rightClickedElement, newObject);
 
 
@@ -199,22 +199,29 @@ function addTabz(fileObject) {
 
 
 $(document).on('click', ".tabSelect", function (e) {
-    var object;
+    
+
+
     $("#sortable").children().removeClass("ui-tabs-active, ui-state-active")
     $(this).addClass("ui-tabs-active, ui-state-active");
     
     //console.log($(this).children(":first").text())
     var openTabName = $(this).children(":first").text();
-    for (var i = 0; i < openTabs.length; i++) {
+    var object = GetFileFromID(openTabName);
+    $(".file a").removeClass("selectedFile");
+    $("li[id='" + object.Name + "']").children(":first").addClass("selectedFile")
+    console.log($("li[id='" + object.Name + "']"))
+    /*for (var i = 0; i < openTabs.length; i++) {
         if (openTabs[i].Name == openTabName) {
             console.log(openTabs[i].Name)
             object = openTabs[i];
             
         }
-    }
-    if (typeof object != "undefined") {
-
-    editor.setValue(object.Content);
+    }*/
+    console.log(object)
+    if (typeof object != "undefined" && !$(".ace_gutter-layer").children().hasClass("ace_error")) {
+       
+        setSessionContent(object)
         setSessionLanguage(editor.getSession(), object.Type);
         
     }

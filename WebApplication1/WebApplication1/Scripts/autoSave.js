@@ -117,8 +117,8 @@ var validCodeFunc = function () {
 
     console.log($(".selectedFile").parent().attr("id"));
     console.log(currentFile);
-    currentFile.Content = editor.getValue();
-   
+   currentFile.Content = editor.getValue();
+
 
    $("#errormess").text("SAVED").css('color', 'green');
     $("#img-check").show();

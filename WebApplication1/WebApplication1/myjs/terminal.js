@@ -90,6 +90,7 @@ var Terminal = (function () {
 
 		this.html = document.createElement('div')
 		this.html.className = 'Terminal'
+		
 		if (typeof(id) === 'string') { this.html.id = id }
 
 		this._innerWindow = document.createElement('div')
@@ -106,7 +107,16 @@ var Terminal = (function () {
 		}
 
 		this.print = function (message) {
-			var newLine = document.createElement('div')
+
+
+
+		    var newLine = document.createElement('div')
+
+		    newLine.style = "padding-top:4px; padding-bottom:4px"
+          
+		
+		    
+		    
 			newLine.textContent = message
 			this._output.appendChild(newLine)
 		}
@@ -173,6 +183,15 @@ var Terminal = (function () {
 		    this.html.style.left = left
 		}
 
+		this.setPaddingLeft = function (padding) {
+		    this.html.style.paddingLeft = padding
+		}
+
+		this.setPaddingTop = function (padding) {
+		    this.html.style.paddingTop = padding
+		}
+
+		
         
 		
 
@@ -194,13 +213,16 @@ var Terminal = (function () {
 		this.setHeight('230px')
 		this.setmaxHeight('100%')
 		this.setscrollY('auto')
+		this.setPaddingLeft('15px')
+		this.setPaddingTop('15px')
+		
 	
 
 
 
 		this.html.style.fontFamily = 'Monaco, Courier'
 		this.html.style.margin = '0'
-		this._innerWindow.style.padding = '0px'
+		this._innerWindow.style.padding = '0'
 		this._input.style.margin = '0'
 		this._output.style.margin = '0'
 		this._cursor.style.background = 'white'
