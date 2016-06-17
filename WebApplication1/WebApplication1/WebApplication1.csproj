@@ -550,6 +550,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrapnonscroll.css" />
+    <Content Include="Content\Icons\csharp.png" />
+    <Content Include="Content\Icons\css.png" />
+    <Content Include="Content\Icons\html.png" />
     <Content Include="Content\style67.css" />
     <Content Include="Content\styleIndex.css" />
     <Content Include="Content\FileManagerDesign.css" />

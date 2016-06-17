@@ -171,7 +171,7 @@ function removeArrayObject(element) {
 function addTabz(fileObject) {
     var result = isInArray(fileObject, openTabs)
     //var result = $.grep(openTabs, function (e) { return e.Name == fileObject.Name; });
-    console.log(result);
+    //console.log(result);
     if (!result) {
 
     
@@ -203,7 +203,7 @@ $(document).on('click', ".tabSelect", function (e) {
     $("#sortable").children().removeClass("ui-tabs-active, ui-state-active")
     $(this).addClass("ui-tabs-active, ui-state-active");
     
-    console.log($(this).children(":first").text())
+    //console.log($(this).children(":first").text())
     var openTabName = $(this).children(":first").text();
     for (var i = 0; i < openTabs.length; i++) {
         if (openTabs[i].Name == openTabName) {
