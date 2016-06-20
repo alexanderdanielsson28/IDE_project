@@ -3,7 +3,7 @@
       var tabTitle = $("#tab_title"),
 
         tabContent = $( "#tab_content" ),
-        tabTemplate = "<li class='tabSelect ui-state-default'><a href='#{href}'>#{label}</a> <span class='ui-icon ui-icon-close ui-icon-arrowthick-2-n-s' role='presentation'>Remove Tab</span></li>",
+        tabTemplate = "<li class='tabSelect ui-state-default'><a href='#{href}'>#{label}</a><i class='fa fa-times' aria-hidden='true'></i></li>",
         tabPlusTemplate = "<li id='CreateFileButton'><a href='#{href}'>#{label}</a> </li>",
         tabCounter = 1;
  
@@ -90,11 +90,10 @@
         //.button()
         .click(function() {
             dialog.dialog("open");
-            
         });
  
       // close icon: removing the tab on click
-      tabs.delegate("span.ui-icon-close", "click", function () {
+      tabs.delegate(".fa-times", "click", function () {
           //console.log($(this).closest("li").hasClass("ui-tabs-active, ui-state-active"))
           if ($(this).closest("li").hasClass("ui-tabs-active, ui-state-active")) {
               editor.setValue("", 0);
@@ -106,9 +105,12 @@
           
           //console.log(openTabs)
           removeArrayObject($(this).closest("li"))
-          //console.log(openTabs)
-          //console.log($(this).closest("li"))
-          
+          console.log($(this).closest("li").find("a").text())
+          console.log($(".selectedFile").text())
+
+          if ($(this).closest("li").find("a").text() == $(".selectedFile").text()) {
+              editor.setValue("", 0)
+          }
           tabs.tabs("refresh");
       }); 
  
@@ -200,7 +202,7 @@ function addTabz(fileObject) {
 
 $(document).on('click', ".tabSelect", function (e) {
     
-
+    if (!$(e.target).hasClass("fa-times")) {
 
     $("#sortable").children().removeClass("ui-tabs-active, ui-state-active")
     $(this).addClass("ui-tabs-active, ui-state-active");
@@ -225,7 +227,7 @@ $(document).on('click', ".tabSelect", function (e) {
         setSessionLanguage(editor.getSession(), object.Type);
         
     }
-    
+    }
 });
 
 //Function that creates a new object to the file hierachy

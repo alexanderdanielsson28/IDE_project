@@ -185,6 +185,7 @@ body {
     float:left;
     border:0px;
     margin:5px;
+    cursor:pointer;
     
    /*background-image:
     linear-gradient(
@@ -212,13 +213,13 @@ body {
    
     
     #sortable li a {
-        
+        cursor:pointer;
         -webkit-transform: skew(30deg);
  -moz-transform: skew(30deg); 
  -o-transform: skew(30deg);
 
 }
-        #sortable li span {
+        #sortable li .fa-times {
         
         -webkit-transform: skew(30deg);
  -moz-transform: skew(30deg); 

@@ -37,6 +37,16 @@ document.getElementById("boxieR").onclick = function settingsinfoR() {
     document.getElementById('boxieR').style.display = "none";
     document.getElementById('boxie').style.display = "block";
 }
+/*
+$("html:not(#showcontent):not(*)").click(function (e) {
+    console.log($(e.target))
+    
+        settingsinfoR();
+    
+
+})*/
+
+
 //Handles the settings + and - functions that hide/shows the different sections of settings to choose from
 //settings for theme section, changes theme on the editor
 var startstopThemes = 1;
