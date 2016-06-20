@@ -4,6 +4,7 @@
     <!-- Viewsport, desctription, ignore default mobile stylings, author -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="Code editor">
+    <!-- telephone=no means that no phones should have default stylings, all are now made by server -->
     <meta name="format-detection" content="telephone=no" />
     <meta name="author" content="The Fantastic 4 Kalmar style">
     <meta charset="UTF-8">
@@ -23,8 +24,12 @@
     <!-- CSS document for the layout of the site, the main structure to things -->
     <link rel="stylesheet" href="../../Content/bootstrapnonscroll.css" />
 </head>
+
+<!-- Main container of the contenct shown -->
 <div class="col-md-12" id="Container">
+    <!-- bodyArea div tag is forced to be 100% width & height inside Container -->
     <div class="col-md-12" id="bodyArea">
+        <!-- Header bar in the top left corner contains preview, save & settings -->
         <div class="col-md-2" id="headerAreaFirstDiv">
             <span id="spantext">js</span>
             <!-- open and close settings -->
@@ -64,7 +69,6 @@
                         <p class="spanCommandP"><span title="Cobalt is a dark blue theme" id="cb1" class="spanpointer">cobalt theme</span></p>
                         <p class="spanCommandP"><span title="Tomorrow is a white theme" id="tm1" class="spanpointer">tomorrow theme</span></p>
                     </div>
-                    <a href="https://i.gyazo.com/11423dfcf429a37268ba0b5051f0359e.png" alt="lol">dank editor 100%</a>
                 </div>
             </div>
             <!-- Save button -->
@@ -72,16 +76,19 @@
                 <span class="glyphicon glyphicon-floppy-saved"></span>Save
             </button>
             <!-- Preview button -->
-            <div id="form_button">
+            <div id="form_button"> 
+                <!-- Form that opens a new tab and runs the code written in editor file (html) Url.Encode() -->
                 @using (Html.BeginForm())
                 {
-                    // <input type="text" id="testData" />
-                    <input style="display:none" type="text" id="testData" name="reportName" />
-                    <input type="submit" value="Run preview" id="preview_button" />
+
+
+
+                    <input type="submit" value="Run preview" id="preview_button" formtarget="_blank"/>
+                    <input style="display:none" type="text" id="testData" name="reportName"/>
                 }
             </div>
         </div>
-        <!-- Area for tabs -->
+        <!-- Top right area contains tabs -->
         <div class="col-md-10" id="HeaderAreaSecondDiv">
             <div id="tabs">
                 <ul id="sortable">
@@ -89,7 +96,6 @@
                 </ul>
             </div>
         </div>
-        <!-- 
         <div id="dialog" title="Create New File">
             <form>
                 <fieldset class="ui-helper-reset">
@@ -105,24 +111,27 @@
                 </fieldset>
             </form>
         </div>
-               <div class='fileMenu'>
+            <div class='fileMenu'>
             <button id="add_tab">Create New File</button>
             <button id="DeleteFileButton">Delete File</button>
-        </div>-->
-        <!-- Filehieracrhy -->
+        </div>
+        <!-- Area where Filehieracrhy bottom left area -->
         <div class="col-md-2" id="hierarchy">
+            <!-- Filehieracrhy -->
             <div id="editor-box">
                 <div id="ram">
                     <ol id="FileManager"></ol>
                 </div>
             </div>
         </div>
-        <!-- Editor -->
+        <!-- Editor area in the middle right section -->
         <div class="col-md-10" id="editorArea">
+            <!-- Editor -->
             <pre id="editor"></pre>
         </div>
-        <!-- Terminal -->
+        <!-- Terminal area in the bottom right section -->
         <div class="col-md-10" id="consoleArea">
+            <!-- Terminal -->
             <div id="term"></div>
         </div>
     </div>
@@ -149,5 +158,5 @@
 <script src="~/Scripts/autoSave.js"></script>
 <script src="~/myjs/loadTheTerminal.js"></script>
 <script src="~/Scripts/VariableChecks.js"></script>
-<!-- JavaScript document that handles functions, settings functions and similiar -->
+<!-- JavaScript document contains a few functions only, mostly the functions you find in settings -->
 <script src="~/no-fonflikt/doc.js"></script>

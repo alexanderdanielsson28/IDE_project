@@ -10,15 +10,21 @@
 
 
 <script src="~/Scripts/jquery-1.10.2.js"></script>
-<textarea style="display:none" id="textbox">@Html.Raw(Model.html).ToString()</textarea>
+<!-- <textarea style="display:none" id="textbox">@Html.Raw(Model.html).ToString()</textarea> -->
+
 
 <script>
     eval(localStorage.myCode);
-    @*var teststring = '@Html.Raw(Model.html)';*@
-  var  teststring = '@Html.Raw(Model.html.Replace("'", "\\\'"))';
-   // console.log(ff);
- //   console.log(teststring);
+    @*var teststring = '@Html.Raw(Model.html)';   @Html.Raw((String)ViewBag.myData);         *@
+    var teststring = '@Html.Raw(Model.html.Replace("'", "\\\'"))';
+
+    
+
+    //window.location.href = "/Home/Contact";
+    // console.log(ff); "'", "\\\'"
+    // console.log(teststring); .Replace("'", "\\\'") .Replace("'", "\\\'") ViewBag.Mydata 
     var testObject;
+
 
     // Retrieve the object from storage
     //var retrievedObject = localStorage.getItem('testObject');
@@ -32,31 +38,30 @@
 
     /*
     makeTextFile = function (text) {
-      var data = new Blob([text], {type: 'text/plain'});
+    var data = new Blob([text], {type: 'text/plain'});
 
-      // If we are replacing a previously generated file we need to
-      // manually revoke the object URL to avoid memory leaks.
-      if (textFile !== null) {
-        window.URL.revokeObjectURL(textFile);
-      }
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+    window.URL.revokeObjectURL(textFile);
+    }
 
-      textFile = window.URL.createObjectURL(data);
+    textFile = window.URL.createObjectURL(data);
 
-      return textFile;
+    return textFile;
     };
 
 
     var create = document.getElementById('create'),
-      textbox = document.getElementById('textbox');
+    textbox = document.getElementById('textbox');
 
     create.addEventListener('click', function () {
-      var link = document.getElementById('downloadlink');
-      link.href = makeTextFile(textbox.value);
-      link.style.display = 'block';
+    var link = document.getElementById('downloadlink');
+    link.href = makeTextFile(textbox.value);
+    link.style.display = 'block';
     }, false);
-  })();*/
-
-    $("body").append("<div id='h1text'><h1>preview page</h1></div>");
+    })();*/
+    $("body").append("<div id='h1text'><h1>preview page</h1></div><img/>");
     $("body").append(teststring.toString());
 </script>
 <style>
@@ -68,6 +73,13 @@
 
     footer {
         display: none;
+    }
+    img{
+        margin-left:auto;
+        margin-right:auto;
+        background-image:url("https://i.gyazo.com/eda50d6e754644b6305ee02a4396d89f.jpg");
+        width:346px;
+        height:267px;
     }
 </style>
 <body>

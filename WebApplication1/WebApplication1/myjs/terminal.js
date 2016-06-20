@@ -1,4 +1,4 @@
-/*! terminal.js v2.0 | (c) 2014 Erik Österberg | https://github.com/eosterberg/terminaljs */
+/*! terminal.js v2.0 | (c) 2014 String Emil | https://github.com/eosterberg/terminaljs */
 
 var Terminal = (function () {
 	// PROMPT_TYPE
