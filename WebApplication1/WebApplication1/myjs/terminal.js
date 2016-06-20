@@ -27,6 +27,8 @@ var Terminal = (function () {
 		inputField.style.border = 'none'
 		inputField.style.opacity = '0'
 		inputField.style.fontSize = '0.2em'
+		inputField.style.paddingBottom = '8px'
+        inputField.style.paddingTop = '8px'
 
 		terminalObj._inputLine.textContent = ''
 		terminalObj._input.style.display = 'block'

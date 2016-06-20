@@ -1,8 +1,8 @@
 ﻿
     var myTerminal = new Terminal()
 
-myTerminal.print("********************** APIRIX Terminal V2 **********************")
-myTerminal.print("The commands are: | date | creator | errorlog | theme | clear |");
+myTerminal.print("********************** AJEA Code Editor **********************")
+myTerminal.print("The commands are: | date | creator | errorlog | clear |");
 
 var lock = true;
 
@@ -21,7 +21,7 @@ function myfunction() {
         }
         else if (userInput == "errorlog") {
             var annot = editor.getSession().getAnnotations();
-            console.log(annot);
+           
 
             if (annot.length > 0) {
 
@@ -39,51 +39,11 @@ function myfunction() {
                 lock = false
             }
         }
-        else if (userInput == "theme") {
-
-
-            myTerminal.print("black");
-            myTerminal.print("white");
-            myTerminal.print("bluegray");                
-
-            myTerminal.input("", function (userInput2) {    
-
-                if (userInput2 == "black") {
-                    black();
-                    myTerminal.print("You Choosed Theme Black")
-                    lock = false;
-                }
-
-                else if (userInput2 == "white") {
-                    white();
-                    myTerminal.print("You Choosed Theme White")
-                    lock = false;
-                }
-                else if (userInput2 == "bluegray") {
-                    grayblue();
-                    myTerminal.print("You Choosed Theme Bluegray")
-                    lock = false;
-                }
-                else{
-                    myTerminal.print("There Are No Theme Called That!")
-                    lock = false;
-                }
-
-                    
-                if (lock == false) {
-                    lock = true;
-                    myfunction();
-                }
-
-
-            });
-               
-                
-        }
+       
         else if (userInput == "clear") {
             myTerminal.clear();
-            myTerminal.print("*********** APIRIX Terminal V2 ***********")
-            myTerminal.print("The commands are: | date | creator | errorlog | theme | clear |");
+            myTerminal.print("*********** AJEA Code Editor ***********")
+            myTerminal.print("The commands are: | date | creator | errorlog | clear |");
             lock = false;
         }
             

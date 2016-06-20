@@ -48,10 +48,10 @@ ol.FileManager
 			display: block;
             font-family:Consolas;
 		}
-		li.file a[href *= 'csharp']	{ background: url(Icons/csharp.png) 0 0 no-repeat; }
-		li.file a[href *= 'html']	{ background: url(Icons/html.png) 0 0 no-repeat; }
-		li.file a[href $= 'css']	{ background: url(Icons/css.png) 0 0 no-repeat; }
-		li.file a[href $= 'javascript']		{ background: url(Icons/JSIcon16X16.png) 0 0 no-repeat; }
+		li.file a[href *= 'csharp']	{ background: url(Icons/csh.png) 0 0 no-repeat; }
+		li.file a[href *= 'html']	{ background: url(Icons/htmle.png) 0 0 no-repeat; }
+		li.file a[href $= 'css']	{ background: url(Icons/csse.png) 0 0 no-repeat; }
+		li.file a[href $= 'javascript']		{ background: url(Icons/js.png) 0 0 no-repeat; }
 	li input
 	{
 		position: absolute;
