@@ -63,7 +63,7 @@ var checkForErrors = function () {
 
 
         } else {
-            validCodeFunc();
+           saveIconFunc();
         }
     
 
@@ -114,6 +114,9 @@ var delay4 = 8000;
 var validCodeFunc = function () {
     
     var currentFile = GetFileFromID($(".selectedFile").parent().attr("id"));
+
+    //console.log($(".selectedFile").parent().attr("id"));
+    console.log(currentFile);
    currentFile.Content = editor.getValue();
 
 
@@ -132,6 +135,7 @@ var resMessage = function () {
     $("#msg").text("");
     $("#img-check").hide();
     $("#errormess").text("");
+    $(".saveIcon").hide();
    // console.log("reset");
 
 }
@@ -148,13 +152,17 @@ var fu = function () {
 }
 
 
-
+var saveIconFunc = function () {
+    $(".saveIcon").show();
+    validCodeFunc();
+}
 
 
 var update = function () {
- //  $("#errormess").text("SAVED").css('color', 'green');
+
+    saveIconFunc();
    // $("#errormess").addClass("errormess");
-    validCodeFunc();
+    
 }
 
 // code for saveButton, if code are same or not
