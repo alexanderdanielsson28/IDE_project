@@ -182,7 +182,8 @@ ol.FileManager
     padding-left: 25px;
     width: 100%;
     overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: auto;
+    height:70%;
 }
 
 #ram{
