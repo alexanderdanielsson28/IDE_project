@@ -10,15 +10,21 @@
 
 
 <script src="~/Scripts/jquery-1.10.2.js"></script>
-<textarea style="display:none" id="textbox">@Html.Raw(Model.html).ToString()</textarea>
+<!-- <textarea style="display:none" id="textbox">@Html.Raw(Model.html).ToString()</textarea> -->
+
 
 <script>
     eval(localStorage.myCode);
-    @*var teststring = '@Html.Raw(Model.html)';*@
-  var  teststring = '@Html.Raw(Model.html.Replace("'", "\\\'"))';
-   // console.log(ff);
- //   console.log(teststring);
+    @*var teststring = '@Html.Raw(Model.html)';   @Html.Raw((String)ViewBag.myData);         *@
+    var teststring = '@Html.Raw(Model.html.Replace("'", "\\\'"))';
+
+    
+
+    //window.location.href = "/Home/Contact";
+    // console.log(ff); "'", "\\\'"
+    // console.log(teststring); .Replace("'", "\\\'") .Replace("'", "\\\'") ViewBag.Mydata 
     var testObject;
+
 
     // Retrieve the object from storage
     //var retrievedObject = localStorage.getItem('testObject');
@@ -55,8 +61,7 @@
       link.style.display = 'block';
     }, false);
   })();*/
-
-    $("body").append("<div id='h1text'><h1>preview page</h1></div>");
+    $("body").append("<div id='h1text'><h1>preview page</h1></div><img/>");
     $("body").append(teststring.toString());
 </script>
 <style>

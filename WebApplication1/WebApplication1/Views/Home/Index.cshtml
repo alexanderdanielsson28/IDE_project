@@ -9,6 +9,7 @@
     <!-- Viewsport, desctription, ignore default mobile stylings, author -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="Code editor">
+    <!-- telephone=no means that no phones should have default stylings, all are now made by server -->
     <meta name="format-detection" content="telephone=no" />
     <meta name="author" content="The Fantastic 4 Kalmar style">
     <meta charset="UTF-8">
@@ -33,8 +34,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
 </head>
+
+<!-- Main container of the contenct shown -->
 <div class="col-md-12" id="Container">
+    <!-- bodyArea div tag is forced to be 100% width & height inside Container -->
     <div class="col-md-12" id="bodyArea">
+        <!-- Header bar in the top left corner contains preview, save & settings -->
         <div class="col-md-2" id="headerAreaFirstDiv">
 
             @*<span id="spantext">js</span>*@
@@ -88,19 +93,14 @@
 
             <!-- Preview button -->
             <div id="form_button">
-                @using (Html.BeginForm("Action", "Controller", FormMethod.Get, new { target = "_blank" }))
+                <!-- Form that opens a new tab and runs the code written in editor file (html) Url.Encode() -->
+                @using (Html.BeginForm())
                 {
-                    <input type="submit" value="Run preview" id="preview_button" />
-                    <input style="display:none" type="text" id="testData" name="reportName" />
 
 
-                    @*@using (Html.BeginForm())
-                    {
-                        // <input type="text" id="testData" />
-                        <input type="submit" value="Run preview" id="preview_button" />
-                        <input style="display:none" type="text" id="testData" name="reportName" />
 
-                    }*@
+                    <input type="submit" value="Run preview" id="preview_button" formtarget="_blank"/>
+                    <input style="display:none" type="text" id="testData" name="reportName"/>
                 }
             </div>
             <!-- Save button -->
@@ -111,7 +111,7 @@
                 </button>
             </div><i class="saveIcon" style="display:none"></i>
         </div>
-        <!-- Area for tabs -->
+        <!-- Top right area contains tabs -->
         <div class="col-md-10" id="HeaderAreaSecondDiv">
             <div id="tabs">
                 <ul id="sortable">
@@ -138,7 +138,7 @@
                 </fieldset>
             </form>
         </div>
-        <div class='fileMenu'>
+               <div class='fileMenu'>
             <button class="fileMenuButton" id="CreateFileButton">Create New File</button>
             <button class="fileMenuButton" id="DeleteFileButton">Delete File</button>
         </div>
@@ -148,9 +148,9 @@
                 <div id="ram">
                     <ol id="FileManager"></ol>
                 </div>
-                <div>
+               
                     <img id="logo-pic" src="~/Content/Icons/ajeapic.png" />
-                </div>
+               
             </div>
         </div>
         <!-- Editor -->
@@ -189,6 +189,6 @@
 
 <script src="~/myjs/loadTheTerminal.js"></script>
 <script src="~/Scripts/VariableChecks.js"></script>
-<!-- JavaScript document that handles functions, settings functions and similiar -->
+<!-- JavaScript document contains a few functions only, mostly the functions you find in settings -->
 <script src="~/no-fonflikt/doc.js"></script>
 <script src="~/Scripts/autoSave.js"></script>
