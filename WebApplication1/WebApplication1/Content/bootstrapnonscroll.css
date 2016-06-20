@@ -171,7 +171,8 @@ body {
     padding:0px;
     float:left;
     border:0px;
-    background:#303030
+    background:#303030;
+    overflow-y:scroll;
 }
 #sortable li {
     min-height:100%;

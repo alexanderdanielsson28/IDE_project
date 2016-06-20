@@ -286,6 +286,17 @@ p {
     padding-left:10px;
     padding-top:7px;
 }
+.errorIcon {
+    width: 10px;
+    height: 10px;
+    /*float: right;*/
+    background-image: url('../img/glossy-red-icon-button-md.png');
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    margin-left: 0px;
+    float: left;
+}
 .saveIcon {
     width:10px;
     height:10px;

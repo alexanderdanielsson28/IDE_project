@@ -143,11 +143,13 @@ var resMessage = function () {
 
 
 var fu = function () {
-    //$("#errormess");
-  //  $("#errormess").attr("id", "valid");
-    // document.getElementById("errormess").appendChild('valid');
+
+    $(".saveIcon").attr("class", "errorIcon").show();
+    console.log("sadsd");
+    setTimeout(function () {
+        $(".errorIcon").attr("class", "saveIcon").hide();
  
-    $("#errormess").text("ERROR").css('color', 'red');
+    }, delay4);
     
 }
 
