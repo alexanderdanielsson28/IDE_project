@@ -36,11 +36,12 @@
 <div class="col-md-12" id="Container">
     <div class="col-md-12" id="bodyArea">
         <div class="col-md-2" id="headerAreaFirstDiv">
-          
+           
             @*<span id="spantext">js</span>*@
             <!-- open and close settings -->
             <div id="boxie">
-                <i class="fa fa-cog fa-2x" aria-hidden="false"></i>
+                <i class="fa fa-cog fa-1x" aria-hidden="false"></i>
+            
             </div>
        
             <div id="boxieR"><i class="fa fa-cog fa-2x" aria-hidden="false"></i></div>
@@ -84,10 +85,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Save button -->
-                <button type="button" class="btn">
-                    Save
-                </button>
+           
                 <!-- Preview button -->
                 <div id="form_button">
                     @using (Html.BeginForm("Action", "Controller", FormMethod.Get, new { target = "_blank" }))
@@ -105,6 +103,11 @@
                     }*@
                     }
                 </div>
+            <!-- Save button -->
+            <button type="button" class="btn">
+                Save
+            </button>
+            <i class="saveIcon" aria-hidden="true" style="display:none"></i>
 </div>
         <!-- Area for tabs -->
         <div class="col-md-10" id="HeaderAreaSecondDiv">
